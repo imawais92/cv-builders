@@ -1,0 +1,343 @@
+.imgs, .main-img-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-input {
+  margin-top: 1.25rem;
+  padding: 0px 60px 0px 60px;
+}
+
+.sign-txt .form-heading {
+  line-height: 4.0625rem;
+}
+.sign-txt h4 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-bottom: 7px;
+  color: var(--primary-color);
+}
+.sign-txt h3 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 24px;
+  color: var(--dark-color);
+}
+.sign-txt h3 a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.sign-txt h3 a :hover {
+  color: #a72727;
+}
+
+.form-control:focus {
+  border-color: var(--dark-color);
+  box-shadow: none;
+}
+
+.form .pass-icon {
+  position: relative;
+  margin-top: -1.75rem;
+  text-decoration: none;
+}
+.form .pass-icon i {
+  color: #383535;
+}
+.form form a {
+  float: right;
+}
+.form input {
+  outline: none;
+}
+.form input :focus {
+  outline: none;
+  border-bottom: 0.125rem solid var(--dark-color);
+}
+.form button {
+  height: 3.3125rem;
+  width: 100%;
+  background: #c21010;
+  background: linear-gradient(63deg, #c21010 0%, #a73232 80%);
+  box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+  margin-top: 5px;
+  color: var(--light-color);
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  border-color: var(--primary-color);
+}
+.form input {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 0%;
+  border-bottom: 2px solid #999999;
+  padding-left: 25px;
+}
+.form input::-moz-placeholder {
+  color: #000842;
+  font-weight: 400;
+  font-size: 16px;
+}
+.form input::placeholder {
+  color: #000842;
+  font-weight: 400;
+  font-size: 16px;
+}
+.form .input-icons {
+  position: absolute;
+  margin-top: 42px;
+  color: #000842;
+}
+.form label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: #999999;
+}
+.form .check-box {
+  margin-top: 1.25rem;
+}
+.form .check-box .checkbox {
+  height: 0.9375rem;
+  width: 0.9375rem;
+}
+.form .check-box a {
+  text-decoration: none;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #4D4D4D;
+}
+.form .check-box a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: 0.2s;
+}
+.form .check-box span {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 0.125rem;
+  color: #4D4D4D;
+}
+
+.socail-icons {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.socail-icons p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #B5B5B5;
+}
+.socail-icons .icon ul {
+  display: flex;
+  list-style: none;
+  margin: 0%;
+  padding: 0%;
+}
+.socail-icons li .s-icon {
+  margin-left: 0.625rem;
+}
+.socail-icons li img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.main-img-div {
+  height: 100vh;
+  width: 98%;
+}
+
+.main-image {
+  height: 98%;
+  width: 100%;
+}
+.main-image .img-background {
+  height: 100%;
+  width: 100%;
+  background: #c21010;
+  background: linear-gradient(45deg, #c21010 0%, #a72727 80%);
+  border-radius: 15px;
+}
+.main-image .side-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.main-image .side-img img {
+  width: 80%;
+}
+
+.signup-input {
+  margin-top: 0rem;
+  padding: 0rem 3.75rem 0rem 3.75rem;
+}
+
+.signup-heading {
+  line-height: 50px;
+}
+
+.form-section h4 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--dark-color);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.form-section h4 a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-left: 0.375rem;
+}
+
+.forgot-page-txt .form-heading {
+  line-height: 4.0625rem;
+}
+.forgot-page-txt h4 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-bottom: 0.4375rem;
+  color: red;
+  color: var(--dark-color);
+}
+.forgot-page-txt h3 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--dark-color);
+}
+.forgot-page-txt h3 a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.forgot-page-txt h3 a :hover {
+  color: #000842;
+}
+
+@media (max-width: 992px) and (min-width: 1px) {
+  .imgs {
+    display: none;
+  }
+  .form form .check-box {
+    margin-top: 1.875rem;
+  }
+}
+@media (max-width: 600px) and (min-width: 0px) {
+  .sign-input,
+  .signup-input {
+    margin-top: 1.25rem;
+    padding: 0rem 1.25rem 0rem 1.25rem;
+  }
+  .form form .check-box {
+    margin-top: 1.875rem;
+  }
+}
+@media (max-width: 390px) and (min-width: 310px) {
+  .sign-input .signup-input {
+    margin-top: 1.25rem;
+    padding: 0rem 1.25rem 0rem 1.25rem;
+  }
+  .form form .check-box {
+    margin-top: 1.875rem;
+  }
+  .form form .check-box .checkbox {
+    height: 0.625rem;
+    width: 0.625rem;
+  }
+  .form form .check-box {
+    margin-top: 1.25rem;
+  }
+  .form form .check-box a {
+    font-size: 0.75rem;
+  }
+  .form form .check-box span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-left: 0.1875rem;
+  }
+}
+@media (max-width: 310px) and (min-width: 0px) {
+  .sign-input .signup-input {
+    margin-top: 1.25rem;
+    padding: 0rem 0.625rem 0rem 0.625rem;
+  }
+  .form form .check-box {
+    display: inline;
+    margin-top: 1.875rem;
+  }
+  .form form .check-box .checkbox {
+    height: 0.625rem;
+    width: 0.625rem;
+  }
+  .form form .check-box {
+    margin-top: 1.25rem;
+  }
+  .form form .check-box a {
+    font-size: 0.625rem;
+  }
+  .form form .check-box span {
+    font-size: 0.625rem;
+    font-weight: 400;
+    margin-left: 3px;
+  }
+}
+@media (max-width: 430px) and (min-width: 0px) {
+  .forgot-page-txt h4 {
+    font-size: 1.375rem;
+    margin-bottom: 0rem;
+  }
+  .forgot-page-txt h3 {
+    font-weight: 500;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+  }
+}
+@media (max-width: 354px) and (min-width: 0px) {
+  .forgot-page-txt h4 {
+    font-size: 1.375rem;
+    margin-bottom: 0rem;
+  }
+  .forgot-page-txt h3 {
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+@media (max-width: 332px) and (min-width: 0px) {
+  .forgot-page-txt h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0rem;
+  }
+  .forgot-page-txt h3 {
+    font-weight: 600;
+    font-size: 0.625rem;
+    line-height: 1.125rem;
+  }
+}/*# sourceMappingURL=style.css.map */
