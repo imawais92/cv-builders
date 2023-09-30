@@ -1,6 +1,4 @@
-<?php
-include('includes/db.php')
-?>
+
 <!-- =================== Navbar-Start =================== -->
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
