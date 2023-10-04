@@ -339,7 +339,7 @@ include("./includes/navbar.php");
             </div>
             <!-- ==============form-End================ -->
             <!-- ==============form-tips-sec-start============== -->
-            <div class="col-lg-5 mt-4 mt-lg-" style=" box-shadow:5px 0px 20px 10px #E0E0E0; border-radius:20px;">
+            <div class="col-lg-5 mt-4 " style=" box-shadow:5px 0px 20px 10px #E0E0E0; border-radius:20px;">
 
               <div class="Form-tip-sec">
                 <h3>TIPS</h3>
