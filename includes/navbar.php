@@ -2,7 +2,6 @@
 <!-- =================== Navbar-Start =================== -->
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#"><b>LOGO</b></a> -->
     <div class="logo">
       <a href="./index.php"><img src="./image/Cv-Builder-Logo.svg" alt="logo"></a>
     </div>

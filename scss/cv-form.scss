@@ -23,6 +23,12 @@
 .progres-bar {
   vertical-align: middle;
 
+  & .progressbarss {
+    box-shadow: 0px 0px 20px 5px #E0E0E0;
+    border-radius: 20px;
+    display: flex;
+  }
+
   .progress-sec {
     display: flex;
     justify-content: center;
@@ -37,6 +43,8 @@
         font-size: .75rem;
         text-transform: uppercase;
         vertical-align: middle;
+        margin-bottom: 0;
+        padding: 10px 20px;
 
         & span {
           border: .125rem solid var(--primary-color);
@@ -72,41 +80,18 @@
 
 
 
-.personal-info-form {
-  & h3 {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin: 1rem 0 0 1rem;
+// .personal-info-form {
+//   & h3 {
+//     font-weight: 600;
+//     letter-spacing: 0.5px;
+//     margin: 1rem 0 0 1rem;
 
-  }
-
-  & .form-buttons {
-    & button {
-      margin-bottom: 1.5rem;
-      background: linear-gradient(63deg, #c21010 0%, #a73232 80%);
-      color: var(--light-color);
-      padding: .375rem 1rem .375rem 1rem;
-      font-weight: 500;
-    }
-  }
-}
-
-.form-bg {
-  background-color: white;
-  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
-  // border-radius: .3125rem;
-}
-
-// .input-field {
-//   & img {
-//     background: var(--primary-color);
-//     padding: 5px;
-//     border-radius: 4px;
-//     width: 35px;
-//     position: absolute;
-//     margin-left: 1rem;
 //   }
+
 // }
+
+
+
 
 .add-education {
   & img {
@@ -117,55 +102,12 @@
   }
 }
 
-.Form-tip-sec {
-  background-color: whitesmoke;
-
-  & h3 {
-    margin: 1rem 0 0 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-
-  & .text ul {
-
-    & li {
-      font-weight: 500;
-      color: #000000c5;
-      line-height: 1.5rem;
-      margin-top: 1rem;
-    }
-  }
-
-  & .preview_btn {
-    & button {
-      @extend %flex-center;
-      padding: 6px 10px 6px 10px;
-      font-size: 1rem;
-      border: 2px solid var(--primary-color);
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-left: 1.5rem;
-      margin-bottom: 3rem;
-      margin: 2rem 0rem 3rem 1.5rem;
-    }
-
-    & i {
-      color: var(--primary-color);
-      font-size: 1.5rem;
-      flex-direction: column;
-      @extend %flex-center
-    }
-  }
-}
-
 
 .input-field {
   margin-top: 2.2rem;
   position: relative;
 
-  & .email_width {
-    width: 95%;
-  }
+
 
   & label {
     position: absolute;
@@ -181,7 +123,7 @@
   }
 
   & input {
-    width: 90%;
+    width: 100%;
     height: 2.5rem;
     border-radius: .375rem;
     font-size: 1rem;
@@ -196,162 +138,50 @@
     border: .0625rem solid #808080
   }
 
-}
-
-// .image_input {
-//   border: .0625rem solid #80808071;
-//   width: 100%;
-//   height: 8rem;
-//   float: right;
-//   position: relative;
-
-//   & label {
-//     top: 0;
-//     left: 0;
-//     position: relative;
-//     background: transparent;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100%;
-//     width: 100%;
-
-//     & i {
-//       font-size: 4rem;
-//     }
-//   }
-
-// }
-
-::-webkit-datetime-edit-month-field {
-  text-transform: uppercase;
-  color: #000000ab;
-}
-
-::-webkit-datetime-edit-day-field {
-  text-transform: uppercase;
-  text-transform: uppercase;
-  color: #000000ab;
-}
-
-::-webkit-datetime-edit-year-field {
-  text-transform: uppercase;
-  color: #000000ab;
-}
-
-.toggle-image-form {
-  float: right;
-}
-
-:root {
-  --primary-color: #C21010;
-  --light-color: #ffffff;
 
 }
 
-%flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.form-select:focus {
+  outline: none;
+  box-shadow: none;
+  border: .0625rem solid #808080;
 
 }
 
-.main-heigt2 {
-  height: 100%;
 
-  & .main-heigt {
-    height: 90%;
-  }
-}
-
-
-.progres-bar {
-  vertical-align: middle;
-
-  .progress-sec {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    & a {
-      text-decoration: none;
-
-      & p {
-        color: rgba(0, 0, 0, 0.544);
-        font-weight: 600;
-        font-size: .75rem;
-        text-transform: uppercase;
-        vertical-align: middle;
-
-        & span {
-          border: .125rem solid var(--primary-color);
-          border-radius: 50%;
-          width: 1.25rem;
-          height: 1.25rem;
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: .375rem;
-          text-align: center;
-          font-size: .75rem;
-          font-weight: 700;
-          position: relative;
-
-
-
-        }
-
-        &::after {
-          background: #d5dae1;
-          width: .9375rem;
-          height: .125rem;
-          display: inline-block;
-          content: "";
-          margin: 0 .5625rem;
-          vertical-align: middle
-        }
-
-      }
-    }
-  }
-}
 
 
 
 .personal-info-form {
-  & h3 {
+  & .headinf {
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin: 1rem 0 0 1rem;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: inline;
+    padding: 8px 20px 8px 8px;
+    background-color: var(--primary-color);
+    color: white;
 
   }
 
   & .form-buttons {
     & button {
-      margin-bottom: 1.5rem;
+      // background: linear-gradient(63deg, rgba(0, 0, 0, 0.888) 0%, rgba(0, 0, 0, 0.742) 80%);
       background: linear-gradient(63deg, #c21010 0%, #a73232 80%);
       color: var(--light-color);
       padding: .375rem 1rem .375rem 1rem;
       font-weight: 500;
     }
+
+    & .add-det-btn {
+      background: linear-gradient(63deg, rgba(0, 0, 0, 0.888) 0%, rgba(0, 0, 0, 0.742) 80%);
+      border: none;
+      width: 100px;
+      height: 40px;
+    }
   }
 }
-
-.form-bg {
-  background-color: white;
-  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
-  border-radius: .3125rem;
-}
-
-// .input-field {
-//   & img {
-//     background: var(--primary-color);
-//     padding: 5px;
-//     border-radius: 4px;
-//     width: 35px;
-//     position: absolute;
-//     margin-left: 1rem;
-//   }
-// }
 
 .add-education {
   & img {
@@ -363,7 +193,6 @@
 }
 
 .Form-tip-sec {
-  background-color: whitesmoke;
 
   & h3 {
     margin: 1rem 0 0 1rem;
@@ -382,82 +211,6 @@
   }
 }
 
-.input-field {
-  margin-top: 2.2rem;
-  position: relative;
-
-
-  & .email_width {
-    width: 95%;
-  }
-
-  & .gender-option {
-    width: 90%;
-    border: 1px solid #80808071;
-
-    &:focus {
-      box-shadow: none;
-      border: .0625rem solid #808080
-    }
-
-
-  }
-
-  & label {
-    position: absolute;
-    transition: 0.3s;
-    font-weight: 500;
-    top: -1.75rem;
-    left: .375rem;
-    font-size: 1rem;
-    padding: 0 .125rem;
-    background: white;
-    color: var(--primary-color);
-
-  }
-
-  & input {
-    width: 90%;
-    height: 2.5rem;
-    border-radius: .375rem;
-    font-size: 1rem;
-    padding: 0 .9375rem;
-    color: #000000ab;
-    font-weight: 500;
-    border: .0625rem solid #80808071
-  }
-
-  & input:focus {
-    outline: none;
-    border: .0625rem solid #808080
-  }
-
-}
-
-// .image_input {
-//   border: 1px solid #80808071;
-//   width: 100%;
-//   height: 8rem;
-//   float: right;
-//   position: relative;
-
-//   & label {
-//     top: 0;
-//     left: 0;
-//     position: relative;
-//     background: transparent;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100%;
-//     width: 100%;
-
-//     & i {
-//       font-size: 4rem;
-//     }
-//   }
-
-// }
 
 ::-webkit-datetime-edit-month-field {
   text-transform: uppercase;
@@ -475,108 +228,6 @@
   color: #000000ab;
 }
 
-.toggle-image-form {
-  float: right;
-}
-
-:root {
-  --primary-color: #C21010;
-  --light-color: #ffffff;
-
-}
-
-%flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.main-heigt2 {
-  height: 100%;
-
-  & .main-heigt {
-    height: 90%;
-  }
-}
-
-
-.progres-bar {
-  vertical-align: middle;
-
-  .progress-sec {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    & a {
-      text-decoration: none;
-
-      & p {
-        color: rgba(0, 0, 0, 0.544);
-        font-weight: 600;
-        font-size: .75rem;
-        text-transform: uppercase;
-        vertical-align: middle;
-
-        & span {
-          border: .125rem solid var(--primary-color);
-          border-radius: 50%;
-          width: 1.25rem;
-          height: 1.25rem;
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: .375rem;
-          text-align: center;
-          font-size: .75rem;
-          font-weight: 700;
-          position: relative;
-
-
-
-        }
-
-        &::after {
-          background: #d5dae1;
-          width: .9375rem;
-          height: .125rem;
-          display: inline-block;
-          content: "";
-          margin: 0 .5625rem;
-          vertical-align: middle
-        }
-
-      }
-    }
-  }
-}
-
-
-
-.personal-info-form {
-  & h3 {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin: 1rem 0 0 1rem;
-
-  }
-
-  & .form-buttons {
-    & button {
-      margin-bottom: 1.5rem;
-      background: linear-gradient(63deg, #c21010 0%, #a73232 80%);
-      color: var(--light-color);
-      padding: .375rem 1rem .375rem 1rem;
-      font-weight: 500;
-    }
-  }
-}
-
-.form-bg {
-  background-color: white;
-  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
-  border-radius: 5px;
-}
 
 .input-field {
   & img {
@@ -601,85 +252,6 @@
   }
 }
 
-.add-education {
-  & img {
-    background: var(--primary-color);
-    padding: .3125rem;
-    border-radius: .25rem;
-    width: 2.1875rem;
-  }
-}
-
-.Form-tip-sec {
-  background-color: whitesmoke;
-
-  & h3 {
-    margin: 1rem 0 0 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-
-  & .text ul {
-
-    & li {
-      font-weight: 500;
-      color: #000000c5;
-      line-height: 1.5rem;
-      margin-top: 1rem;
-    }
-  }
-}
-
-
-.input-field {
-  margin-top: 2.2rem;
-  position: relative;
-
-  & .email_width {
-    width: 95%;
-  }
-
-  & label {
-    position: absolute;
-    transition: 0.3s;
-    font-weight: 500;
-    top: -1.75rem;
-    left: .375rem;
-    font-size: 1rem;
-    padding: 0 .125rem;
-    background: white;
-    color: var(--primary-color);
-
-  }
-
-  & input {
-    width: 90%;
-    height: 2.5rem;
-    border-radius: .375rem;
-    font-size: 1rem;
-    padding: 0 15px;
-    color: #000000ab;
-    font-weight: 500;
-    border: .0625rem solid #80808071
-  }
-
-  & input:focus {
-    outline: none;
-    border: .0625rem solid #808080
-  }
-
-  & textarea {
-    padding: .625rem .9375rem;
-    color: #000000ab;
-    font-weight: 500;
-    border: .0625rem solid #80808071
-  }
-
-  & .about-us-txt {
-    font-weight: 500;
-    margin-top: 0.3rem;
-  }
-}
 
 .range-form {
   width: 400px;
@@ -756,112 +328,4 @@
     }
   }
 
-}
-
-::-webkit-datetime-edit-month-field {
-  text-transform: uppercase;
-  color: #000000ab;
-}
-
-::-webkit-datetime-edit-day-field {
-  text-transform: uppercase;
-  text-transform: uppercase;
-  color: #000000ab;
-}
-
-::-webkit-datetime-edit-year-field {
-  text-transform: uppercase;
-  color: #000000ab;
-}
-
-.toggle-image-form {
-  float: left;
-  position: relative;
-
-  color: var(--primary-color);
-  background-color: transparent;
-  padding: .5rem .625rem .5rem .625rem;
-  font-weight: 700;
-  border: .125rem solid var(--primary-color);
-  float: right;
-  font-size: .75rem;
-
-
-}
-
-// ============form-add-table==============
-.input_info_table {
-  width: 95%;
-  margin-top: 2rem;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgb(207, 207, 207);
-    border-radius: 0px;
-  }
-
-
-  &::-webkit-scrollbar-track {
-    width: 5px;
-  }
-
-  & table {
-    white-space: nowrap;
-
-    & thead tr {
-      font-size: 1rem;
-      ;
-
-      & th {
-        padding: 5px 12px 5px 12px;
-        width: 100%;
-        color: var(--primary-color);
-        white-space: nowrap;
-        font-weight: 600;
-      }
-    }
-
-    & tbody {
-      & .table-icon {
-        border-left: none;
-      }
-
-      & td {
-        font-weight: 500;
-        padding: 5px 12px 5px 12px;
-
-        & a i {
-          color: var(--primary-color);
-          letter-spacing: 0.2rem;
-          cursor: pointer;
-        }
-
-      }
-    }
-  }
-}
-
-
-.tips_modal {
-
-  & .modal-body {
-    & h2 {
-      font-weight: 600;
-      text-align: center;
-      color: var(--primary-color);
-    }
-
-    & p {
-      text-align: center;
-      font-weight: 600;
-    }
-
-    & .input-img img {
-      width: 100%;
-    }
-  }
 }
