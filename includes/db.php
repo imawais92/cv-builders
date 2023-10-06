@@ -5,6 +5,7 @@ $username = "root";
 $password = "";
 $database = "cv_builders";
 $conn = mysqli_connect($servername , $username , $password , $database);
+$pdo = mysqli_connect($servername , $username , $password , $database);
 if(!$conn){
   echo "database Error";
 }

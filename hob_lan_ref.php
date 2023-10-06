@@ -1,6 +1,8 @@
 <?php
 include('includes/db.php');
 if (isset($_POST['submit'])) {
+  $hobbies = $_POST['hobby'];
+  $languages = $_POST['languge'];
   $references = $_POST['reference'];
 
   for ($i = 0; $i < count($references); $i++) {
@@ -9,11 +11,6 @@ if (isset($_POST['submit'])) {
     $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
     $result2 = mysqli_query($conn, $sql2);
 
-    if ($result2) {
-      header("location: templete.php");
-    } else {
-      echo "Error: " . mysqli_error($conn);
-    }
   }
 
   for ($i = 0; $i < count($languages); $i++) {
@@ -97,7 +94,7 @@ include("includes/navbar.php");
                       <div class="col-md-12">
                         <div id="referad">
                           <div class="input-field mt-5 ">
-                            <input name="" id="hobby" type="text">
+                            <input name="hobby[]" id="hobby" type="text">
                             <label>Hobby</label>
                           </div>
                         </div>
@@ -140,7 +137,7 @@ include("includes/navbar.php");
                       <div class="col-md-12">
                         <div id="referad">
                           <div class="input-field mt-5 ">
-                            <input name="" id="hobby" type="text">
+                            <input name="hobby[]" id="hobby" type="text">
                             <label>Hobby</label>
                           </div>
                         </div>
