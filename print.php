@@ -22,19 +22,21 @@ $data = json_decode($data);
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      box-sizing: border-box;
     }
 
     .container {
       min-height: 296.5mm;
-      width: 206mm;
+      width: 212mm;
       background-color: white;
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      margin: auto;
-      background-color: #e09203;
+      grid-template-columns: 30% 70%;
+      /* grid-template-columns: 1fr 2fr; */
+      margin: 0;
     }
 
     .left-column {
+      margin: 0;
       padding: 20px;
       background-color: #e09203;
       color: white;
@@ -197,7 +199,7 @@ $data = json_decode($data);
       <!-- =====================per info================ -->
       <div class="right-column">
         <div class="section">
-          <div style="background-color: #d7d700;color: black;padding: 25px;border-radius: 40px 0px;">
+          <div style="background-color: #d7d700;color: black;padding: 25px;border-radius: 40px 0px; width:100%">
             <h1 style="font-size: 60px;">
               <?= ucfirst($data->per_info->fname) ?>
               <?= ucfirst($data->per_info->lname) ?>
@@ -297,7 +299,7 @@ $data = json_decode($data);
       let contents = document.getElementById('content');
       const opt = {
         margin: 0,
-        filename: 'Cvbuilders.pdf',
+        filename: 'Cvbuilder.pdf',
         html2canvas: {
           scale: 0.75,
         },
