@@ -1,4 +1,5 @@
 <?php
+$title = "Preview ";
 $data = file_get_contents('res.txt');
 $data = json_decode($data);
 
@@ -93,7 +94,6 @@ $data = json_decode($data);
             <tr>
               <td> <img src="img/email (1).png" alt="" width="20px"></td>
               <td style="word-wrap: break-word;"> <span>
-                  <?= $data->per_info->email ?>
                 </span> </td>
 
             </tr>
@@ -164,7 +164,6 @@ $data = json_decode($data);
           <div>
             <?php
             for ($i = 0; $i < count($data->hobbies); $i++) {
-              # code... 
 
             ?>
               <ul>

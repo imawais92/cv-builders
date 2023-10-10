@@ -1,4 +1,5 @@
 <?php
+$title = "Privacy Policy";
 include("./includes/header.php");
 include('./includes/navbar.php');
 ?>

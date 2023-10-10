@@ -1,4 +1,5 @@
 <?php
+$title = "Information";
 include('includes/db.php');
 if (isset($_POST['submit'])) {
   $company_names = $_POST['company_name'];
@@ -7,28 +8,63 @@ if (isset($_POST['submit'])) {
   $work_end_dates = $_POST['work_end_date'];
   $work_city_countries = $_POST['work_city_coun'];
 
-  for ($i = 0; $i < count($company_names); $i++) {
-    $company_name = $company_names[$i];
-    $work_role = $work_roles[$i];
-    $work_st_date = $work_st_dates[$i];
-    $work_end_date = $work_end_dates[$i];
-    $work_city_coun = $work_city_countries[$i];
-
-    $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-      echo "Data inserted successfully";
-      header("location: hob_lan_ref.php");
-    } else {
-      echo "Error: " . mysqli_error($conn);
+  if (!empty($_REQUEST['worexp_id'])) {
+    $sql_del = "DELETE FROM `work_exp` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
+    $r = mysqli_query($conn, $sql_del);
+    if ($r) {
+      for ($i = 0; $i < count($company_names); $i++) {
+        $company_name = $company_names[$i];
+        $work_role = $work_roles[$i];
+        $work_st_date = $work_st_dates[$i];
+        $work_end_date = $work_end_dates[$i];
+        $work_city_coun = $work_city_countries[$i];
+        $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
+        $result = mysqli_query($conn, $sql);
+        if (!$result) {
+          // Handle the error if the insertion fails
+          echo "Error: " . mysqli_error($conn);
+        }
+      }
     }
+  } else {
+    for ($i = 0; $i < count($company_names); $i++) {
+      $company_name = $company_names[$i];
+      $work_role = $work_roles[$i];
+      $work_st_date = $work_st_dates[$i];
+      $work_end_date = $work_end_dates[$i];
+      $work_city_coun = $work_city_countries[$i];
+      $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
+      $result = mysqli_query($conn, $sql);
+    }
+  }
+  if ($result) {
+    header("location: hob_lan_ref.php");
+  } else {
+    echo "Error: " . mysqli_error($conn);
   }
 }
 
+$checkdata = mysqli_query($conn, "SELECT * FROM work_exp WHERE user_id = '" . $_SESSION['user_id'] . "' ");
+if (mysqli_num_rows($checkdata)  >=  1) {
+  $getdata = true;
+  $buttontext = "Update";
+} else {
+  $buttontext = "Next";
+  $getdata = false;
+}
 
 
+if (@$_REQUEST['del']) {
+  $del_works = $_REQUEST['del'];
+  $sql_del = "DELETE FROM `work_exp` WHERE work_exp_id = $del_works";
+  $result = mysqli_query($conn, $sql_del);
+  if($result){
+    header("location: work-exp.php");
+  
+  }
+}
 ?>
+
 <?php
 include("includes/header.php");
 include("./includes/navbar.php")
@@ -66,62 +102,137 @@ include("./includes/navbar.php")
 
             <div class="col-lg-7 ">
               <div class="personal-info-form ">
-                <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
-                  <div class="my-3 position-relative">
-                    <h3 class="headinf">Working Experience</h3>
-                  </div>
-                  <div class="form-info">
 
-                    <!-- ================user-work-ex-form-Start ====================== -->
+                <?php
+                if ($getdata == true) {
+                  while (@$work_det = mysqli_fetch_assoc($checkdata)) {
+                ?>
+                    <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
+                      <div class="my-3 position-relative">
+                        <h3 class="headinf">Working Experience</h3>
+                        <a href="work-exp.php?del=<?= $work_det['work_exp_id'] ?>">
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                        </a>
+                      </div>
+                      <div class="form-info">
 
-                    <div id="add_work">
-                      <div class="container">
-                        <div class="row">
-                          <!-- ============Company Name============ -->
-                          <div class="col-md-6">
-                            <div class="input-field mt-5 ">
-                              <input name="company_name[]" id="com_name" type="text">
-                              <label>Company Name</label>
-                            </div>
-                          </div>
-                          <!-- ============Role============ -->
-                          <div class="col-md-6">
+                        <!-- ================user-work-ex-form-Start ====================== -->
 
-                            <div class="input-field mt-5 ">
-                              <input name="work_role[]" id="role" type="text">
-                              <label>Role </label>
-                            </div>
-                          </div>
-                          <!-- ============Start-Date============ -->
-                          <div class="col-md-6">
-                            <div class="input-field mt-5 ">
-                              <input name="work_st_date[]" id="start_date" type="date">
-                              <label class="date-lable">Start Date</label>
-                            </div>
-                          </div>
-                          <!-- ============End-Date============ -->
-                          <div class="col-md-6 ">
-                            <div class="input-field mt-5 ">
-                              <input name="work_end_date[]" id="end_date" type="date">
-                              <label class="date-lable">End Date</label>
-                            </div>
-                          </div>
-                          <!-- ============City============ -->
-                          <div class="col-md-12">
+                        <div id="add_work">
+                          <div class="container">
+                            <input type="hidden" name="worexp_id" value="<?= $work_det['work_exp_id'] ?>">
+                            <div class="row">
+                              <!-- ============Company Name============ -->
+                              <div class="col-md-6">
+                                <div class="input-field mt-5 ">
+                                  <input name="company_name[]" id="com_name" type="text" value="<?= $work_det['company_name'] ?>">
+                                  <label>Company Name</label>
+                                </div>
+                              </div>
+                              <!-- ============Role============ -->
+                              <div class="col-md-6">
 
-                            <div class="input-field mt-5 ">
-                              <textarea name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
-                              <label>Working Details</label>
+                                <div class="input-field mt-5 ">
+                                  <input name="work_role[]" id="role" type="text" value="<?= $work_det['role'] ?>">
+                                  <label>Role </label>
+                                </div>
+                              </div>
+                              <!-- ============Start-Date============ -->
+                              <div class="col-md-6">
+                                <div class="input-field mt-5 ">
+                                  <input name="work_st_date[]" id="start_date" type="date" value="<?= $work_det['work_st_data'] ?>">
+                                  <label class="date-lable">Start Date</label>
+                                </div>
+                              </div>
+                              <!-- ============End-Date============ -->
+                              <div class="col-md-6 ">
+                                <div class="input-field mt-5 ">
+                                  <input name="work_end_date[]" id="end_date" type="date" value="<?= $work_det['work_end_date'] ?>">
+                                  <label class="date-lable">End Date</label>
+                                </div>
+                              </div>
+                              <!-- ============City============ -->
+                              <div class="col-md-12">
+
+                                <div class="input-field mt-5 ">
+                                  <textarea name="work_city_coun[]" class="form-control" id="Feild" rows="4"><?= $work_det['city_country'] ?></textarea>
+                                  <label>Working Details</label>
+                                </div>
+                              </div>
+                              <!-- ============Country============ -->
                             </div>
                           </div>
-                          <!-- ============Country============ -->
                         </div>
+                        <!-- ================user-work-ex-form-End---====================== -->
+
                       </div>
                     </div>
-                    <!-- ================user-work-ex-form-End---====================== -->
+                  <?php
+                  }
+                } else {
+                  ?>
+                  <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
+                    <div class="my-3 position-relative">
+                      <h3 class="headinf">Working Experience</h3>
+                    </div>
+                    <div class="form-info">
 
+                      <!-- ================user-work-ex-form-Start ====================== -->
+
+                      <div id="add_work">
+                        <div class="container">
+                          <input type="hidden" name="worexp_id">
+                          <div class="row">
+                            <!-- ============Company Name============ -->
+                            <div class="col-md-6">
+                              <div class="input-field mt-5 ">
+                                <input name="company_name[]" id="com_name" type="text">
+                                <label>Company Name</label>
+                              </div>
+                            </div>
+                            <!-- ============Role============ -->
+                            <div class="col-md-6">
+
+                              <div class="input-field mt-5 ">
+                                <input name="work_role[]" id="role" type="text">
+                                <label>Role </label>
+                              </div>
+                            </div>
+                            <!-- ============Start-Date============ -->
+                            <div class="col-md-6">
+                              <div class="input-field mt-5 ">
+                                <input name="work_st_date[]" id="start_date" type="date">
+                                <label class="date-lable">Start Date</label>
+                              </div>
+                            </div>
+                            <!-- ============End-Date============ -->
+                            <div class="col-md-6 ">
+                              <div class="input-field mt-5 ">
+                                <input name="work_end_date[]" id="end_date" type="date">
+                                <label class="date-lable">End Date</label>
+                              </div>
+                            </div>
+                            <!-- ============City============ -->
+                            <div class="col-md-12">
+
+                              <div class="input-field mt-5 ">
+                                <textarea name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
+                                <label>Working Details</label>
+                              </div>
+                            </div>
+                            <!-- ============Country============ -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- ================user-work-ex-form-End---====================== -->
+
+                    </div>
                   </div>
-                </div>
+
+                <?php
+
+                }
+                ?>
                 <!-- =====virtual data====== -->
 
                 <div id="work_exp_sec">
@@ -202,7 +313,7 @@ include("./includes/navbar.php")
                 <div class="form-buttons " style="margin-top: 100px;">
 
                   <a href="./edu_skill.php"> <button type="button" class="btn btn-danger  save-btn  add-det-btn"> Previous</button></a>
-                  <button name="submit" type="submit" class="btn btn-danger float-end save-btn  add-det-btn"> Next</button>
+                  <button name="submit" type="submit" class="btn btn-danger float-end save-btn  add-det-btn"> <?= $buttontext ?></button>
                 </div>
               </div>
             </div>

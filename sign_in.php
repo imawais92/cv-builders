@@ -1,4 +1,5 @@
 <?php
+$title = "Sign In";
 include("./includes/header.php");
 include('./includes/db.php')
 ?>

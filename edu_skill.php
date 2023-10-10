@@ -1,4 +1,5 @@
 <?php
+$title = "Information";
 include("includes/db.php");
 if (isset($_POST['submit'])) {
   $institute_names = $_POST['institute_name'];
