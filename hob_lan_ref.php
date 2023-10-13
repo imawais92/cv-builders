@@ -1,43 +1,130 @@
 <?php
+$title = "Information";
 include('includes/db.php');
 if (isset($_POST['submit'])) {
   $hobbies = $_POST['hobby'];
   $languages = $_POST['languge'];
   $references = $_POST['reference'];
 
-  for ($i = 0; $i < count($references); $i++) {
-    $reference = $references[$i];
 
-    $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
-    $result2 = mysqli_query($conn, $sql2);
 
-  }
 
-  for ($i = 0; $i < count($languages); $i++) {
-    $language = $languages[$i];
+  if (!empty($_REQUEST['reference'])) {
+    // =========ref
+    if (!empty($_REQUEST['refe_id'])) {
+      $sql_de = "DELETE FROM `user_references` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
+      $resu = mysqli_query($conn, $sql_de);
+      if ($resu) {
 
-    $sql1 = "INSERT INTO `languages` (`user_id`,`language`) VALUES ('" . $_SESSION['user_id'] . "','$language')";
-    $result1 = mysqli_query($conn, $sql1);;
+        for ($i = 0; $i < count($references); $i++) {
+          $reference = $references[$i];
 
-    if ($result1) {
-      header("location: templete.php");
+          $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
+          $result2 = mysqli_query($conn, $sql2);
+        }
+      }
     } else {
-      echo "Error: " . mysqli_error($conn);
+
+      for ($i = 0; $i < count($references); $i++) {
+        $reference = $references[$i];
+
+        $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
+        $result2 = mysqli_query($conn, $sql2);
+      }
     }
   }
-  for ($i = 0; $i < count($hobbies); $i++) {
-    $hobby = $hobbies[$i];
 
-    $sql3 = "INSERT INTO `hobbies` (`user_id`,`hobby`) VALUES ('" . $_SESSION['user_id'] . "','$hobby')";
-    $result3 = mysqli_query($conn, $sql3);
+  // =========ref
 
-    if ($result3) {
-      header("location: templete.php");
-    } else {
-      echo "Error: " . mysqli_error($conn);
+  // =========lan
+  if (!empty($_REQUEST['lan_ids'])) {
+    $sql_d = "DELETE FROM `languages` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
+    $re = mysqli_query($conn, $sql_d);
+    if ($re) {
+      for ($i = 0; $i < count($languages); $i++) {
+        $language = $languages[$i];
+
+        $sql1 = "INSERT INTO `languages` (`user_id`,`language`) VALUES ('" . $_SESSION['user_id'] . "','$language')";
+        $result1 = mysqli_query($conn, $sql1);;
+      }
     }
+  } else {
+    for ($i = 0; $i < count($languages); $i++) {
+      $language = $languages[$i];
+
+      $sql1 = "INSERT INTO `languages` (`user_id`,`language`) VALUES ('" . $_SESSION['user_id'] . "','$language')";
+      $result1 = mysqli_query($conn, $sql1);;
+    }
+  }
+  // =========lan
+
+  // =========hoby
+  if (!empty($_REQUEST['hoby_id'])) {
+    $sql_del = "DELETE FROM `hobbies` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
+    $r = mysqli_query($conn, $sql_del);
+    if ($r) {
+      for ($i = 0; $i < count($hobbies); $i++) {
+        $hobby = $hobbies[$i];
+
+        $sql3 = "INSERT INTO `hobbies` (`user_id`,`hobby`) VALUES ('" . $_SESSION['user_id'] . "','$hobby')";
+        $result3 = mysqli_query($conn, $sql3);
+      }
+    }
+  } else {
+    for ($i = 0; $i < count($hobbies); $i++) {
+      $hobby = $hobbies[$i];
+
+      $sql3 = "INSERT INTO `hobbies` (`user_id`,`hobby`) VALUES ('" . $_SESSION['user_id'] . "','$hobby')";
+      $result3 = mysqli_query($conn, $sql3);
+    }
+  }
+  // =========hoby
+
+
+  if ($result3) {
+    header("location: templete.php");
+  } else {
+    echo "Error: " . mysqli_error($conn);
   }
 }
+
+
+$checkhob = mysqli_query($conn, "SELECT * FROM hobbies WHERE user_id = '" . $_SESSION['user_id'] . "' ");
+$checklan = mysqli_query($conn, "SELECT * FROM languages WHERE user_id = '" . $_SESSION['user_id'] . "' ");
+$checkref  = mysqli_query($conn, "SELECT * FROM user_references WHERE user_id = '" . $_SESSION['user_id'] . "' ");
+if (mysqli_num_rows($checkhob) or mysqli_num_rows($checklan) or mysqli_num_rows($checkref)  >=  1) {
+  $getdata = true;
+  $buttontext = "Update";
+} else {
+  $buttontext = "Next";
+  $getdata = false;
+}
+
+
+
+
+if (@$_REQUEST['delh']) {
+  $del_id  = $_REQUEST['delh'];
+  $re = mysqli_query($conn, "DELETE FROM `hobbies` WHERE  hobbies_id =  $del_id");
+  if ($re) {
+    header('location:hob_lan_ref.php ');
+  }
+}
+if (@$_REQUEST['dellan']) {
+  $del_id  = $_REQUEST['dellan'];
+  $re = mysqli_query($conn, "DELETE FROM `languages` WHERE  lang_id =  $del_id");
+  if ($re) {
+    header('location:hob_lan_ref.php ');
+  }
+}
+if (@$_REQUEST['delref']) {
+  $del_id  = $_REQUEST['delref'];
+  $re = mysqli_query($conn, "DELETE FROM `user_references` WHERE  ref_id =  $del_id");
+  if ($re) {
+    header('location:hob_lan_ref.php ');
+  }
+}
+
 
 ?>
 
@@ -84,32 +171,69 @@ include("includes/navbar.php");
             <!-- ==============form-start============== -->
             <div class="col-lg-7">
               <div class="personal-info-form pb-4">
-                <!-- ==================hobby-section-Start========================== -->
-                <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
-                  <div class="my-3 position-relative">
-                    <h3 class="headinf">Hobbies</h3>
-                  </div>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div id="referad">
-                          <div class="input-field mt-5 ">
-                            <input name="hobby[]" id="hobby" type="text">
-                            <label>Hobby</label>
+                <?php
+                if ($getdata == true) {
+                  while ($dta = mysqli_fetch_assoc($checkhob)) {
+                ?>
+                    <!-- ==================hobby-section-Start========================== -->
+                    <input name="hoby_id" type="hidden" value="<?= $dta['hobbies_id'] ?>">
+                    <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+                      <div class="my-3 position-relative">
+                        <h3 class="headinf">Hobbies</h3>
+                        <a href="hob_lan_ref.php?delh=<?= $dta['hobbies_id'] ?>">
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                        </a>
+                      </div>
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div id="referad">
+                              <div class="input-field mt-5 ">
+                                <input name="hobby[]" id="hobby" type="text" value="<?= $dta['hobby'] ?>">
+                                <label>Hobby</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  <?php
+                  }
+                } else {
+
+                  ?>
+                  <!-- ==================hobby-section-Start========================== -->
+                  <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+                    <div class="my-3 position-relative">
+                      <h3 class="headinf">Hobbies</h3>
+                    </div>
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div id="referad">
+                            <div class="input-field mt-5 ">
+                              <input name="hobby[]" id="hobby" type="text">
+                              <label>Hobby</label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+
+                <?php
+
+                }
+                ?>
                 <!-- ======================virtual-sec================ -->
                 <div class="container-fluid">
                   <div id="Hobby_sec">
                   </div>
                 </div>
                 <!-- ======================virtual-sec================ -->
-                <div class="form-buttons">
-                  <button id="add_hobby" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger  float-end mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Hobby</button>
+                <div class="form-buttons d-flex justify-content-end">
+                  <button id="add_hobby" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger   mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Hobby</button>
                 </div>
 
                 <script>
@@ -153,21 +277,55 @@ include("includes/navbar.php");
 
                 <!-- ==================Language-section-Start========================== -->
                 <div style="margin-top: 100px;">
-                  <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
-                    <div class="my-3 position-relative">
-                      <h3 class="headinf">Languages</h3>
-                    </div>
-                    <div class="container-fluid">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="input-field mt-5 ">
-                            <input name="languge[]" id="lan" type="text">
-                            <label>Language</label>
+                  <?php
+                  if ($getdata == true) {
+                    while ($data = mysqli_fetch_assoc($checklan)) {
+                  ?>
+                      <input type="hidden" name="lan_ids" id="" value="<?= $data['lang_id'] ?>">
+                      <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+                        <div class="my-3 position-relative">
+                          <h3 class="headinf">Languages</h3>
+                          <a href="hob_lan_ref.php?dellan=<?= $data['lang_id'] ?>">
+                            <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                          </a>
+                        </div>
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="input-field mt-5 ">
+                                <input name="languge[]" id="lan" type="text" value="<?= $data['language'] ?>">
+                                <label>Language</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <?php
+                    }
+                  } else {
+
+                    ?>
+                    <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+                      <div class="my-3 position-relative">
+                        <h3 class="headinf">Languages</h3>
+                      </div>
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-field mt-5 ">
+                              <input name="languge[]" id="lan" type="text">
+                              <label>Language</label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+
+                  <?php
+
+                  }
+                  ?>
                 </div>
                 <!-- ======================virtual-sec================ -->
                 <div class="container-fluid">
@@ -175,8 +333,8 @@ include("includes/navbar.php");
                   </div>
                 </div>
                 <!-- ======================virtual-sec================ -->
-                <div class="form-buttons">
-                  <button id="add_language" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger  float-end mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Language</button>
+                <div class="form-buttons d-flex justify-content-end">
+                  <button id="add_language" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger mb-2 mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Language</button>
                 </div>
 
                 <script>
@@ -216,8 +374,36 @@ include("includes/navbar.php");
 
 
                 <!-- ==================referece-section-Start========================== -->
-                <div style="margin-top: 100px;">
-                  <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+
+                <?php
+                if ($getdata == true) {
+                  while ($row = mysqli_fetch_assoc($checkref)) {
+                ?>
+                    <input type="hidden" name="refe_id" id="" value="<?= $row['ref_id'] ?>">
+                    <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+                      <div class="my-3 position-relative">
+                        <h3 class="headinf">References</h3>
+                        <a href="hob_lan_ref.php?delref=<?= $row['ref_id'] ?>">
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                        </a>
+                      </div>
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="input-field mt-5 ">
+                              <input name="reference[]" id="ref" type="text" value="<?= $row['user_reference'] ?>">
+                              <label>Reference</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php
+                  }
+                } else {
+
+                  ?>
+                  <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
                       <h3 class="headinf">References</h3>
                     </div>
@@ -232,15 +418,19 @@ include("includes/navbar.php");
                       </div>
                     </div>
                   </div>
-                </div>
+                <?php
+
+                }
+                ?>
+
                 <!-- ======================virtual-sec================ -->
                 <div class="container-fluid">
                   <div id="ref_sec">
                   </div>
                 </div>
                 <!-- ======================virtual-sec================ -->
-                <div class="form-buttons">
-                  <button id="add_ref" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger  float-end mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Reference</button>
+                <div class="form-buttons d-flex justify-content-end">
+                  <button id="add_ref" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger   mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Reference</button>
                 </div>
 
                 <script>
@@ -282,7 +472,6 @@ include("includes/navbar.php");
                 <div class="col-12  " style="margin-top: 100px;">
                   <div class="form-buttons mt-4">
                     <a href="./work-exp.php"> <button type="button" class="btn btn-danger btnPrevious add-det-btn">Previous</button></a>
-
                     <button type="submit" name="submit" class="btn btn-danger float-end save-btn btnNext add-det-btn">Next</button>
                   </div>
                 </div>

@@ -20,10 +20,6 @@ if (isset($_POST['submit'])) {
         $work_city_coun = $work_city_countries[$i];
         $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
         $result = mysqli_query($conn, $sql);
-        if (!$result) {
-          // Handle the error if the insertion fails
-          echo "Error: " . mysqli_error($conn);
-        }
       }
     }
   } else {
