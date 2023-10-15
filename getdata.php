@@ -77,3 +77,12 @@ $mainArrayJson = json_encode($mainArray);
 
 // Output the JSON
 echo $mainArrayJson;
+
+
+// Define the file name for the second JSON file
+$secondJsonFileName = 'res.json';
+
+// Write the JSON data to the second JSON file
+file_put_contents($secondJsonFileName, $mainArrayJson);
+
+echo "JSON data has been written to $secondJsonFileName";
