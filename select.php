@@ -14,7 +14,7 @@ $id = 1;
   <div class="row">
     <div class="col-md-2">
       <div class="templete-preview">
-        <a href="preview.php?pre=<?= $id; ?>">
+        <a href="preview.php? pre=<?= $id; ?>">
           <div class="mt-3 temp position-relative">
             <img class="w-100" src="./image/cv-image.png" alt="">
             <h2 class="position-absolute">SELECT</h2>

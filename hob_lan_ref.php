@@ -18,21 +18,21 @@ if (isset($_POST['submit'])) {
 
         for ($i = 0; $i < count($references); $i++) {
           $reference = $references[$i];
-
           $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
           $result2 = mysqli_query($conn, $sql2);
         }
       }
-    } else {
+    }
+  } else {
 
-      for ($i = 0; $i < count($references); $i++) {
-        $reference = $references[$i];
+    for ($i = 0; $i < count($references); $i++) {
+      $reference = $references[$i];
 
-        $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
-        $result2 = mysqli_query($conn, $sql2);
-      }
+      $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
+      $result2 = mysqli_query($conn, $sql2);
     }
   }
+
 
   // =========ref
 
@@ -81,8 +81,8 @@ if (isset($_POST['submit'])) {
   // =========hoby
 
 
-  if ($result3) {
-    header("location: templete.php");
+  if ($result1) {
+    header("location: getdata.php");
   } else {
     echo "Error: " . mysqli_error($conn);
   }
@@ -189,7 +189,7 @@ include("includes/navbar.php");
                           <div class="col-md-12">
                             <div id="referad">
                               <div class="input-field mt-5 ">
-                                <input name="hobby[]" id="hobby" type="text" value="<?= $dta['hobby'] ?>">
+                                <input name="hobby[]" id="hobby" type="text" value="<?= $dta['hobby'] ?>" required>
                                 <label>Hobby</label>
                               </div>
                             </div>
@@ -213,7 +213,7 @@ include("includes/navbar.php");
                         <div class="col-md-12">
                           <div id="referad">
                             <div class="input-field mt-5 ">
-                              <input name="hobby[]" id="hobby" type="text">
+                              <input name="hobby[]" id="hobby" type="text" required>
                               <label>Hobby</label>
                             </div>
                           </div>
@@ -261,7 +261,7 @@ include("includes/navbar.php");
                       <div class="col-md-12">
                         <div id="referad">
                           <div class="input-field mt-5 ">
-                            <input name="hobby[]" id="hobby" type="text">
+                            <input name="hobby[]" id="hobby" type="text" required>
                             <label>Hobby</label>
                           </div>
                         </div>
@@ -293,7 +293,7 @@ include("includes/navbar.php");
                           <div class="row">
                             <div class="col-md-12">
                               <div class="input-field mt-5 ">
-                                <input name="languge[]" id="lan" type="text" value="<?= $data['language'] ?>">
+                                <input name="languge[]" id="lan" type="text" value="<?= $data['language'] ?>" required>
                                 <label>Language</label>
                               </div>
                             </div>
@@ -314,7 +314,7 @@ include("includes/navbar.php");
                         <div class="row">
                           <div class="col-md-12">
                             <div class="input-field mt-5 ">
-                              <input name="languge[]" id="lan" type="text">
+                              <input name="languge[]" id="lan" type="text" required>
                               <label>Language</label>
                             </div>
                           </div>
@@ -361,7 +361,7 @@ include("includes/navbar.php");
                     <div class="row">
                       <div class="col-md-12">
                       <div class="input-field mt-5 ">
-                            <input name="languge[]" id="lan" type="text" >
+                            <input name="languge[]" id="lan" type="text"  required>
                             <label>Language</label>
                           </div>
                       </div>

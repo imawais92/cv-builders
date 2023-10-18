@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
   }
 }
 
-  
+
 $checkedu = mysqli_query($conn, "SELECT * FROM education WHERE user_id = '" . $_SESSION['user_id'] . "' ");
 $checkskill = mysqli_query($conn, "SELECT * FROM skills WHERE user_id = '" . $_SESSION['user_id'] . "' ");
 if (mysqli_num_rows($checkedu) or mysqli_num_rows($checkskill)  >=  1) {
@@ -200,8 +200,9 @@ include("./includes/navbar.php");
                             <!-- ============Feild============ -->
                             <div class="col-md-12">
                               <div class="input-field mt-5  ">
-                                <textarea name="edu_field[]" class="form-control" id="Feild" rows="4"> <?= $dta['field'] ?></textarea>
+                                <textarea maxlength="180" name="edu_field[]" class="form-control" id="Feild" rows="4"> <?= $dta['field'] ?></textarea>
                                 <label>Education Details</label>
+                                <div class="form-text about-us-txt">Enter yout education details in less than <b>180</b> Letters</div>
                               </div>
                             </div>
                           </div>
@@ -267,8 +268,9 @@ include("./includes/navbar.php");
                           <!-- ============Feild============ -->
                           <div class="col-md-12">
                             <div class="input-field mt-5  ">
-                              <textarea name="edu_field[]" class="form-control" id="Feild" rows="4"></textarea>
+                              <textarea maxlength="180" name="edu_field[]" class="form-control" id="Feild" rows="4"> <?= $dta['field'] ?></textarea>
                               <label>Education Details</label>
+                              <div class="form-text about-us-txt">Enter yout education details in less than <b>180</b> Letters</div>
                             </div>
                           </div>
                         </div>
@@ -350,8 +352,9 @@ include("./includes/navbar.php");
       </div>
       <div class="col-md-12">
         <div class="input-field mt-5">
-        <textarea name="edu_field[]" class="form-control" id="Feild" rows="4" ></textarea>
+        <textarea  maxlength="180"  name="edu_field[]" class="form-control" id="Feild" rows="4" ></textarea>
           <label>Education Details</label>
+          <div class="form-text about-us-txt">Enter yout education details in less than <b>180</b> Letters</div>
         </div>
               </div>
             </div>

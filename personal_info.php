@@ -1,6 +1,6 @@
 <?php
+$title = "Information";
 include("./includes/db.php");
-
 $userid =  $_SESSION['user_id'];
 if (isset($_POST['submit'])) {
   $fname = $_POST['fname'];

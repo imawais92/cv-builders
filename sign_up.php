@@ -1,4 +1,4 @@
-<?php 
+<?php
 $title = "Sign Up ";
 include("./includes/header.php");
 include('./includes/db.php');
@@ -25,7 +25,6 @@ if (isset($_REQUEST['submit'])) {
       $result = mysqli_query($conn, $sql);
 
       header('location: ./sign_in.php');
-
     } else {
       $passError = "Passwords not matched";
       $input_pass_eror = 'style="border-color:#C21010"';
@@ -38,7 +37,8 @@ if (isset($_REQUEST['submit'])) {
 
 //   $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img class="s-icon" src="./image/google-icon.svg" alt="" ></a>';
 // }
-// ?>
+// 
+?>
 
 
 <body style="background-color: #ffffff;">
@@ -90,10 +90,8 @@ if (isset($_REQUEST['submit'])) {
                 <div class="mb-4 position-relative">
                   <img class="input-icons" src="./image/passsword-icons.svg" alt="Pass">
                   <label for="cpassword" class="form-label">Conform Password</label>
-                  <input required <?php echo @$input_pass_eror ?> name="cpassword" type="password" id="pass" class="form-control" id="exampleInputPassword1" placeholder="Enter your password again">
+                  <input required <?php echo @$input_pass_eror ?> name="cpassword" type="password" id="pass2" class="form-control" id="exampleInputPassword1" placeholder="Enter your password again">
                   <div onclick="showpassword()">
-                    <a class="pass-icon" id="pass_hide_icon" href="#"><i class="fa-regular fa-eye-slash"></i></a>
-                    <a style="display: none;" class="pass-icon" id="pass_show_icon" href="#"><i class="fa-regular fa-eye"></i></a>
                     <div style="color:#C21010; letter-spacing:0.3px " class="form-text"><b><?php echo  @$passError ?></b></div>
                   </div>
                 </div>
@@ -102,28 +100,6 @@ if (isset($_REQUEST['submit'])) {
             </div>
           </div>
           <!-- ==========form-End=========== -->
-          <!-- =========socail-icons========= -->
-          <!-- <div class="socail-icons mt-2">
-            <p>or continue with</p>
-            <div class="icon">
-              <ul>
-                <li>
-                  <a href="#"><img src="./image/Facebook.svg" alt=""></a>
-                </li>
-                <li>
-                  <a href="#"><img class="s-icon" src="./image/apple-icon.svg" alt=""></a>
-                <li>
-                  <?php
-
-                  print_r($login_button);
-
-                  ?>
-                </li>
-                </li>
-              </ul>
-            </div>
-          </div> -->
-          <!-- =========socail-icons-End========= -->
         </div>
       </div>
       <!-- ==========input-section-End==== -->

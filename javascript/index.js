@@ -1,4 +1,4 @@
-function lan_flag(){
+function lan_flag() {
   let navbarflag = document.getElementById("navbarflag");
   let lan_flag = document.querySelectorAll(".lan_flag");
   let storedFlagSrc = localStorage.getItem("lan");
@@ -16,9 +16,8 @@ function lan_flag(){
       }
     });
   });
-  
 }
-lan_flag()
+lan_flag();
 // ================index-page-heading-an==========
 var TxtType = function (el, toRotate, period) {
   this.toRotate = toRotate;
@@ -107,14 +106,17 @@ window.addEventListener("scroll", function () {
 
 function showpassword() {
   var inputpass = document.getElementById("pass");
+  var inputp = document.getElementById("pass2");
   var showpass = document.getElementById("pass_show_icon");
   var hidepass = document.getElementById("pass_hide_icon");
   if (inputpass.type === "password") {
     inputpass.type = "text";
+    inputp.type = "text";
     showpass.style.display = "block";
     hidepass.style.display = "none";
   } else {
     inputpass.type = "password";
+    inputp.type = "password";
     showpass.style.display = "none";
     hidepass.style.display = "block";
   }

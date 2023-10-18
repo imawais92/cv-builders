@@ -8,18 +8,20 @@ if (isset($_POST['submit'])) {
   $work_end_dates = $_POST['work_end_date'];
   $work_city_countries = $_POST['work_city_coun'];
 
-  if (!empty($_REQUEST['worexp_id'])) {
-    $sql_del = "DELETE FROM `work_exp` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
-    $r = mysqli_query($conn, $sql_del);
-    if ($r) {
-      for ($i = 0; $i < count($company_names); $i++) {
-        $company_name = $company_names[$i];
-        $work_role = $work_roles[$i];
-        $work_st_date = $work_st_dates[$i];
-        $work_end_date = $work_end_dates[$i];
-        $work_city_coun = $work_city_countries[$i];
-        $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
-        $result = mysqli_query($conn, $sql);
+  if (!empty($_REQUEST['company_name'])) {
+    if (!empty($_REQUEST['worexp_id'])) {
+      $sql_del = "DELETE FROM `work_exp` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
+      $r = mysqli_query($conn, $sql_del);
+      if ($r) {
+        for ($i = 0; $i < count($company_names); $i++) {
+          $company_name = $company_names[$i];
+          $work_role = $work_roles[$i];
+          $work_st_date = $work_st_dates[$i];
+          $work_end_date = $work_end_dates[$i];
+          $work_city_coun = $work_city_countries[$i];
+          $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
+          $result = mysqli_query($conn, $sql);
+        }
       }
     }
   } else {
@@ -54,9 +56,8 @@ if (@$_REQUEST['del']) {
   $del_works = $_REQUEST['del'];
   $sql_del = "DELETE FROM `work_exp` WHERE work_exp_id = $del_works";
   $result = mysqli_query($conn, $sql_del);
-  if($result){
+  if ($result) {
     header("location: work-exp.php");
-  
   }
 }
 ?>
@@ -151,8 +152,9 @@ include("./includes/navbar.php")
                               <div class="col-md-12">
 
                                 <div class="input-field mt-5 ">
-                                  <textarea name="work_city_coun[]" class="form-control" id="Feild" rows="4"><?= $work_det['city_country'] ?></textarea>
+                                  <textarea maxlength="180" name="work_city_coun[]" class="form-control" id="Feild" rows="4"><?= $work_det['city_country'] ?></textarea>
                                   <label>Working Details</label>
+                                  <div class="form-text about-us-txt">Enter yout work details in less than <b>180</b> Letters</div>
                                 </div>
                               </div>
                               <!-- ============Country============ -->
@@ -212,8 +214,9 @@ include("./includes/navbar.php")
                             <div class="col-md-12">
 
                               <div class="input-field mt-5 ">
-                                <textarea name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
+                                <textarea maxlength="180" name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
                                 <label>Working Details</label>
+                                <div class="form-text about-us-txt">Enter yout work details in less than <b>180</b> Letters</div>
                               </div>
                             </div>
                             <!-- ============Country============ -->
@@ -292,8 +295,9 @@ include("./includes/navbar.php")
                           </div>
                           <div class="col-md-12">
                             <div class="input-field mt-5 ">
-                              <textarea name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
+                              <textarea maxlength="180" name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
                               <label>Working Details</label>
+                                  <div class="form-text about-us-txt">Enter yout work details in less than <b>180</b> Letters</div>
                             </div>
                           </div>
                         </div>
