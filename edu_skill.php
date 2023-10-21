@@ -268,7 +268,7 @@ include("./includes/navbar.php");
                           <!-- ============Feild============ -->
                           <div class="col-md-12">
                             <div class="input-field mt-5  ">
-                              <textarea maxlength="180" name="edu_field[]" class="form-control" id="Feild" rows="4"> <?= $dta['field'] ?></textarea>
+                              <textarea maxlength="180" name="edu_field[]" class="form-control" id="Feild" rows="4"></textarea>
                               <label>Education Details</label>
                               <div class="form-text about-us-txt">Enter yout education details in less than <b>180</b> Letters</div>
                             </div>

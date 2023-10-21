@@ -4,12 +4,12 @@ include('includes/db.php');
 if (isset($_POST['submit'])) {
   $hobbies = $_POST['hobby'];
   $languages = $_POST['languge'];
-  $references = $_POST['reference'];
+  @$references = $_POST['reference'];
 
 
 
 
-  if (!empty($_REQUEST['reference'])) {
+  if (@!empty($_REQUEST['reference'])) {
     // =========ref
     if (!empty($_REQUEST['refe_id'])) {
       $sql_de = "DELETE FROM `user_references` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
@@ -272,9 +272,6 @@ include("includes/navbar.php");
                     hobby_sec.append(newhob)
                   })
                 </script>
-
-
-
                 <!-- ==================Language-section-Start========================== -->
                 <div style="margin-top: 100px;">
                   <?php
@@ -376,9 +373,31 @@ include("includes/navbar.php");
                 <!-- ==================referece-section-Start========================== -->
 
                 <?php
+                $count = mysqli_num_rows($checkref);
+                if ($count == 0) {
+                ?>
+                  <input type="hidden" name="refe_id" id="" value="<?= $row['ref_id'] ?>">
+                  <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
+                    <div class="my-3 position-relative">
+                      <h3 class="headinf">References</h3>
+                    </div>
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="input-field mt-5 ">
+                            <input name="reference[]" id="ref" type="text">
+                            <label>Reference</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ======= -->
+                  <?php
+                }
                 if ($getdata == true) {
                   while ($row = mysqli_fetch_assoc($checkref)) {
-                ?>
+                  ?>
                     <input type="hidden" name="refe_id" id="" value="<?= $row['ref_id'] ?>">
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                       <div class="my-3 position-relative">
