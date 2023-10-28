@@ -20,7 +20,7 @@ include_once('./includes/navbar.php');
 
         <a href="preview.php? pre=<?= 2 ?>">
           <div class="mt-3 temp position-relative">
-            <img class="w-100" src="./image/cv-image-2.png" alt="">
+            <img class="w-100" src="./templates/tem-img/tem-1.png" alt="">
             <h2 class="position-absolute">SELECT</h2>
           </div>
         </a>
