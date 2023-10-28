@@ -9,33 +9,45 @@ if (isset($_POST['submit'])) {
 
 
 
-  if (@!empty($_REQUEST['reference'])) {
-    // =========ref
-    if (!empty($_REQUEST['refe_id'])) {
-      $sql_de = "DELETE FROM `user_references` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
-      $resu = mysqli_query($conn, $sql_de);
-      if ($resu) {
+  if (!empty($_POST['reference'])) {
+    // Initialize an empty array to store non-empty references
+    $nonEmptyReferences = array();
 
-        for ($i = 0; $i < count($references); $i++) {
-          $reference = $references[$i];
-          $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
+    // Iterate through the references and filter out empty ones
+    foreach ($_POST['reference'] as $value) {
+      $value = trim($value); // Trim whitespace
+      if (!empty($value)) {
+        $nonEmptyReferences[] = $value;
+      }
+    }
+
+    // Check if there are non-empty references to insert
+    if (!empty($nonEmptyReferences)) {
+      if (isset($_REQUEST['refe_id'])) {
+        // Delete existing records for the user
+        $sql_de = "DELETE FROM `user_references` WHERE user_id = '" . $_SESSION['user_id'] . "'";
+        $resu = mysqli_query($conn, $sql_de);
+        if ($resu) {
+          // Insert non-empty references
+          foreach ($nonEmptyReferences as $reference) {
+            $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "', '$reference')";
+            $result2 = mysqli_query($conn, $sql2);
+          }
+        }
+      } else {
+        // Insert non-empty references without deleting existing ones
+        foreach ($nonEmptyReferences as $reference) {
+          $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "', '$reference')";
           $result2 = mysqli_query($conn, $sql2);
         }
       }
     }
-  } else {
-
-    for ($i = 0; $i < count($references); $i++) {
-      $reference = $references[$i];
-
-      $sql2 = "INSERT INTO `user_references` (`user_id`,`user_reference`) VALUES ('" . $_SESSION['user_id'] . "','$reference')";
-      $result2 = mysqli_query($conn, $sql2);
-    }
   }
+
 
 
   // =========ref
-  }
+  // }
 
   // =========lan
   if (!empty($_REQUEST['lan_ids'])) {
