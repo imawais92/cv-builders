@@ -35,6 +35,7 @@ if (isset($_POST['submit'])) {
 
 
   // =========ref
+  }
 
   // =========lan
   if (!empty($_REQUEST['lan_ids'])) {
