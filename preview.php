@@ -2,7 +2,6 @@
 $data = file_get_contents('res.json');
 $data = json_decode($data);
 session_start();
-// $_SESSION['my_data'] = 1;
 if (isset($_GET['pre'])) {
   $tem_id = urldecode($_GET['pre']);
   $_SESSION['my_data'] = $tem_id;
@@ -45,33 +44,54 @@ if (isset($_GET['pre'])) {
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
+
+    .selecthading h1 {
+      background-color: #C21010;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      padding: 18px 32px;
+      border-radius: 10px;
+    }
   </style>
 
   <button class="btns" id="downbtn">Download PDF</button>
 
   <?php
-  include_once('templates/tem_1.php');
-  include_once('templates/tem_2.php');
+
+  if (@$_SESSION['my_data']) {
+    include_once('templates/tem_1.php');
+    include_once('templates/tem_2.php');
+  } else {
   ?>
-  <script>
-    let btn = document.getElementById('downbtn');
-    btn.addEventListener('click', () => {
-      let contents = document.getElementById('content');
-      const opt = {
-        margin: 0,
-        filename: 'Cvbuilder.pdf',
-        html2canvas: {
-          scale: 1,
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait'
+    <div class="selecthading">
+      <div class="selecthading">
+        <h1>Please Select Template</h1>
+      </div>
+    <?php
+  }
+    ?>
+    <script>
+      let btn = document.getElementById('downbtn');
+      btn.addEventListener('click', () => {
+        let contents = document.getElementById('content');
+        const opt = {
+          margin: 0,
+          filename: 'Cvbuilder.pdf',
+          html2canvas: {
+            scale: 1,
+          },
+          jsPDF: {
+            unit: 'mm',
+            format: 'a4',
+            orientation: 'portrait'
+          }
         }
-      }
-      html2pdf().set(opt).from(contents).save();
-    });
-  </script>
+        html2pdf().set(opt).from(contents).save();
+      });
+    </script>
 
 </body>
 

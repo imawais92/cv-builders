@@ -3,24 +3,22 @@ $title = "Information";
 include("./includes/db.php");
 $userid =  $_SESSION['user_id'];
 if (isset($_POST['submit'])) {
-  $fname = $_POST['fname'];
-  $lname = $_POST['lname'];
-  $father_name = $_POST['father_name'];
-  $gender = $_POST['gender'];
-  $dob = $_POST['dob'];
-  $profession = $_POST['profession'];
-  $website = $_POST['website'];
-  $personal_no = $_POST['personal_no'];
-  $tel_no = $_POST['tel_no'];
-  $email = $_POST['email'];
-  $country = $_POST['country'];
-  $city = $_POST['city'];
-  $about_us = $_POST['about_us'];
-
+  $fname = $conn->real_escape_string($_POST['fname']);
+  $lname = $conn->real_escape_string($_POST['lname']);
+  $father_name = $conn->real_escape_string($_POST['father_name']);
+  $gender = $conn->real_escape_string($_POST['gender']);
+  $dob = $conn->real_escape_string($_POST['dob']);
+  $profession = $conn->real_escape_string($_POST['profession']);
+  $website = $conn->real_escape_string($_POST['website']);
+  $personal_no = $conn->real_escape_string($_POST['personal_no']);
+  $tel_no = $conn->real_escape_string($_POST['tel_no']);
+  $email = $conn->real_escape_string($_POST['email']);
+  $country = $conn->real_escape_string($_POST['country']);
+  $city = $conn->real_escape_string($_POST['city']);
+  $about_us = $conn->real_escape_string($_POST['about_us']);
   $img = $_FILES['imgupload']['name'];
   if (!empty($_REQUEST['upd_id'])) {
     $upd_id = $_REQUEST['upd_id'];
-
     $tmp_image = $_FILES['imgupload']['tmp_name'];
     $target_dir = "uploads/images/";
     $target_file = $target_dir . basename($img);
@@ -30,7 +28,11 @@ if (isset($_POST['submit'])) {
       $sql = "UPDATE `per_info` SET `fname`='$fname',`lname`='$lname',`father_name`='$father_name',`gender`='$gender',`profession`='$profession',`dob`='$dob',`website`='$website',`per_no`= '$personal_no',`tel_no`='$tel_no',`email`='$email' , `country`='$country',`city`='$city',`about_us`='$about_us' WHERE user_id =  $upd_id";
     }
   } else {
+    $tmp_image = $_FILES['imgupload']['tmp_name'];
+    $target_dir = "uploads/images/";
+    $target_file = $target_dir . basename($img);
     $sql = "INSERT INTO `per_info`(`user_id`, `fname`, `lname`, `father_name`, `gender`, `profession`, `dob`, `website`, `per_no`, `tel_no`, `email`, `user_img`, `country`, `city`, `about_us`) VALUES ('" . $_SESSION['user_id'] . "', '$fname', '$lname', '$father_name', '$gender', '$profession', '$dob', '$website', '$personal_no', '$tel_no', '$email', '$img', '$country', '$city', '$about_us')";
+    echo $sql;
   }
   $result = mysqli_query($conn, $sql);
   if ($result) {
@@ -56,7 +58,7 @@ include("./includes/navbar.php");
 <body style="background-color: white;">
 
   <!-- ====================contact-page-progrss-bar-start==================== -->
-  <div class="container-fluid " >
+  <div class="container-fluid ">
     <div class="progres-bar">
       <div class="progress-sec mt-4 ">
         <div class="progressbarss">
@@ -124,6 +126,7 @@ include("./includes/navbar.php");
                             ?>
                             <input name="imgupload" id="files" style="visibility:hidden;" type="file">
                           </div>
+                          <p id="imagetxt" style="color: #C21010; font-weight:600; position:absolute; top:140px; text-align:center; left:30px">Select Image</p>
                         </div>
                       </div>
                     </div>
@@ -279,6 +282,7 @@ include("./includes/navbar.php");
   <script>
     const imageUpload = document.getElementById('files');
     const imagePreview = document.getElementById('imagePreview');
+    const imagetxt = document.getElementById('imagetxt');
     imageUpload.addEventListener('change', function(event) {
       const file = event.target.files[0];
       if (file) {
@@ -293,11 +297,15 @@ include("./includes/navbar.php");
 
         reader.readAsDataURL(file);
       }
+      imagetxt.style.display = "none"
     });
     let img = document.getElementById('upd_img');
     img.addEventListener('click', () => {
       img.remove()
     })
+    if (imageUpload.value == '') {
+      imagetxt.style.display = "none"
+    }
   </script>
   <?php
   include('./includes/end_links.php');

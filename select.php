@@ -13,14 +13,14 @@ include_once('./includes/navbar.php');
       <div class="templete-preview">
         <a href="preview.php? pre=<?= 1 ?>">
           <div class="mt-3 temp position-relative">
-            <img class="w-100" src="./image/cv-image.png" alt="">
+            <img class="w-100" src="./templates/tem-img/tem-1.png" alt="">
             <h2 class="position-absolute">SELECT</h2>
           </div>
         </a>
 
         <a href="preview.php? pre=<?= 2 ?>">
           <div class="mt-3 temp position-relative">
-            <img class="w-100" src="./templates/tem-img/tem-1.png" alt="">
+            <img class="w-100" src="./templates/tem-img/tem-2.png" alt="">
             <h2 class="position-absolute">SELECT</h2>
           </div>
         </a>

@@ -16,26 +16,29 @@ if (isset($_POST['submit'])) {
     $r = mysqli_query($conn, $sql_del);
     if ($r) {
       for ($a = 0; $a < count($institute_names); $a++) {
-        $institute_name = $institute_names[$a];
-        $degree = $degrees[$a];
-        $total_mark = $total_marks[$a];
-        $ob_mark = $ob_marks[$a];
-        $edu_st_date = $edu_st_dates[$a];
-        $edu_end_date = $edu_end_dates[$a];
-        $edu_field = $edu_fields[$a];;
+        $institute_name = $conn->real_escape_string($institute_names[$a]);
+        $degree = $conn->real_escape_string($degrees[$a]);
+        $total_mark = $conn->real_escape_string($total_marks[$a]);
+        $ob_mark = $conn->real_escape_string($ob_marks[$a]);
+        $edu_st_date = $conn->real_escape_string($edu_st_dates[$a]);
+        $edu_end_date = $conn->real_escape_string($edu_end_dates[$a]);
+        $edu_field = $conn->real_escape_string($edu_fields[$a]);
         $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field')";
         $result = mysqli_query($conn, $sql);
+        if ($result) {
+          header('location: ./work-exp.php');
+        }
       }
     }
   } else {
     for ($a = 0; $a < count($institute_names); $a++) {
-      $institute_name = $institute_names[$a];
-      $degree = $degrees[$a];
-      $total_mark = $total_marks[$a];
-      $ob_mark = $ob_marks[$a];
-      $edu_st_date = $edu_st_dates[$a];
-      $edu_end_date = $edu_end_dates[$a];
-      $edu_field = $edu_fields[$a];;
+      $institute_name = $conn->real_escape_string($institute_names[$a]);
+      $degree = $conn->real_escape_string($degrees[$a]);
+      $total_mark = $conn->real_escape_string($total_marks[$a]);
+      $ob_mark = $conn->real_escape_string($ob_marks[$a]);
+      $edu_st_date = $conn->real_escape_string($edu_st_dates[$a]);
+      $edu_end_date = $conn->real_escape_string($edu_end_dates[$a]);
+      $edu_field = $conn->real_escape_string($edu_fields[$a]);
       $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field')";
       $result = mysqli_query($conn, $sql);
     }
@@ -51,8 +54,8 @@ if (isset($_POST['submit'])) {
     $sql_de = "DELETE FROM `skills` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
     $res = mysqli_query($conn, $sql_de);
     for ($i = 0; $i < count($skills); $i++) {
-      $skill = $skills[$i];
-      $skill_range = $skill_ranges[$i];
+      $skill = $conn->real_escape_string($skills[$i]);
+      $skill_range = $conn->real_escape_string($skill_ranges[$i]);
 
 
       $sql1 = "INSERT INTO `skills` (`user_id`, `skill`, `skill_per`) VALUES ('" . $_SESSION['user_id'] . "','$skill', '$skill_range')";
@@ -60,8 +63,8 @@ if (isset($_POST['submit'])) {
     }
   } else {
     for ($i = 0; $i < count($skills); $i++) {
-      $skill = $skills[$i];
-      $skill_range = $skill_ranges[$i];
+      $skill = $conn->real_escape_string($skills[$i]);
+      $skill_range = $conn->real_escape_string($skill_ranges[$i]);
 
 
       $sql1 = "INSERT INTO `skills` (`user_id`, `skill`, `skill_per`) VALUES ('" . $_SESSION['user_id'] . "','$skill', '$skill_range')";
@@ -172,14 +175,14 @@ include("./includes/navbar.php");
                             <div class="col-md-6">
 
                               <div class="input-field mt-5">
-                                <input name="total_marks[]" class="hide" id="tmarks" type="number" value="<?= $dta['total_marks'] ?>">
+                                <input name="total_marks[]" class="hide" id="tmarks" type="text" value="<?= $dta['total_marks'] ?>">
                                 <label>Total Marks / CGPA</label>
                               </div>
                             </div>
                             <!-- ============Obtains Marks============ -->
                             <div class="col-md-6">
                               <div class="input-field mt-5">
-                                <input name="ob_marks[]" class="hide" id="obmarks" type="number" value="<?= $dta['obtain_marks'] ?>">
+                                <input name="ob_marks[]" class="hide" id="obmarks" type="text" value="<?= $dta['obtain_marks'] ?>">
                                 <label>Obtains Marks / CGPA</label>
                               </div>
                             </div>
@@ -240,14 +243,14 @@ include("./includes/navbar.php");
                           <div class="col-md-6">
 
                             <div class="input-field mt-5">
-                              <input name="total_marks[]" class="hide" id="tmarks" type="number">
+                              <input name="total_marks[]" class="hide" id="tmarks" type="text">
                               <label>Total Marks / CGPA</label>
                             </div>
                           </div>
                           <!-- ============Obtains Marks============ -->
                           <div class="col-md-6">
                             <div class="input-field mt-5">
-                              <input name="ob_marks[]" class="hide" id="obmarks" type="number">
+                              <input name="ob_marks[]" class="hide" id="obmarks" type="text">
                               <label>Obtains Marks / CGPA</label>
                             </div>
                           </div>
@@ -329,12 +332,12 @@ include("./includes/navbar.php");
        </div>
         <div class="col-md-6">
           <div class="input-field mt-5">
-           <input class="hide" name="total_marks[]" type="number"> <label> Total Marks / CGPA</label>
+           <input class="hide" name="total_marks[]" type="text"> <label> Total Marks / CGPA</label>
          </div>
         </div>
       <div class="col-md-6">
         <div class="input-field mt-5">
-          <input name="ob_marks[]" class="hide" id="obmarks" type="number">
+          <input name="ob_marks[]" class="hide" id="obmarks" type="text">
           <label>Obtains Marks / CGPA</label>
         </div>
       </div>

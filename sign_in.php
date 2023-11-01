@@ -96,27 +96,6 @@ if (isset($_REQUEST['submit'])) {
                 </div>
                 <button name="submit" type="submit" class="btn btn-primary">Login</button>
               </form>
-              <!-- =========socail-icons========= -->
-              <div class="socail-icons">
-                <p>or continue with</p>
-                <div class="icon">
-                  <ul>
-                    <li>
-                      <a href="#"><img src="./image/Facebook.svg" alt=""></a>
-                    </li>
-                    <li>
-                      <a href="#"><img class="s-icon" src="./image/apple-icon.svg" alt=""></a>
-                      <?php
-                      echo '<li>
-                      ' . @$login_button . '
-                      <!-- <a href="#"><img class="s-icon" src="./image/google-icon.svg" alt="" ></a> -->
-                    </li>'
-                      ?>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- =========socail-icons-End========= -->
             </div>
           </div>
           <!-- ==========form-End=========== -->

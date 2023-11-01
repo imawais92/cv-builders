@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     $re = mysqli_query($conn, $sql_d);
     if ($re) {
       for ($i = 0; $i < count($languages); $i++) {
-        $language = $languages[$i];
+        $language = $conn->real_escape_string($languages[$i]);
 
         $sql1 = "INSERT INTO `languages` (`user_id`,`language`) VALUES ('" . $_SESSION['user_id'] . "','$language')";
         $result1 = mysqli_query($conn, $sql1);;
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
     }
   } else {
     for ($i = 0; $i < count($languages); $i++) {
-      $language = $languages[$i];
+      $language = $conn->real_escape_string($languages[$i]);
 
       $sql1 = "INSERT INTO `languages` (`user_id`,`language`) VALUES ('" . $_SESSION['user_id'] . "','$language')";
       $result1 = mysqli_query($conn, $sql1);;
@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
     $r = mysqli_query($conn, $sql_del);
     if ($r) {
       for ($i = 0; $i < count($hobbies); $i++) {
-        $hobby = $hobbies[$i];
+        $hobby = $conn->real_escape_string($hobbies[$i]);
 
         $sql3 = "INSERT INTO `hobbies` (`user_id`,`hobby`) VALUES ('" . $_SESSION['user_id'] . "','$hobby')";
         $result3 = mysqli_query($conn, $sql3);
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
     }
   } else {
     for ($i = 0; $i < count($hobbies); $i++) {
-      $hobby = $hobbies[$i];
+      $hobby = $conn->real_escape_string($hobbies[$i]);
 
       $sql3 = "INSERT INTO `hobbies` (`user_id`,`hobby`) VALUES ('" . $_SESSION['user_id'] . "','$hobby')";
       $result3 = mysqli_query($conn, $sql3);

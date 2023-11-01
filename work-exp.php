@@ -8,20 +8,18 @@ if (isset($_POST['submit'])) {
   $work_end_dates = $_POST['work_end_date'];
   $work_city_countries = $_POST['work_city_coun'];
 
-  if (!empty($_REQUEST['company_name'])) {
-    if (!empty($_REQUEST['worexp_id'])) {
-      $sql_del = "DELETE FROM `work_exp` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
-      $r = mysqli_query($conn, $sql_del);
-      if ($r) {
-        for ($i = 0; $i < count($company_names); $i++) {
-          $company_name = $company_names[$i];
-          $work_role = $work_roles[$i];
-          $work_st_date = $work_st_dates[$i];
-          $work_end_date = $work_end_dates[$i];
-          $work_city_coun = $work_city_countries[$i];
-          $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
-          $result = mysqli_query($conn, $sql);
-        }
+  if (!empty($_REQUEST['worexp_id'])) {
+    $sql_del = "DELETE FROM `work_exp` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
+    $r = mysqli_query($conn, $sql_del);
+    if ($r) {
+      for ($i = 0; $i < count($company_names); $i++) {
+        $company_name = $conn->real_escape_string($company_names[$i]);
+        $work_role = $conn->real_escape_string($work_roles[$i]);
+        $work_st_date = $conn->real_escape_string($work_st_dates[$i]);
+        $work_end_date = $conn->real_escape_string($work_end_dates[$i]);
+        $work_city_coun = $conn->real_escape_string($work_city_countries[$i]);
+        $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
+        $result = mysqli_query($conn, $sql);
       }
     }
   } else {
@@ -108,7 +106,7 @@ include("./includes/navbar.php")
                       <div class="my-3 position-relative">
                         <h3 class="headinf">Working Experience</h3>
                         <a href="work-exp.php?del=<?= $work_det['work_exp_id'] ?>">
-                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
                         </a>
                       </div>
                       <div class="form-info">

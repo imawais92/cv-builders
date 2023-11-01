@@ -122,22 +122,6 @@ function showpassword() {
   }
 }
 
-function toggleDivs() {
-  const withoutimg = document.getElementById("withoutimg");
-  const withoutimg2 = document.getElementById("withoutimg2");
-  const withimag = document.getElementById("withimag");
-
-  if (withoutimg.style.display === "none") {
-    withoutimg.style.display = "block";
-    withoutimg2.style.display = "block";
-    withimag.style.display = "none";
-  } else {
-    withoutimg.style.display = "none";
-    withoutimg2.style.display = "none";
-    withimag.style.display = "block";
-  }
-}
-
 // ================index-page-cv-templete==========
 $(".carousel .carousel-item").each(function () {
   var minPerSlide = 4;

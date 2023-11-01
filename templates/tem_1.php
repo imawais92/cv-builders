@@ -1,276 +1,377 @@
 <?php
-if ($_SESSION['my_data'] == 1) {
+if (@$_SESSION['my_data'] == 1) {
 ?>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lato', sans-serif;
+    }
+
+
+    :root {
+      --primary-color: #323B4C;
+      --light-color: #ffffff;
+      --dark-color: black;
+
+    }
+
     .container {
-      min-height: 296.5mm;
       width: 210mm;
-      max-width: 800px;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: 296.5mm;
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid black;
       margin: auto;
+
     }
 
-    .left-column {
+    .sec-1 {
+      background-color: var(--primary-color);
+      height: 100%;
+    }
+
+    .image-sec {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .image-sec img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      margin-top: 2rem;
+      border: 18px solid #3E4D69;
+      border-radius: 50%;
+    }
+
+    .content {
+      margin: 1rem 0 0 1.8rem;
+    }
+
+    .content .heading {
+      padding: 8px 0;
+      border-bottom: 2px solid var(--light-color);
+    }
+
+    .content .heading h5 {
+      color: var(--light-color);
+      font-size: 16px;
+      font-weight: bold;
+
+    }
+
+
+
+    .per-info .icon-sec {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      color: var(--light-color);
+      align-content: center;
+
+    }
+
+    .per-info .icon-sec p {
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .per-info .icon-sec i {
+      font-size: 15px;
+    }
+
+    .edu-sec {
+      margin-top: 40px;
+    }
+
+    .edu .content {
+      color: var(--light-color);
+      margin: 0;
+      line-height: 24px;
+    }
+
+    .edu .content h5 {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .edu .content h6 {
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .edu .content p {
+      font-size: 12px;
+      font-weight: 700;
+
+    }
+
+    .skill .content {
+      margin: 0;
+    }
+
+
+    .skill .content ul {
+      line-height: 26px;
+      margin-top: 10px;
+      margin-left: 18px;
+    }
+
+    .skill .content li {
+      color: var(--light-color);
+      font-size: 13px;
+    }
+
+    .lan .content {
+      margin: 0;
+      line-height: 30px;
+      color: var(--light-color);
+    }
+
+    .lan .content p {
+      font-size: 13px;
+    }
+
+    .sec-2 {
       padding: 20px;
-      background-color: #e09203;
-      color: white;
     }
 
-    h1 {
-      font-size: 36px;
+    .name-sec h1 {
+      font-size: 50px;
+      color: var(--primary-color);
+      font-weight: 900;
+      text-transform: capitalize;
     }
 
-    h2 {
-      font-size: 24px;
+    .name-sec p {
+      color: var(--primary-color);
+      text-transform: capitalize;
+      letter-spacing: 0.50px;
+      margin-left: 5px;
+      margin-top: 6px;
+
     }
 
-    .right-column {
-      padding: 20px;
-      background-color: #333;
+    .sec-heading {
+      margin-top: 10px;
     }
 
-    .section {
-      margin-bottom: 20px;
+    .sec-heading .heading h3 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      margin-top: 20px;
+      padding: 10px 0;
+
     }
 
-    .section:last-child {
-      margin-bottom: 0;
+    .sec-2 .ab-info p {
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 20px;
+      text-align: justify;
     }
 
-    .section h2 {
-      color: #333;
+    .work-info {
+      margin-top: 12px;
+
     }
 
-    .section p {
-      line-height: 1.6;
+    .work-info .com-name {
+      font-size: 15px;
+      margin-top: 4px;
     }
 
-    .section ul {
-      list-style: square;
-      padding-left: 20px;
+    .work-info h4 {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .work-info p {
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 20px;
+      text-align: justify;
     }
   </style>
 
 
   <div id="content">
     <div class="container">
-      <div class="left-column">
-        <header style="text-align: center;">
-          <img src="img/img-removebg-preview.png" alt="" width="80%">
-        </header>
-        <header style="margin-top:50px;">
-          <h2 style="background-color: #333; color: white;padding-left: 5px;">Contact</h2>
-        </header>
-        <!-- ===========contaact============ -->
-        <div class="section" style="margin-top:10px;">
-          <table>
-            <tr>
-              <td> <img src="img/email (1).png" alt="" width="20px"></td>
-              <td style="word-wrap: break-word;"> <span>
-                  <?= $data->per_info->email ?>
-                </span> </td>
 
-            </tr>
-          </table>
-          <div class="contact-item">
-          </div>
-          <div class="contact-item">
-            <img src="img/blocked-call.png" alt="" width="20px">
-            <span>
-              <?= $data->per_info->per_no ?>
-            </span>
-          </div>
-          <div class="contact-item">
-            <img src="img/location.png" alt="" width="20px">
-            <span>
-              <?= $data->per_info->country ?>
-              <?= $data->per_info->city ?>
-            </span>
-          </div>
-        </div>
-        <!-- ===========skill============= -->
-        <div class="section">
-          <h2 style="background-color: #333; color: white;padding-left: 5px;">Skill</h2>
-          <ul style="margin-top: 20px;">
-          </ul>
-          <div>
-            <?php
-            for ($i = 0; $i < count($data->skills); $i++) {
-              # code... 
 
-            ?>
-              <ul>
-
-                <li>
-                  <?= $data->skills[$i]->skill ?>
-                </li>
-              </ul>
-            <?php
-            }
-            ?>
-          </div>
-        </div>
-        <!-- ==========Languages=============== -->
-        <div class="section">
-          <h2 style="background-color: #333; color: white;padding-left: 5px;">Languages</h2>
-          <ul style="margin-top: 20px;">
-          </ul>
-          <div>
-            <?php
-            for ($i = 0; $i < count($data->languages); $i++) {
-            ?>
-              <ul>
-                <li>
-                  <?= $data->languages[$i]->language ?>
-                </li>
-              </ul>
-            <?php
-            }
-            ?>
-          </div>
-        </div>
-        <!-- ============hobbies============= -->
-        <div class="section">
-          <h2 style="background-color: #333; color: white;padding-left: 5px;">Hobbies</h2>
-          <ul style="margin-top: 20px;">
-          </ul>
-          <div>
-            <?php
-            for ($i = 0; $i < count($data->hobbies); $i++) {
-            ?>
-              <ul>
-
-                <li>
-                  <?= $data->hobbies[$i]->hobby ?>
-                </li>
-              </ul>
-            <?php
-            }
-            ?>
-          </div>
-        </div>
-
-        <!-- Reference=============== -->
+      <div class="sec-1">
         <?php
-        if (isset($data->user_references) && !empty($data->user_references)) {
+        if($data->per_info->user_img){
         ?>
-          <div class="section">
-            <h2 style="background-color: #333; color: white;padding-left: 5px;">Reference</h2>
-            <ul style="margin-top: 20px;">
-            </ul>
-            <div>
-              <?php
 
-              for ($i = 0; $i < count($data->user_references); $i++) {
-              ?>
-                <ul>
-                  <?= $data->user_references[$i]->user_reference ?>
-                </ul>
-              <?php
-              }
-
-
-              ?>
-            </div>
-          </div>
-
+        <div class="image-sec">
+          <img src="./uploads/images/<?= $data->per_info->user_img ?>" alt="your image">
+        </div>
 
         <?php
+
         }
         ?>
+        <div class="content">
+          <!-- ====perinfo===== -->
+          <div>
+            <div class="heading">
+              <h5>Contact</h5>
+            </div>
+            <div class="per-info">
+              <div class="icon-sec">
+                <h5><i class="fa-solid fa-envelope"></i></h5>
+                <p><?= $data->per_info->email ?> </p>
+              </div>
+              <div class="icon-sec">
+                <h5><i class="fa-solid fa-phone"></i></h5>
+                <p><?= $data->per_info->per_no ?></p>
+              </div>
+              <div class="icon-sec">
+                <h5><i class="fa-solid fa-location-dot"></i></h5>
+                <p><?= $data->per_info->country ?>
+                  <?= $data->per_info->city ?></p>
+              </div>
+              <div class="icon-sec">
+                <h5><i class="fa-solid fa-globe"></i></h5>
+                <p><?= $data->per_info->website ?></p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ====perinfo===== -->
+          <div class="edu-sec">
+            <div class="heading">
+              <h5>Education</h5>
+            </div>
+            <?php
+            for ($i = 0; $i < count($data->education); $i++) {
+            ?>
+              <div class="edu">
+                <div class="content">
+                  <h5><?= $data->education[$i]->dagree ?></h5>
+                  <h6> <?= $data->education[$i]->instutute_name ?> </h6>
+                  <p> <?= $data->education[$i]->deg_st_date ?> - <?= $data->education[$i]->deg_end_date ?></p>
+                </div>
+              </div>
+            <?php
+            }
+            ?>
+            <!-- ====skill===== -->
+            <div class="edu-sec">
+              <div class="heading">
+                <h5>Skills</h5>
+              </div>
+
+              <div class="skill">
+                <div class="content">
+                  <ul>
+                    <?php
+                    for ($i = 0; $i < count($data->skills); $i++) {
+                      # code... 
+
+                    ?>
+                      <li> <?= $data->skills[$i]->skill ?></li>
+                    <?php
+                    }
+                    ?>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ====skill===== -->
+            <div class="edu-sec">
+              <div class="heading">
+                <h5>Language</h5>
+              </div>
+
+              <div class="lan">
+                <div class="content">
+                  <?php
+                  for ($i = 0; $i < count($data->languages); $i++) {
+                  ?>
+                    <p> <?= $data->languages[$i]->language ?></p>
+                  <?php
+                  }
+                  ?>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
       </div>
-      <!-- =====================per info================ -->
-      <div class="right-column">
-        <div class="section">
-          <div style="background-color: #d7d700;color: black;padding: 25px;border-radius: 40px 0px;">
-            <h1 style="font-size: 60px;">
-              <?= ucfirst($data->per_info->fname) ?>
-              <?= ucfirst($data->per_info->lname) ?>
-            </h1>
-            <h4><i>
-                <?= $data->per_info->profession ?>
-              </i></h4>
-          </div>
-          <div style="margin-top: 20px; background-color: white;width: 130px;padding-left: 5px;">
-            <h2 style="color: black; ">About Us</h2>
-          </div>
-          <div style="color: white;margin-top: 15px;">
-            <p>
-              <?= ucfirst($data->per_info->about_us) ?>
-            </p>
-          </div>
+
+      <div class="sec-2">
+
+        <div class="name-sec">
+          <h1><?= ucfirst($data->per_info->fname) ?> <?= ucfirst($data->per_info->lname) ?></h1>
+          <p><?= $data->per_info->profession ?></p>
         </div>
 
-        <div class="section">
+        <div class="sec-heading">
           <div>
-            <div style="background-color: white; width: 130px;">
-              <h2 style="color: black; padding-left: 5px;">Education</h2>
+            <div class="heading">
+              <h3>About Me</h3>
+            </div>
+            <div class="ab-info">
+              <p> <?= ucfirst($data->per_info->about_us) ?></p>
+            </div>
+          </div>
+
+          <div>
+            <div class="heading">
+              <h3>Work Experience</h3>
             </div>
             <?php
-            for ($i = 0; $i < count($data->education); $i++) {
-
+            for ($i = 0; $i < count($data->work_exp); $i++) {
             ?>
-              <div style="margin-top: 20px;">
-                <h5 style="color: yellow;">
-                  <?= $data->education[$i]->instutute_name ?> /
-                  <?= $data->education[$i]->dagree ?>
-                </h5>
-                <div>
-                  <p style="color: white;">
-                    <u>
-                      <?= $data->education[$i]->deg_st_date ?> /
-                      <?= $data->education[$i]->deg_end_date ?>
-                    </u>
-                  </p>
-                  <p style="float:right;color:white">
-                    <?= $data->education[$i]->total_marks ?> /
-                    <?= $data->education[$i]->obtain_marks ?>
-                  </p>
-                </div>
-                <p style="color: white;">
-                  <?= $data->education[$i]->field ?>
-                </p>
+              <div class="work-info">
+                <h5>Aug 2018 - present</h5>
+                <p class="com-name"> <?= ucfirst($data->work_exp[$i]->company_name) ?> </p>
+                <h4><?= $data->work_exp[$i]->role ?></h4>
+                <p> <?= $data->work_exp[$i]->city_country ?></p>
               </div>
             <?php
             }
             ?>
           </div>
-        </div>
 
-        <div class="section">
-          <div>
-            <div style="background-color: white; width: 200px;">
-              <h2 style="color: black; padding-left: 5px;">Work Experince</h2>
-            </div>
-            <?php
-            for ($i = 0; $i < count($data->education); $i++) {
-            ?>
-              <div style="margin-top: 20px;">
-                <h5 style="color: yellow;">
-                  <?= $data->work_exp[$i]->company_name ?> /
-                  <?= $data->work_exp[$i]->role ?>
 
-                </h5>
-                <div style="color: white;">
-                  <p style="color: white;margin-top:8px;">
-                    <u>
-                      <?= $data->work_exp[$i]->work_st_data ?> /
-                      <?= $data->work_exp[$i]->work_end_date ?>
-                    </u>
-                  </p>
-                </div>
-                <div style="color: white;margin-top:12px;">
-                  <?= $data->work_exp[$i]->city_country ?>
-                </div>
-
+          <?php
+          if (isset($data->user_references) && !empty($data->user_references)) {
+          ?>
+            <div>
+              <div class="heading">
+                <h3>References</h3>
               </div>
-            <?php
-            }
-            ?>
-          </div>
+              <div class="work-info">
+                <ul>
+                  <?php
+                  for ($i = 0; $i < count($data->user_references); $i++) {
+                  ?>
+                    <li style="margin-left: 20px;">
+                      <h3><?= $data->user_references[$i]->user_reference ?></h3>
+                    </li>
+                  <?php
+                  }
+                  ?>
+                </ul>
+              </div>
+            </div>
+          <?php
+          }
+          ?>
         </div>
       </div>
     </div>
