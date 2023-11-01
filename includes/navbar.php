@@ -1,4 +1,3 @@
-
 <!-- =================== Navbar-Start =================== -->
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
@@ -24,14 +23,14 @@
               ?>
                 <a href="./personal_info.php">Create cv</a>
                 <a href="./personal_info.php">Show cv templete</a>
-                <a href="#">How to create CV</a>
+                <a href="./guide.php">How to create CV</a>
               <?php
               } else {
 
               ?>
                 <a href="./sign_up.php">Create cv</a>
                 <a href="./sign_up.php">Show cv templete</a>
-                <a href="#">How to create CV</a>
+                <a href="./guide.php">How to create CV</a>
 
               <?php
 
@@ -55,7 +54,7 @@
               ?>
                 <a href="./personal_info.php">Create Resume</a>
                 <a href="./personal_ssinfo.php">Show resume templete</a>
-                <a href="#">How to create resume</a>
+                <a href="./guide.php">How to create resume</a>
 
 
               <?php
@@ -65,7 +64,7 @@
 
                 <a href="./sign_up.php">Create Resume</a>
                 <a href="./sign_up.php">Show resume templete</a>
-                <a href="#">How to create resume</a>
+                <a href="./guide.php">How to create resume</a>
 
               <?php
 
@@ -89,7 +88,7 @@
               ?>
                 <a href="./blog.php">blogs</a>
                 <a href="./users/">Setting</a>
-                <a href="#">How to create resume</a>
+                <a href="./guide.php">How to create resume</a>
 
               <?php
 
@@ -98,7 +97,7 @@
 
                 <a href="./blog.php">blogs</a>
                 <a href="./sign_up.php">Setting</a>
-                <a href="#">How to create resume</a>
+                <a href="./guide.php">How to create resume</a>
               <?php
 
               }
@@ -119,7 +118,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./personal_info.php">Create</a></li>
               <li><a class="dropdown-item" href="./personal_info.php">Templete</a></li>
-              <li><a class="dropdown-item" href="#">How to create CV</a></li>
+              <li><a class="dropdown-item" href="./guide.php">How to create CV</a></li>
             </ul>
           <?php
 
@@ -128,7 +127,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./sign_up.php">Create</a></li>
               <li><a class="dropdown-item" href="./sign_up.php">Templete</a></li>
-              <li><a class="dropdown-item" href="#">How to create CV</a></li>
+              <li><a class="dropdown-item" href="./guide.php">How to create CV</a></li>
             </ul>
           <?php
           }
@@ -144,7 +143,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./personal_info.php">Create</a></li>
               <li><a class="dropdown-item" href="./personal_info.php">Templete</a></li>
-              <li><a class="dropdown-item" href="#">How to create Resume</a></li>
+              <li><a class="dropdown-item" href="./guide.php">How to create Resume</a></li>
             </ul>
           <?php
 
@@ -153,7 +152,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./sign_up.php">Create</a></li>
               <li><a class="dropdown-item" href="./sign_up.php">Templete</a></li>
-              <li><a class="dropdown-item" href="#">How to create Resume</a></li>
+              <li><a class="dropdown-item" href="./guide.php">How to create Resume</a></li>
             </ul>
 
           <?php
@@ -196,13 +195,13 @@
 
             <ul class="dropdown-menu">
               <li>
-                <p class="lan_flag" flag="en"><img  style="width:25px" src="./image/usa.svg"><span>English</span></p>
+                <p class="lan_flag" flag="en"><img style="width:25px" src="./image/usa.svg"><span>English</span></p>
               </li>
               <li>
-                <p  class="lan_flag" flag="ar"><img   style="width:30px" src="./image/sa.svg"><span>Arabic</span></p>
+                <p class="lan_flag" flag="ar"><img style="width:30px" src="./image/sa.svg"><span>Arabic</span></p>
               </li>
               <li>
-                <p  class="lan_flag" flag="ar"><img   style="width:30px" src="./image/sa.svg"><span>Arabic</span></p>
+                <p class="lan_flag" flag="ar"><img style="width:30px" src="./image/sa.svg"><span>Arabic</span></p>
               </li>
             </ul>
           </div>
@@ -214,10 +213,10 @@
         if (@!$_SESSION["loginemail"]) {
 
           echo '  <a href="./sign_in.php" ><button class="sign_in_btn">Sign in</button></a>';
-        }else{
+        } else {
           echo '<div class="user_details_dropdown">' . @$_SESSION["loginemail"] . '  </div> ';
         }
-       
+
         ?>
 
 

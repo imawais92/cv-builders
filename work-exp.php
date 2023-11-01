@@ -237,7 +237,7 @@ include("./includes/navbar.php")
 
                 <!-- =====virtual data====== -->
                 <div class="form-buttons">
-                  <button id="add_word_btn" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger  float-end mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Education</button>
+                  <button id="add_word_btn" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger  float-end mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add work Experience</button>
                 </div>
 
 
@@ -308,7 +308,7 @@ include("./includes/navbar.php")
 
                   })
                 </script>
-                <div class="form-buttons " style="margin-top: 100px;">
+                <div class="form-buttons mb-5 " style="margin-top: 100px;">
 
                   <a href="./edu_skill.php"> <button type="button" class="btn btn-danger  save-btn  add-det-btn"> Previous</button></a>
                   <button name="submit" type="submit" class="btn btn-danger float-end save-btn  add-det-btn"> <?= $buttontext ?></button>

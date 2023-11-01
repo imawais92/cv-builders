@@ -197,6 +197,11 @@ if (@$_SESSION['my_data'] == 1) {
       line-height: 20px;
       text-align: justify;
     }
+
+    .reference-sec {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   </style>
 
 
@@ -206,12 +211,12 @@ if (@$_SESSION['my_data'] == 1) {
 
       <div class="sec-1">
         <?php
-        if($data->per_info->user_img){
+        if ($data->per_info->user_img) {
         ?>
 
-        <div class="image-sec">
-          <img src="./uploads/images/<?= $data->per_info->user_img ?>" alt="your image">
-        </div>
+          <div class="image-sec">
+            <img src="./uploads/images/<?= $data->per_info->user_img ?>" alt="your image">
+          </div>
 
         <?php
 
@@ -356,7 +361,7 @@ if (@$_SESSION['my_data'] == 1) {
                 <h3>References</h3>
               </div>
               <div class="work-info">
-                <ul>
+                <ul class="reference-sec">
                   <?php
                   for ($i = 0; $i < count($data->user_references); $i++) {
                   ?>
