@@ -7,6 +7,7 @@ if (isset($_POST['submit'])) {
   $work_st_dates = $_POST['work_st_date'];
   $work_end_dates = $_POST['work_end_date'];
   $work_city_countries = $_POST['work_city_coun'];
+  // $presents =  $_POST['present'];
 
   if (!empty($_REQUEST['worexp_id'])) {
     $sql_del = "DELETE FROM `work_exp` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
@@ -18,18 +19,20 @@ if (isset($_POST['submit'])) {
         $work_st_date = $conn->real_escape_string($work_st_dates[$i]);
         $work_end_date = $conn->real_escape_string($work_end_dates[$i]);
         $work_city_coun = $conn->real_escape_string($work_city_countries[$i]);
-        $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
+        $present = isset($_POST['present'][$i]) ? 1 : 0;
+        $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country` , `present`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun' , '$present')";
         $result = mysqli_query($conn, $sql);
       }
     }
   } else {
     for ($i = 0; $i < count($company_names); $i++) {
-      $company_name = $company_names[$i];
-      $work_role = $work_roles[$i];
-      $work_st_date = $work_st_dates[$i];
-      $work_end_date = $work_end_dates[$i];
-      $work_city_coun = $work_city_countries[$i];
-      $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun')";
+      $company_name = $conn->real_escape_string($company_names[$i]);
+      $work_role = $conn->real_escape_string($work_roles[$i]);
+      $work_st_date = $conn->real_escape_string($work_st_dates[$i]);
+      $work_end_date = $conn->real_escape_string($work_end_dates[$i]);
+      $work_city_coun = $conn->real_escape_string($work_city_countries[$i]);
+      $present = isset($_POST['present'][$i]) ? 1 : 0;
+      $sql = "INSERT INTO `work_exp` (`user_id` ,`company_name`, `role`, `work_st_data`, `work_end_date`, `city_country` , `present`) VALUES ('" . $_SESSION['user_id'] . "','$company_name', '$work_role', '$work_st_date', '$work_end_date', '$work_city_coun' , '$present')";
       $result = mysqli_query($conn, $sql);
     }
   }
@@ -141,8 +144,10 @@ include("./includes/navbar.php")
                               </div>
                               <!-- ============End-Date============ -->
                               <div class="col-md-6 ">
-                                <div class="input-field mt-5 ">
-                                  <input name="work_end_date[]" id="end_date" type="date" value="<?= $work_det['work_end_date'] ?>">
+                                <div class="input-field mt-5 d-flex position-relative ">
+                                  <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="date">
+                                  <label class="date-lable" style="left:79%">Present</label>
+                                  <input id="checkbox" type="checkbox" name="present[]" style="width: 20%;" value="">
                                   <label class="date-lable">End Date</label>
                                 </div>
                               </div>
@@ -203,8 +208,10 @@ include("./includes/navbar.php")
                             </div>
                             <!-- ============End-Date============ -->
                             <div class="col-md-6 ">
-                              <div class="input-field mt-5 ">
-                                <input name="work_end_date[]" id="end_date" type="date">
+                              <div class="input-field mt-5 d-flex position-relative ">
+                                <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="date">
+                                <label class="date-lable" style="left:79%">Present</label>
+                                <input id="checkbox" type="checkbox" name="present[]" style="width: 20%;">
                                 <label class="date-lable">End Date</label>
                               </div>
                             </div>
@@ -286,11 +293,13 @@ include("./includes/navbar.php")
                             </div>
                           </div>
                           <div class="col-md-6 ">
-                            <div class="input-field mt-5 ">
-                              <input name="work_end_date[]" id="end_date" type="date">
-                              <label class="date-lable">End Date</label>
-                            </div>
-                          </div>
+                                <div class="input-field mt-5 d-flex position-relative ">
+                                  <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="date">
+                                  <label class="date-lable" style="left:79%">Present</label>
+                                  <input id="checkbox" type="checkbox" name="present[]" style="width: 20%;" value="">
+                                  <label class="date-lable">End Date</label>
+                                </div>
+                              </div>
                           <div class="col-md-12">
                             <div class="input-field mt-5 ">
                               <textarea maxlength="180" name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>

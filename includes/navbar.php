@@ -22,7 +22,7 @@
               if (@$_SESSION["loginemail"]) {
               ?>
                 <a href="./personal_info.php">Create cv</a>
-                <a href="./personal_info.php">Show cv templete</a>
+                <a href="./templates.php">Show cv templete</a>
                 <a href="./guide.php">How to create CV</a>
               <?php
               } else {
@@ -53,7 +53,7 @@
               if (@$_SESSION["loginemail"]) {
               ?>
                 <a href="./personal_info.php">Create Resume</a>
-                <a href="./personal_ssinfo.php">Show resume templete</a>
+                <a href="./templates.php">Show resume templete</a>
                 <a href="./guide.php">How to create resume</a>
 
 
@@ -87,7 +87,7 @@
               if (@$_SESSION["loginemail"]) {
               ?>
                 <a href="./blog.php">blogs</a>
-                <a href="./users/">Setting</a>
+                <!-- <a href="./users/">Setting</a> -->
                 <a href="./guide.php">How to create resume</a>
 
               <?php
@@ -96,7 +96,7 @@
               ?>
 
                 <a href="./blog.php">blogs</a>
-                <a href="./sign_up.php">Setting</a>
+                <!-- <a href="./sign_up.php">Setting</a> -->
                 <a href="./guide.php">How to create resume</a>
               <?php
 
@@ -117,7 +117,7 @@
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./personal_info.php">Create</a></li>
-              <li><a class="dropdown-item" href="./personal_info.php">Templete</a></li>
+              <li><a class="dropdown-item" href="./templates.php">Templete</a></li>
               <li><a class="dropdown-item" href="./guide.php">How to create CV</a></li>
             </ul>
           <?php
@@ -142,7 +142,7 @@
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./personal_info.php">Create</a></li>
-              <li><a class="dropdown-item" href="./personal_info.php">Templete</a></li>
+              <li><a class="dropdown-item" href="./templates.php">Templete</a></li>
               <li><a class="dropdown-item" href="./guide.php">How to create Resume</a></li>
             </ul>
           <?php
@@ -169,7 +169,7 @@
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./blog.php">BLog</a></li>
-              <li><a class="dropdown-item" href="./users/">Setting</a></li>
+              <!-- <li><a class="dropdown-item" href="./users/">Setting</a></li> -->
               <li><a class="dropdown-item" href="./privacypolicy.php">Privacy & Policy </a></li>
             </ul>
           <?php
@@ -178,7 +178,7 @@
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./blog.php">BLog</a></li>
-              <li><a class="dropdown-item" href="./sign_up.php">Setting</a></li>
+              <!-- <li><a class="dropdown-item" href="./sign_up.php">Setting</a></li> -->
               <li><a class="dropdown-item" href="./privacypolicy.php">Privacy & Policy </a></li>
             </ul>
 

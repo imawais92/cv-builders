@@ -11,6 +11,7 @@ if (isset($_POST['submit'])) {
   $edu_fields = $_POST['edu_field'];
   $skills = $_POST['skill'];
   $skill_ranges = $_POST['skill_range'];
+  $presents = $_POST['edu_present'];
   if (!empty($_REQUEST['edu_id'])) {
     $sql_del = "DELETE FROM `education` WHERE  user_id = '" . $_SESSION['user_id'] . "'";
     $r = mysqli_query($conn, $sql_del);
@@ -23,7 +24,8 @@ if (isset($_POST['submit'])) {
         $edu_st_date = $conn->real_escape_string($edu_st_dates[$a]);
         $edu_end_date = $conn->real_escape_string($edu_end_dates[$a]);
         $edu_field = $conn->real_escape_string($edu_fields[$a]);
-        $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field')";
+        $present = isset($presents[$a]) ? 1 : 0;
+        $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field` , `edu_present`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field' , '$present')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
           header('location: ./work-exp.php');
@@ -39,7 +41,8 @@ if (isset($_POST['submit'])) {
       $edu_st_date = $conn->real_escape_string($edu_st_dates[$a]);
       $edu_end_date = $conn->real_escape_string($edu_end_dates[$a]);
       $edu_field = $conn->real_escape_string($edu_fields[$a]);
-      $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field')";
+      $present = isset($_POST['edu_present'][$a]) ? 1 : 0;
+      $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field` , `edu_present`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field' , '$present')";
       $result = mysqli_query($conn, $sql);
     }
 
@@ -130,7 +133,7 @@ include("./includes/navbar.php");
       </div>
     </div>
   </div>
-  <form action="#" method="post">
+  <form action="#" method="post" enctype="multipart/form-data">
     <div class="container">
       <div class="form-bg mt-4">
         <div class="container">
@@ -195,8 +198,10 @@ include("./includes/navbar.php");
                             </div>
                             <!-- ============End-Date============ -->
                             <div class="col-md-6 ">
-                              <div class="input-field mt-5 ">
-                                <input name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
+                              <div class="input-field mt-5 d-flex position-relative ">
+                                <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
+                                <label class="date-lable" style="left:79%">Present</label>
+                                <input type="checkbox" name="edu_present[]" style="width: 20%;" value="">
                                 <label class="date-lable">End Date</label>
                               </div>
                             </div>
@@ -263,8 +268,10 @@ include("./includes/navbar.php");
                           </div>
                           <!-- ============End-Date============ -->
                           <div class="col-md-6 ">
-                            <div class="input-field mt-5 ">
-                              <input name="edu_end_date[]" id="edate" class="hide" type="date">
+                            <div class="input-field mt-5 d-flex position-relative ">
+                              <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
+                              <label class="date-lable" style="left:79%">Present</label>
+                              <input type="checkbox" name="edu_present[]" style="width: 20%;" value="">
                               <label class="date-lable">End Date</label>
                             </div>
                           </div>
@@ -347,12 +354,14 @@ include("./includes/navbar.php");
           <label class="date-lable">Start Date</label>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="input-field mt-5">
-          <input name="edu_end_date[]" id="edate" class="hide" type="date">
-          <label class="date-lable">End Date</label>
-        </div>
-      </div>
+      <div class="col-md-6 ">
+                            <div class="input-field mt-5 d-flex position-relative ">
+                              <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" >
+                              <label class="date-lable" style="left:79%">Present</label>
+                              <input  type="checkbox" name="edu_present[]" style="width: 20%;">
+                              <label class="date-lable">End Date</label>
+                            </div>
+                          </div>
       <div class="col-md-12">
         <div class="input-field mt-5">
         <textarea  maxlength="180"  name="edu_field[]" class="form-control" id="Feild" rows="4" ></textarea>

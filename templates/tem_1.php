@@ -257,12 +257,18 @@ if (@$_SESSION['my_data'] == 1) {
             </div>
             <?php
             for ($i = 0; $i < count($data->education); $i++) {
+              $edupre =  $data->education[$i]->edu_present;
+              if ($edupre == 0) {
+                $edupre = $data->education[$i]->deg_end_date;
+              } else {
+                $edupre = "Present";
+              }
             ?>
               <div class="edu">
                 <div class="content">
                   <h5><?= $data->education[$i]->dagree ?></h5>
                   <h6> <?= $data->education[$i]->instutute_name ?> </h6>
-                  <p> <?= $data->education[$i]->deg_st_date ?> - <?= $data->education[$i]->deg_end_date ?></p>
+                  <p> <?= $data->education[$i]->deg_st_date ?> - <?= $edupre ?></p>
                 </div>
               </div>
             <?php
@@ -279,8 +285,6 @@ if (@$_SESSION['my_data'] == 1) {
                   <ul>
                     <?php
                     for ($i = 0; $i < count($data->skills); $i++) {
-                      # code... 
-
                     ?>
                       <li> <?= $data->skills[$i]->skill ?></li>
                     <?php
@@ -340,9 +344,15 @@ if (@$_SESSION['my_data'] == 1) {
             </div>
             <?php
             for ($i = 0; $i < count($data->work_exp); $i++) {
+              $pre = $data->work_exp[$i]->present;
+              if ($pre == 0) {
+                $pre = $data->work_exp[$i]->work_end_date;
+              } else {
+                $pre = "Present";
+              };
             ?>
               <div class="work-info">
-                <h5>Aug 2018 - present</h5>
+                <h5> <?= $data->work_exp[$i]->work_st_data ?> - <?= $pre ?></h5>
                 <p class="com-name"> <?= ucfirst($data->work_exp[$i]->company_name) ?> </p>
                 <h4><?= $data->work_exp[$i]->role ?></h4>
                 <p> <?= $data->work_exp[$i]->city_country ?></p>

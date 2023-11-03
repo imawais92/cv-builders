@@ -8,7 +8,7 @@ $user_id = $_SESSION['user_id']; // Replace with the user_id you want to retriev
 $mainArray = array();
 
 // Retrieve data from the 'education' table
-$query = "SELECT `edu_id`, `user_id`, `instutute_name`, `dagree`, `total_marks`, `obtain_marks`, `deg_st_date`, `deg_end_date`, `field`, `data_time` FROM `education` WHERE `user_id` = '$user_id'";
+$query = "SELECT *  FROM `education` WHERE `user_id` = '$user_id'";
 $q = mysqli_query($conn, $query);
 $x = 0;
 while ($r = mysqli_fetch_assoc($q)) :
