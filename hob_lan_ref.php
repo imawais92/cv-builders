@@ -194,7 +194,7 @@ include("includes/navbar.php");
                       <div class="my-3 position-relative">
                         <h3 class="headinf">Hobbies</h3>
                         <a href="hob_lan_ref.php?delh=<?= $dta['hobbies_id'] ?>">
-                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                         </a>
                       </div>
                       <div class="container-fluid">
@@ -267,7 +267,7 @@ include("includes/navbar.php");
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
                     <h3 class="headinf">Hobbies</h3>
-                    <h4 onclick="removehob('#hobyrem_${hid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                    <h4 onclick="removehob('#hobyrem_${hid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -296,7 +296,7 @@ include("includes/navbar.php");
                         <div class="my-3 position-relative">
                           <h3 class="headinf">Languages</h3>
                           <a href="hob_lan_ref.php?dellan=<?= $data['lang_id'] ?>">
-                            <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                            <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; "><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                           </a>
                         </div>
                         <div class="container-fluid">
@@ -365,7 +365,7 @@ include("includes/navbar.php");
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
                     <h3 class="headinf">Languages</h3>
-                    <h4 onclick="removehob('#lanrem_${lid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                    <h4 onclick="removehob('#lanrem_${lid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -416,7 +416,7 @@ include("includes/navbar.php");
                       <div class="my-3 position-relative">
                         <h3 class="headinf">References</h3>
                         <a href="hob_lan_ref.php?delref=<?= $row['ref_id'] ?>">
-                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; "><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                         </a>
                       </div>
                       <div class="container-fluid">
@@ -483,7 +483,7 @@ include("includes/navbar.php");
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
                     <h3 class="headinf">References</h3>
-                    <h4 onclick="removehob('#refrem_${rid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                    <h4 onclick="removehob('#refrem_${rid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                   </div>
                   <div class="container-fluid">
                     <div class="row">

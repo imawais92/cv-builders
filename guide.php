@@ -7,7 +7,7 @@ include('includes/navbar.php')
 
 ?>
 
-<div class="container">
+<div class="container mt-5 mb-5">
   <div>
     <ol style="list-style: none;">
       <li>

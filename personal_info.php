@@ -167,7 +167,7 @@ include("./includes/navbar.php");
                   <!-- ============Website============ -->
                   <div class="col-md-12">
                     <div class="input-field mt-5">
-                      <input name="website" class="email_width" type=" email" required value="<?= @$per_det['website'] ?>">
+                      <input name="website" class="email_width" type=" email" value="<?= @$per_det['website'] ?>">
                       <label>Website</label>
                     </div>
                   </div>

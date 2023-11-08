@@ -340,4 +340,7 @@
     font-size: 0.625rem;
     line-height: 1.125rem;
   }
+}
+input[type=checkbox] {
+  accent-color: red;
 }/*# sourceMappingURL=style.css.map */

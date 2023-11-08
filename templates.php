@@ -19,7 +19,15 @@ $row = mysqli_num_rows($result_tem);
   </div>
 </div>
 <div class="mt-4 edit-details-btn container-fluid  ">
-  <a href="./user_information.php" class="text-decoration-none"> <button class=" edit-details-btn me-3"> <i class='bx bxs-pencil'></i> <span class="ms-1">Create Cv</span></button></a>
+  <?php
+  if ($row < 1) {
+  ?>
+    <a href="./personal_info.php" class="text-decoration-none"> <button class=" edit-details-btn me-3"> <i class='bx bxs-pencil'></i> <span class="ms-1">Create Cv</span></button></a>
+
+  <?php
+  }
+  ?>
+
 </div>
 
 <div class="container-fluid mb-5">

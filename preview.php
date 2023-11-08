@@ -55,9 +55,26 @@ if (isset($_GET['pre'])) {
       padding: 18px 32px;
       border-radius: 10px;
     }
+
+    .editbtn {
+      background: linear-gradient(63deg, #1019C2 0%, #3244A7 80%);
+      color: white;
+      padding: 8px 18px;
+      border: none;
+      float: right;
+      margin: 10px 40px 30px 0;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 
-  <button class="btns" id="downbtn">Download PDF</button>
+  <div class="topbox">
+    <a href="./personal_info.php" target="_parent"> <button class="editbtn"><i class="fa-solid fa-pencil"></i> Edit</button></a>
+    <button class="btns" id="downbtn">Download PDF</button>
+  </div>
+
+
 
   <?php
 
@@ -92,6 +109,7 @@ if (isset($_GET['pre'])) {
         html2pdf().set(opt).from(contents).save();
       });
     </script>
+    <script src="https://kit.fontawesome.com/c416a2d46a.js" crossorigin="anonymous"></script>
 
 </body>
 

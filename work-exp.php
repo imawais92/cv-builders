@@ -109,7 +109,7 @@ include("./includes/navbar.php")
                       <div class="my-3 position-relative">
                         <h3 class="headinf">Working Experience</h3>
                         <a href="work-exp.php?del=<?= $work_det['work_exp_id'] ?>">
-                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                         </a>
                       </div>
                       <div class="form-info">
@@ -268,7 +268,7 @@ include("./includes/navbar.php")
                     newel.innerHTML = `<div class="py-3 mt-5" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
                   <div class="my-3 position-relative">
                     <h3 class="headinf">Working Experience</h3>
-                    <h4 onclick="remove_workexp('#workid_${wid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                    <h4 onclick="remove_workexp('#workid_${wid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                   </div>
                   <div class="form-info">
                     <div id="add_work">

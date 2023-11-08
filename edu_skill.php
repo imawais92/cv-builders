@@ -153,7 +153,7 @@ include("./includes/navbar.php");
                         <div class="my-3 position-relative">
                           <h3 class="headinf">Education</h3>
                           <a href="edu_skill.php?del=<?= $dta['edu_id'] ?>">
-                            <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                            <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                           </a>
                         </div>
                         <div class="container">
@@ -324,7 +324,7 @@ include("./includes/navbar.php");
                         <div class=" py-2 mt-3 id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
                       <h3 class="headinf">Education</h3>
-                      <h4  onclick="removeById('#education_table_id_${id}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i class="fa-solid fa-x"></i></h4>
+                      <h4  onclick="removeById('#education_table_id_${id}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                     </div>
                     <div class="row">
           <div class="col-md-6">
@@ -390,7 +390,7 @@ include("./includes/navbar.php");
                           <div class="my-3 position-relative">
                             <h3 class="headinf">Skill</h3>
                             <a href="edu_skill.php?delete=<?= $row['skill_id'] ?>">
-                              <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i class="fa-solid fa-x"></i></h4>
+                              <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                             </a>
                           </div>
                         </div>
@@ -492,7 +492,7 @@ include("./includes/navbar.php");
                     <div class="personal-info-form  py-3 ">
                       <div class="my-3 position-relative">
                         <h3 class="headinf">Skill</h3>
-                        <h4  onclick="removeskillById('#skill_id_${sid}')" class="position-absolute" style="right: 1.5rem; top:-10px; cursor:pointer;"><i class="fa-solid fa-x"></i></h4>
+                        <h4  onclick="removeskillById('#skill_id_${sid}')" class="position-absolute" style="right: 1.5rem; top:-10px; cursor:pointer;"><i  class="fa-solid fa-x"></i></h4>
                       </div>
                     </div>
                     <!-- ==================Skill-section-Start========================== -->
