@@ -1,11 +1,13 @@
-.cv_templete_img .temp_img, .cv_templete_img, .templete_heading_img .heading {
+.cv_templete_img .temp_img,
+.cv_templete_img,
+.templete_heading_img .heading {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 :root {
-  --primary-color: #C21010;
+  --primary-color: #c21010;
   --light-color: #ffffff;
 }
 
@@ -90,7 +92,8 @@
   height: 90vh;
   overflow-y: scroll;
 }
-.templete-preview .temp h2 {
+.templete-preview .temp h2,
+.temp_img h2 {
   z-index: 99;
   top: 50%;
   color: white;
@@ -99,22 +102,25 @@
   opacity: 0;
   font-weight: 600;
 }
-.templete-preview .temp::after {
+.templete-preview .temp::after,
+.temp_img::after {
   content: "";
   top: 0;
   position: absolute;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.597);
-  z-index: 90;
+  z-index: 10;
   left: 0;
   opacity: 0;
   transition: all 0.5s;
 }
-.templete-preview .temp:hover::after {
+.templete-preview .temp:hover::after,
+.temp_img:hover::after {
   opacity: 100;
 }
-.templete-preview .temp:hover h2 {
+.templete-preview .temp:hover h2,
+.temp_img:hover h2 {
   opacity: 100;
 }
 
@@ -124,4 +130,4 @@
 
 .templete-preview::-webkit-scrollbar-thumb {
   background-color: gray;
-}/*# sourceMappingURL=templete.css.map */
+} /*# sourceMappingURL=templete.css.map */
