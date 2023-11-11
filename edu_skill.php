@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         $edu_st_date = $conn->real_escape_string($edu_st_dates[$a]);
         $edu_end_date = $conn->real_escape_string($edu_end_dates[$a]);
         $edu_field = $conn->real_escape_string($edu_fields[$a]);
-        $present = isset($presents[$a]) ? 1 : 0;
+        $present = $conn->real_escape_string($presents[$a]);
         $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field` , `edu_present`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field' , '$present')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
       $edu_st_date = $conn->real_escape_string($edu_st_dates[$a]);
       $edu_end_date = $conn->real_escape_string($edu_end_dates[$a]);
       $edu_field = $conn->real_escape_string($edu_fields[$a]);
-      $present = isset($_POST['edu_present'][$a]) ? 1 : 0;
+      $present = $conn->real_escape_string($presents[$a]);
       $sql = "INSERT INTO `education`(`user_id`,`instutute_name`, `dagree`, `total_marks`, `obtain_marks`,  `deg_st_date`, `deg_end_date`, `field` , `edu_present`) VALUES ('" . $_SESSION['user_id'] . "', '$institute_name','$degree','$total_mark','$ob_mark','$edu_st_date','$edu_end_date','$edu_field' , '$present')";
       $result = mysqli_query($conn, $sql);
     }
@@ -146,7 +146,9 @@ include("./includes/navbar.php");
                 <div class="form-info">
                   <?php
                   if ($getdata == true) {
+                    $a = 1;
                     while ($dta = mysqli_fetch_assoc($checkedu)) {
+                      $a++;
                   ?>
                       <!-- ================user-Education-form-Start==================== -->
                       <div class=" py-2 mt-3" id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
@@ -201,7 +203,8 @@ include("./includes/navbar.php");
                               <div class="input-field mt-5 d-flex position-relative ">
                                 <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
                                 <label class="date-lable" style="left:79%">Present</label>
-                                <input type="checkbox" name="edu_present[]" style="width: 20%;" value="">
+                                <input type="checkbox" style="width: 20%;" id="checkbox<?= $a ?>" onchange="changecheck(this)">
+                                <input type="hidden" id="inputField<?= $a ?>" name="edu_present[]" value="0" readonly>
                                 <label class="date-lable">End Date</label>
                               </div>
                             </div>
@@ -271,7 +274,8 @@ include("./includes/navbar.php");
                             <div class="input-field mt-5 d-flex position-relative ">
                               <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
                               <label class="date-lable" style="left:79%">Present</label>
-                              <input type="checkbox" name="edu_present[]" style="width: 20%;" value="">
+                              <input type="checkbox" style="width: 20%;" id="checkbox1" onchange="changecheck(this)">
+                              <input type="hidden" id="inputField1" name="edu_present[]" value="0" readonly>
                               <label class="date-lable">End Date</label>
                             </div>
                           </div>
@@ -298,7 +302,7 @@ include("./includes/navbar.php");
                   </div>
                   <!-- ======================details-table-End================ -->
                   <div class="form-buttons d-flex justify-content-end">
-                    <button style="padding:8px 12px; border-radius:40px;" class="btn btn-danger educationbtn  mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Education</button>
+                    <button id="add_education" style="padding:8px 12px; border-radius:40px;" class="btn btn-danger educationbtn  mt-4  me-2" type="button"> <i class="fa-solid fa-plus"></i> Add Education</button>
                   </div>
 
                   <script>
@@ -309,18 +313,17 @@ include("./includes/navbar.php");
                       }
                     }
 
-                    let add_edu = document.querySelectorAll('.educationbtn');
-                    add_edu.forEach((e) => {
+                    let add_edu = document.getElementById('add_education');
+                    let education_divs = document.getElementById('education_table');
+                    add_edu.addEventListener('click', () => {
+                      console.log("click");
                       var id = Math.floor(Math.random() * 999999) + 1;
                       var edu_id = Math.floor(Math.random() * 999999) + 1;
-                      e.addEventListener('click', () => {
-                        e.classList.remove('educationbtn');
 
-                        let education_divs = document.getElementById('education_table');
-                        let newdivs = document.createElement('div');
-                        newdivs.classList.add('row');
-                        newdivs.id = 'education_table_id_' + id;
-                        newdivs.innerHTML = `
+                      let newdivs = document.createElement('div');
+                      newdivs.classList.add('row');
+                      newdivs.id = 'education_table_id_' + id;
+                      newdivs.innerHTML = `
                         <div class=" py-2 mt-3 id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
                       <h3 class="headinf">Education</h3>
@@ -358,7 +361,8 @@ include("./includes/navbar.php");
                             <div class="input-field mt-5 d-flex position-relative ">
                               <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" >
                               <label class="date-lable" style="left:79%">Present</label>
-                              <input  type="checkbox" name="edu_present[]" style="width: 20%;">
+                              <input type="checkbox" style="width: 20%;" id="checkbox${id}" onchange="changecheck(this)">
+                                <input type="hidden" id="inputField${id}" name="edu_present[]" value="0" readonly>
                               <label class="date-lable">End Date</label>
                             </div>
                           </div>
@@ -372,14 +376,22 @@ include("./includes/navbar.php");
             </div>
           </div> `;
 
-                        education_divs.appendChild(newdivs);
-                        del_edu.addEventListener('click', () => {
-                          newdivs.remove();
-                          del_edu.style.display = "none"
-
-                        })
-                      })
+                      education_divs.appendChild(newdivs);
                     });
+                  </script>
+                  <script>
+                    function changecheck(checkbox) {
+                      // Get the corresponding input field
+                      var inputFieldId = checkbox.id.replace("checkbox", "inputField");
+                      var inputField = document.getElementById(inputFieldId);
+
+                      // Update the input field value based on checkbox state
+                      if (checkbox.checked) {
+                        inputField.value = "1";
+                      } else {
+                        inputField.value = "0";
+                      }
+                    }
                   </script>
                   <?php
                   if ($getdata == true) {
@@ -588,7 +600,6 @@ include("./includes/navbar.php");
     </div>
   </footer>
   <!-- ================ Footer-End ======================= -->
-
   <?php
   include('./includes/end_links.php');
   ?>
