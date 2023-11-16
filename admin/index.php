@@ -1,4 +1,5 @@
 <?php
+$title = "Add";
 include('../includes/header.php');
 include('../includes/db.php');
 if ($_SESSION['loginadmin']) {
@@ -12,17 +13,17 @@ if (isset($_POST['submit'])) {
   $templete_name = $_POST['templete_name'];
 
   $templete_img = $_FILES['templete_img']['name'];
-  $temp_img = $_FILES['templete_img']['tmp_name'];
-  $target_dir = "../uploads/temp_img/";
-  $target_file = $target_dir . basename($templete_img);
-  if (move_uploaded_file($temp_img, $target_file)) {
+  $temp_image = $_FILES['templete_img']['tmp_name'];
+  $target_dir = "../templates/tem-img/";
+  $targetf = $target_dir . basename($templete_img);
+  if (move_uploaded_file($temp_image, $targetf)) {
   }
 
 
   $templete_file = $_FILES['templete_file']['name'];
   $temp_file = $_FILES['templete_file']['tmp_name'];
-  $target_dir = "../uploads/"; 
-  
+  $target_dir = "../templates/";
+
   $target_file = $target_dir . basename($templete_file);
   if (move_uploaded_file($temp_file, $target_file)) {
   }
@@ -98,7 +99,7 @@ $result_cv = mysqli_query($conn, $sql_cv);
             <tr>
               <th scope="row"><?= $id++ ?></th>
               <td><?= $cv_tem['templete_name'] ?></td>
-              <td> <img style="height: 70px;" src="<?php echo '../uploads/temp_img/' . $cv_tem['templete_img']; ?>" alt=""></td>
+              <td> <img style="height: 70px;" src="../templates/tem-img/<?= $cv_tem['templete_img'] ?>" alt="tem_img"></td>
               <td><?= $cv_tem['templete_file'] ?></td>
             </tr>
           <?php } ?>

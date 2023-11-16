@@ -7,7 +7,9 @@ if (isset($_GET['pre'])) {
   $_SESSION['my_data'] = $tem_id;
   header('location: ./select.php');
 }
-
+include_once('./includes/db.php');
+$sql = "SELECT * FROM `templetes`";
+$res = mysqli_query($conn, $sql);
 
 ?>
 <!DOCTYPE html>
@@ -79,8 +81,13 @@ if (isset($_GET['pre'])) {
   <?php
 
   if (@$_SESSION['my_data']) {
-    include_once('templates/tem_1.php');
-    include_once('templates/tem_2.php');
+    $a = 0;
+    while ($row = mysqli_fetch_assoc($res)) {
+      $a++;
+      if (@$_SESSION['my_data'] == $a) {
+        include_once("templates/" . $row['templete_file']);
+      }
+    }
   } else {
   ?>
     <div class="selecthading">

@@ -194,14 +194,14 @@ include("./includes/navbar.php");
                             <!-- ============Start-Date============ -->
                             <div class="col-md-6">
                               <div class="input-field mt-5 ">
-                                <input name="edu_st_date[]" class="hide" id="sdate" type="date" value="<?= $dta['deg_st_date'] ?>">
+                                <input name="edu_st_date[]" class="hide" id="sdate" type="month" value="<?= $dta['deg_st_date'] ?>">
                                 <label class="date-lable">Start Date</label>
                               </div>
                             </div>
                             <!-- ============End-Date============ -->
                             <div class="col-md-6 ">
                               <div class="input-field mt-5 d-flex position-relative ">
-                                <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
+                                <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="month" value="<?= $dta['deg_end_date'] ?>">
                                 <label class="date-lable" style="left:79%">Present</label>
                                 <input type="checkbox" style="width: 20%;" id="checkbox<?= $a ?>" onchange="changecheck(this)">
                                 <input type="hidden" id="inputField<?= $a ?>" name="edu_present[]" value="0" readonly>
@@ -265,14 +265,14 @@ include("./includes/navbar.php");
                           <!-- ============Start-Date============ -->
                           <div class="col-md-6">
                             <div class="input-field mt-5 ">
-                              <input name="edu_st_date[]" class="hide" id="sdate" type="date">
+                              <input name="edu_st_date[]" class="hide" id="sdate" type="month">
                               <label class="date-lable">Start Date</label>
                             </div>
                           </div>
                           <!-- ============End-Date============ -->
                           <div class="col-md-6 ">
                             <div class="input-field mt-5 d-flex position-relative ">
-                              <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" value="<?= $dta['deg_end_date'] ?>">
+                              <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="month" value="<?= $dta['deg_end_date'] ?>">
                               <label class="date-lable" style="left:79%">Present</label>
                               <input type="checkbox" style="width: 20%;" id="checkbox1" onchange="changecheck(this)">
                               <input type="hidden" id="inputField1" name="edu_present[]" value="0" readonly>
@@ -353,13 +353,13 @@ include("./includes/navbar.php");
       </div>
       <div class="col-md-6">
         <div class="input-field mt-5">
-          <input name="edu_st_date[]" class="hide" id="sdate" type="date">
+          <input name="edu_st_date[]" class="hide" id="sdate" type="month">
           <label class="date-lable">Start Date</label>
         </div>
       </div>
       <div class="col-md-6 ">
                             <div class="input-field mt-5 d-flex position-relative ">
-                              <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="date" >
+                              <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="month" >
                               <label class="date-lable" style="left:79%">Present</label>
                               <input type="checkbox" style="width: 20%;" id="checkbox${id}" onchange="changecheck(this)">
                                 <input type="hidden" id="inputField${id}" name="edu_present[]" value="0" readonly>

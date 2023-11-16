@@ -140,14 +140,14 @@ include("./includes/navbar.php")
                               <!-- ============Start-Date============ -->
                               <div class="col-md-6">
                                 <div class="input-field mt-5 ">
-                                  <input name="work_st_date[]" id="start_date" type="date" value="<?= $work_det['work_st_data'] ?>">
+                                  <input name="work_st_date[]" id="start_date" type="month" value="<?= $work_det['work_st_data'] ?>">
                                   <label class="date-lable">Start Date</label>
                                 </div>
                               </div>
                               <!-- ============End-Date============ -->
                               <div class="col-md-6 ">
                                 <div class="input-field mt-5 d-flex position-relative ">
-                                  <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="date">
+                                  <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="month" value="<?= $work_det['work_end_date'] ?>">
                                   <label class="date-lable" style="left:79%">Present</label>
                                   <input type="checkbox" style="width: 20%;" id="checkbox<?= $a ?>" onchange="updateInputField(this)">
                                   <input type="hidden" id="inputField<?= $a ?>" name="present[]" value="0" readonly>
@@ -205,14 +205,14 @@ include("./includes/navbar.php")
                             <!-- ============Start-Date============ -->
                             <div class="col-md-6">
                               <div class="input-field mt-5 ">
-                                <input name="work_st_date[]" id="start_date" type="date">
+                                <input name="work_st_date[]" id="start_date" type="month">
                                 <label class="date-lable">Start Date</label>
                               </div>
                             </div>
                             <!-- ============End-Date============ -->
                             <div class="col-md-6 ">
                               <div class="input-field mt-5 d-flex position-relative ">
-                                <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="date">
+                                <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="month">
                                 <label class="date-lable" style="left:79%">Present</label>
                                 <input type="checkbox" style="width: 20%;" id="checkbox2" onchange="updateInputField(this)">
                                 <input type="hidden" id="inputField2" name="present[]" value="0" readonly>
@@ -292,13 +292,13 @@ include("./includes/navbar.php")
                           </div>
                           <div class="col-md-6">
                             <div class="input-field mt-5 ">
-                              <input name="work_st_date[]" id="start_date" type="date">
+                              <input name="work_st_date[]" id="start_date" type="month">
                               <label class="date-lable">Start Date</label>
                             </div>
                           </div>
                           <div class="col-md-6 ">
                                 <div class="input-field mt-5 d-flex position-relative ">
-                                  <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="date">
+                                  <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="month">
                                   <label class="date-lable" style="left:79%">Present</label>
                                   <input type="checkbox" style="width: 20%;" id="checkbox${wid}" onchange="updateInputField(this)">
                                 <input type="hidden" id="inputField${wid}" name="present[]" value="0" readonly>

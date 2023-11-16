@@ -1,4 +1,5 @@
 <?php
+$title = "Login";
 include('../includes/db.php');
 
 if (isset($_REQUEST['submit'])) {
@@ -29,8 +30,6 @@ include('../includes/header.php');
 
 ?>
 <style>
-
-
   .card {
     border: none;
     height: 320px
