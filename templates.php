@@ -50,7 +50,7 @@ $r = mysqli_query($conn, $q);
           <?php
         } else {
           ?>
-            <a href="preview.php?pre=<?= $a ?>">
+            <a href="getdata.php?pre=<?= $a ?>">
             <?php
           }
             ?>

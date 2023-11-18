@@ -1,7 +1,7 @@
 <?php
-$data = file_get_contents('res.json');
-$data = json_decode($data);
 session_start();
+$dat = json_encode($_SESSION['temdata']);
+$data = json_decode($dat);
 if (isset($_GET['pre'])) {
   $tem_id = urldecode($_GET['pre']);
   $_SESSION['my_data'] = $tem_id;
@@ -10,7 +10,6 @@ if (isset($_GET['pre'])) {
 include_once('./includes/db.php');
 $sql = "SELECT * FROM `templetes`";
 $res = mysqli_query($conn, $sql);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

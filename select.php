@@ -30,7 +30,8 @@ $res = mysqli_query($conn, "SELECT * FROM `templetes`");
     </div>
     <div class="col-md-10">
       <div class="view-sec ">
-        <embed style="width: 100%; height: 88vh;" src="preview.php" type="application/pdf">
+        <!-- <embed style="width: 100%; height: 88vh;" src="preview.php" type="application/pdf"> -->
+        <iframe style="width: 100%; height: 88vh;" src="preview.php" frameborder="0"></iframe>
       </div>
     </div>
   </div>

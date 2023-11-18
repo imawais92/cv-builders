@@ -66,26 +66,15 @@ $query = "SELECT * FROM `per_info` WHERE `user_id` = '$user_id'";
 $q = mysqli_query($conn, $query);
 $r = mysqli_fetch_assoc($q);
 $mainArray['per_info'] = $r;
-
-if ($r) {
-  header('location: select.php');
+if (@$_REQUEST['pre']) {
+  $temid = $_REQUEST['pre'];
+  header('location: preview.php?pre=' . $temid);
+} else {
+  if ($r) {
+    header('location: select.php');
+  }
 }
 
 
-
-// Repeat the above steps for other tables (per_info, skills, user_references, work_exp) as needed
-
-// Output the main array as JSON
-$mainArrayJson = json_encode($mainArray);
-
-// Output the JSON
-echo $mainArrayJson;
-
-
-// Define the file name for the second JSON file
-$secondJsonFileName = 'res.json';
-
-// Write the JSON data to the second JSON file
-file_put_contents($secondJsonFileName, $mainArrayJson);
-
-echo "JSON data has been written to $secondJsonFileName";
+// store data in session and get data in preview page
+$_SESSION['temdata'] = $mainArray;
