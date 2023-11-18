@@ -356,7 +356,7 @@
                             <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
                         </div>
                         <?php
-                        for ($i = 0; $i < count($data->work_exp); $i++) {
+                        for ($i = 0; $i < count($data->education); $i++) {
                             $edupre =  $data->education[$i]->edu_present;
                             if ($edupre == 0) {
                                 $edupre = $data->education[$i]->deg_end_date;
