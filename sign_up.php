@@ -23,8 +23,15 @@ if (isset($_REQUEST['submit'])) {
       $hach = md5($password, PASSWORD_DEFAULT);
       $sql = "INSERT INTO `users` (`username`, `email`,  `phone_no`,  `password`, `cpassword`) VALUES ('$username', '$email',  '$phone_no', '$password', '$cpassword')";
       $result = mysqli_query($conn, $sql);
-
-      header('location: ./sign_in.php');
+      $salert = "show";
+?>
+      <script>
+        setTimeout(() => {
+          console.log("hello word");
+          window.location.href = "sign_in.php";
+        }, 1000);
+      </script>
+<?php
     } else {
       $passError = "Passwords not matched";
       $input_pass_eror = 'style="border-color:#C21010"';
@@ -32,16 +39,16 @@ if (isset($_REQUEST['submit'])) {
   }
 }
 
-
-// if (!isset($_SESSION['access_token'])) {
-
-//   $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img class="s-icon" src="./image/google-icon.svg" alt="" ></a>';
-// }
-// 
 ?>
-
+<!-- ====alert=== -->
+<div style="position:absolute; top:20px; right:10px; background:#C21010; color:white; z-index:999;" class="toast <?= $salert ?>" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-body">
+    <h6 class="p-0 m-0  d-flex align-items-center"><i class="fa-solid fa-circle-check me-2" style="color: green; font-size:25px"></i> Sign Up Successfully</h6>
+  </div>
+</div>
 
 <body style="background-color: #ffffff;">
+
   <!-- ========logo============ -->
   <div class="container-fluid">
     <div class="row">

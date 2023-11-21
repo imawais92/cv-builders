@@ -58,7 +58,7 @@ $r = mysqli_query($conn, $q);
             <div class="cv_templete_img mt-4">
               <div style="width:90%">
                 <div class="temp_img ">
-                  <img src="./templates/tem-img/<?= $data['templete_img'] ?>" alt="image">
+                  <img src="./templates/tem-img/<?= $data['templete_img'] ?>" alt="image" loading="lazy">
                   <h2 class="position-absolute">SELECT</h2>
                 </div>
               </div>

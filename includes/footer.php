@@ -53,7 +53,7 @@
             <?php
             if (@$_SESSION["loginemail"]) {
             ?>
-              <a href="./users/" class="text-white">Settings</a>
+              <a href="" class="text-white">Settings</a>
 
             <?php
             } else {

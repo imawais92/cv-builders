@@ -203,7 +203,16 @@ include("./includes/navbar.php");
                               <div class="input-field mt-5 d-flex position-relative ">
                                 <input style="width: 80%;" name="edu_end_date[]" id="edate" class="hide" type="month" value="<?= $dta['deg_end_date'] ?>">
                                 <label class="date-lable" style="left:79%">Present</label>
-                                <input type="checkbox" style="width: 20%;" id="checkbox<?= $a ?>" onchange="changecheck(this)">
+                                <?php
+                                if ($dta['edu_present'] == '1') {
+                                  $checked = 'checked';
+                                  $val = '1';
+                                } else {
+                                  $checked = '';
+                                  $val = '0';
+                                }
+                                ?>
+                                <input type="checkbox" <?= $checked ?> style="width: 20%;" id="checkbox<?= $a ?>" onchange="changecheck(this)">
                                 <input type="hidden" id="inputField<?= $a ?>" name="edu_present[]" value="0" readonly>
                                 <label class="date-lable">End Date</label>
                               </div>

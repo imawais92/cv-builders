@@ -149,7 +149,16 @@ include("./includes/navbar.php")
                                 <div class="input-field mt-5 d-flex position-relative ">
                                   <input id="datainput" style="width: 80%;" name="work_end_date[]" id="end_date" type="month" value="<?= $work_det['work_end_date'] ?>">
                                   <label class="date-lable" style="left:79%">Present</label>
-                                  <input type="checkbox" style="width: 20%;" id="checkbox<?= $a ?>" onchange="updateInputField(this)">
+                                  <?php
+                                  if ($work_det['present'] == '1') {
+                                    $checked = 'checked';
+                                    $val = '1';
+                                  } else {
+                                    $checked = '';
+                                    $val = '0';
+                                  }
+                                  ?>
+                                  <input <?= $checked ?> type="checkbox" style="width: 20%;" id="checkbox<?= $a ?>" onchange="updateInputField(this)">
                                   <input type="hidden" id="inputField<?= $a ?>" name="present[]" value="0" readonly>
                                   <label class="date-lable">End Date</label>
                                 </div>
