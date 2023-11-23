@@ -125,8 +125,8 @@ include("./includes/navbar.php");
                             echo "$db_img";
                             ?>
                             <input name="imgupload" id="files" style="visibility:hidden;" type="file">
+                            <p id="imagetxt" style="color: #C21010; font-weight:600; position:absolute; top:140px; ">Select Image</p>
                           </div>
-                          <p id="imagetxt" style="color: #C21010; font-weight:600; position:absolute; top:140px; text-align:center; left:30px">Select Image</p>
                         </div>
                       </div>
                     </div>

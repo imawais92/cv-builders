@@ -25,9 +25,9 @@
   display: flex;
 }
 .progres-bar .progress-sec {
+  width: 100%;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .progres-bar .progress-sec a {
   text-decoration: none;

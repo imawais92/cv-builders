@@ -257,9 +257,6 @@
 
 
 @media (max-width:452px) and (min-width:0px) {
-  .form_progress_txt {
-    display: none;
-  }
 
   .anim-sec-txt {
     & .remove {
@@ -299,4 +296,22 @@
   }
 
 
+}
+
+@media (max-width:975px) {
+  .progress-sec p::after{
+  position: absolute;
+  opacity: 0;
+  }
+}
+@media (max-width:840px) {
+  .progressbarss{
+  flex-wrap: wrap;
+  justify-content: center;
+   width: 100%;
+
+  }
+  .progress-sec p{
+    justify-content: center;
+  }
 }

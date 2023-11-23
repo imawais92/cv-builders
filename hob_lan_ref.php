@@ -107,10 +107,8 @@ $checklan = mysqli_query($conn, "SELECT * FROM languages WHERE user_id = '" . $_
 $checkref  = mysqli_query($conn, "SELECT * FROM user_references WHERE user_id = '" . $_SESSION['user_id'] . "' ");
 if (mysqli_num_rows($checkhob) or mysqli_num_rows($checklan) or mysqli_num_rows($checkref)  >=  1) {
   $getdata = true;
-  $buttontext = "Update";
 } else {
-  $buttontext = "Next";
-  $getdata = false;
+  $buttontext = "Finish";
 }
 
 
@@ -504,7 +502,7 @@ include("includes/navbar.php");
                 <div class="col-12  " style="margin-top: 100px;">
                   <div class="form-buttons mt-4">
                     <a href="./work-exp.php"> <button type="button" class="btn btn-danger btnPrevious add-det-btn">Previous</button></a>
-                    <button type="submit" name="submit" class="btn btn-danger float-end save-btn btnNext add-det-btn">Next</button>
+                    <button type="submit" name="submit" class="btn btn-danger float-end save-btn btnNext add-det-btn">Finish</button>
                   </div>
                 </div>
               </div>
