@@ -28,7 +28,7 @@
         }
 
         .left-column {
-            padding: 20px;
+            padding: 0 20px 20px 20px;
             background: linear-gradient(to right, #1d1c1c, #474545);
             color: white;
 
@@ -57,9 +57,15 @@
             margin: 0px auto;
             width: 159px;
             border-radius: 0px 0px 400px 400px;
-            height: 220px;
+            height: 213px;
             text-align: center;
 
+        }
+
+        .imge img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
         }
 
         .content {
@@ -162,7 +168,7 @@
 
         .edu-section .main-sec {
             display: grid;
-            grid-template-columns: 150px 1fr;
+            grid-template-columns: 160px 1fr;
             width: 100%;
             margin-top: 18px;
 
@@ -185,6 +191,10 @@
             font-weight: 500;
             margin-top: 5px;
         }
+
+        .det-para {
+            margin-left: 10px;
+        }
     </style>
     <div id="content">
         <div class="container">
@@ -193,7 +203,7 @@
                 if ($data->per_info->user_img) {
                 ?>
                     <div class="imge">
-                        <img src="./uploads/images/<?= $data->per_info->user_img ?>" alt="" width="93%" style="border: 2px solid #f7f4fa; border-radius: 100% ;margin-top:60px;  ">
+                        <img src="./uploads/images/<?= $data->per_info->user_img ?>" alt="" style="border: 2px solid #f7f4fa; border-radius: 100% ;margin-top:60px;  ">
                     </div>
                 <?php
                 }
@@ -214,8 +224,8 @@
                             </div>
                             <div class="icon-sec">
                                 <h5><i class="fa-solid fa-location-dot"></i></h5>
-                                <p><?= $data->per_info->country ?>
-                                    <?= $data->per_info->city ?></p>
+                                <p><?= ucfirst($data->per_info->country) ?>
+                                    <?= ucwords($data->per_info->city) ?></p>
                             </div>
                             <?php
                             if (isset($data->per_info->website) && !empty($data->per_info->website)) {
@@ -241,7 +251,7 @@
                                     <?php
                                     for ($i = 0; $i < count($data->skills); $i++) {
                                     ?>
-                                        <li> <span><?= $data->skills[$i]->skill ?></span></li>
+                                        <li> <span><?= ucfirst($data->skills[$i]->skill) ?></span></li>
                                     <?php
                                     }
                                     ?>
@@ -262,7 +272,7 @@
                                     <?php
                                     for ($i = 0; $i < count($data->languages); $i++) {
                                     ?>
-                                        <li> <span><?= $data->languages[$i]->language ?></span></li>
+                                        <li> <span><?= ucwords($data->languages[$i]->language) ?></span></li>
                                     <?php
                                     }
                                     ?>
@@ -283,7 +293,7 @@
                                     <?php
                                     for ($i = 0; $i < count($data->hobbies); $i++) {
                                     ?>
-                                        <li> <span><?= $data->hobbies[$i]->hobby ?></span></li>
+                                        <li> <span><?= ucfirst($data->hobbies[$i]->hobby) ?></span></li>
                                     <?php
                                     }
                                     ?>
@@ -307,7 +317,7 @@
                                         <?php
                                         for ($i = 0; $i < count($data->user_references); $i++) {
                                         ?>
-                                            <li> <span><?= $data->user_references[$i]->user_reference ?></span></li>
+                                            <li> <span><?= ucfirst($data->user_references[$i]->user_reference) ?></span></li>
                                         <?php
                                         }
                                         ?>
@@ -335,7 +345,7 @@
                             </h1>
                             <h4 style="line-height:10px">
                                 <p style="font-size:16px; margin:10px 0">
-                                    <?= $data->per_info->profession ?>
+                                    <?= ucwords($data->per_info->profession) ?>
                                 </p>
                             </h4>
                         </div>
@@ -360,17 +370,18 @@
                             $edupre =  $data->education[$i]->edu_present;
                             if ($edupre == 0) {
                                 $edupre = $data->education[$i]->deg_end_date;
+                                $newFormat = date("M Y", strtotime($edupre));
                             } else {
-                                $edupre = "Present";
+                                $newFormat = "Present";
                             }
                         ?>
                             <div class="main-sec">
                                 <div class="date-sec">
-                                    <p><?= $data->education[$i]->deg_st_date ?> - <?= $edupre ?></p>
+                                    <p><?= date("M Y", strtotime($data->education[$i]->deg_st_date)) ?> - <?= $newFormat ?></p>
                                 </div>
                                 <div class="det-sec">
-                                    <h4><?= $data->education[$i]->dagree ?> / <?= $data->education[$i]->instutute_name ?></h4>
-                                    <p><?= $data->education[$i]->field ?></p>
+                                    <h4><?= ucwords($data->education[$i]->dagree) ?> / <?= ucwords($data->education[$i]->instutute_name) ?></h4>
+                                    <p class="det-para"><?= ucfirst($data->education[$i]->field) ?></p>
                                 </div>
                             </div>
                         <?php
@@ -387,28 +398,24 @@
                             $pre = $data->work_exp[$i]->present;
                             if ($pre == 0) {
                                 $pre = $data->work_exp[$i]->work_end_date;
+                                $wenddata = date("M Y", strtotime($pre));
                             } else {
-                                $pre = "Present";
+                                $wenddata = "Present";
                             };
                         ?>
                             <div class="main-sec">
                                 <div class="date-sec">
-                                    <p><?= $data->work_exp[$i]->work_st_data ?> - <?= $pre ?></p>
+                                    <p><?= date(" M Y ", strtotime($data->work_exp[$i]->work_st_data)) ?> - <?= $wenddata ?></p>
                                 </div>
                                 <div class="det-sec">
-                                    <h4><?= $data->work_exp[$i]->role ?> / <?= $data->work_exp[$i]->company_name ?></h4>
-                                    <p><?= $data->work_exp[$i]->city_country ?></p>
+                                    <h4><?= ucwords($data->work_exp[$i]->role) ?> / <?= ucwords($data->work_exp[$i]->company_name) ?></h4>
+                                    <p class="det-para"><?= ucfirst($data->work_exp[$i]->city_country) ?></p>
                                 </div>
                             </div>
                         <?php
                         }
                         ?>
                     </div>
-
-
-
-
-
                 </div>
             </div>
         </div>

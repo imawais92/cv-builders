@@ -174,7 +174,7 @@
   }
 
   .work-info {
-    margin-top: 12px;
+    margin-top: 18px;
 
   }
 
@@ -228,23 +228,23 @@
           <div class="per-info">
             <div class="icon-sec">
               <h5><i class="fa-solid fa-envelope"></i></h5>
-              <p><?= $data->per_info->email ?> </p>
+              <p><?= ucfirst($data->per_info->email) ?> </p>
             </div>
             <div class="icon-sec">
               <h5><i class="fa-solid fa-phone"></i></h5>
-              <p><?= $data->per_info->per_no ?></p>
+              <p><?= ucfirst($data->per_info->per_no) ?></p>
             </div>
             <div class="icon-sec">
               <h5><i class="fa-solid fa-location-dot"></i></h5>
-              <p><?= $data->per_info->country ?>
-                <?= $data->per_info->city ?></p>
+              <p><?= ucfirst($data->per_info->country) ?>
+                <?= ucfirst($data->per_info->city) ?></p>
             </div>
             <?php
             if (isset($data->per_info->website) && !empty($data->per_info->website)) {
             ?>
               <div class="icon-sec">
                 <h5><i class="fa-solid fa-globe"></i></h5>
-                <p><?= $data->per_info->website ?></p>
+                <p><?= ucfirst($data->per_info->website) ?></p>
               </div>
             <?php
             }
@@ -263,15 +263,17 @@
             $edupre =  $data->education[$i]->edu_present;
             if ($edupre == 0) {
               $edupre = $data->education[$i]->deg_end_date;
+              $newFormat = date("M Y", strtotime($edupre));
             } else {
-              $edupre = "Present";
+              $newFormat = "Present";
             }
+
           ?>
             <div class="edu">
               <div class="content">
-                <h5><?= $data->education[$i]->dagree ?></h5>
-                <h6> <?= $data->education[$i]->instutute_name ?> </h6>
-                <p> <?= $data->education[$i]->deg_st_date ?> - <?= $edupre ?></p>
+                <h5><?= ucwords($data->education[$i]->dagree) ?></h5>
+                <h6> <?= ucwords($data->education[$i]->instutute_name) ?> </h6>
+                <p> <?= date("M Y", strtotime($data->education[$i]->deg_st_date)) ?> - <?= $newFormat ?></p>
               </div>
             </div>
           <?php
@@ -289,7 +291,7 @@
                   <?php
                   for ($i = 0; $i < count($data->skills); $i++) {
                   ?>
-                    <li> <?= $data->skills[$i]->skill ?></li>
+                    <li> <?= ucfirst($data->skills[$i]->skill) ?></li>
                   <?php
                   }
                   ?>
@@ -311,7 +313,7 @@
                   <?php
                   for ($i = 0; $i < count($data->hobbies); $i++) {
                   ?>
-                    <li> <?= $data->hobbies[$i]->hobby ?></li>
+                    <li> <?= ucfirst($data->hobbies[$i]->hobby) ?></li>
                   <?php
                   }
                   ?>
@@ -333,7 +335,7 @@
                   <?php
                   for ($i = 0; $i < count($data->languages); $i++) {
                   ?>
-                    <p> <?= $data->languages[$i]->language ?></p>
+                    <p> <?= ucfirst($data->languages[$i]->language) ?></p>
                   <?php
                   }
                   ?>
@@ -350,7 +352,7 @@
 
       <div class="name-sec">
         <h1><?= ucfirst($data->per_info->fname) ?> <?= ucfirst($data->per_info->lname) ?></h1>
-        <p><?= $data->per_info->profession ?></p>
+        <p><?= ucwords($data->per_info->profession) ?></p>
       </div>
 
       <div class="sec-heading">
@@ -372,15 +374,16 @@
             $pre = $data->work_exp[$i]->present;
             if ($pre == 0) {
               $pre = $data->work_exp[$i]->work_end_date;
+              $wenddata = date("M Y", strtotime($pre));
             } else {
-              $pre = "Present";
+              $wenddata = "Present";
             };
           ?>
             <div class="work-info">
-              <h5> <?= $data->work_exp[$i]->work_st_data ?> - <?= $pre ?></h5>
+              <h5><?= date(" M Y ", strtotime($data->work_exp[$i]->work_st_data)) ?> - <?= $wenddata ?></h5>
               <p class="com-name"> <?= ucfirst($data->work_exp[$i]->company_name) ?> </p>
-              <h4><?= $data->work_exp[$i]->role ?></h4>
-              <p> <?= $data->work_exp[$i]->city_country ?></p>
+              <h4><?= ucwords($data->work_exp[$i]->role) ?></h4>
+              <p class="det-para"> <?= ucfirst($data->work_exp[$i]->city_country) ?></p>
             </div>
           <?php
           }
@@ -401,7 +404,7 @@
                 for ($i = 0; $i < count($data->user_references); $i++) {
                 ?>
                   <li style="margin-left: 20px;">
-                    <h4><?= $data->user_references[$i]->user_reference ?></h4>
+                    <h4><?= ucwords($data->user_references[$i]->user_reference) ?></h4>
                   </li>
                 <?php
                 }

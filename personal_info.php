@@ -31,6 +31,8 @@ if (isset($_POST['submit'])) {
     $tmp_image = $_FILES['imgupload']['tmp_name'];
     $target_dir = "uploads/images/";
     $target_file = $target_dir . basename($img);
+    if (move_uploaded_file($tmp_image, $target_file)) {
+    }
     $sql = "INSERT INTO `per_info`(`user_id`, `fname`, `lname`, `father_name`, `gender`, `profession`, `dob`, `website`, `per_no`, `tel_no`, `email`, `user_img`, `country`, `city`, `about_us`) VALUES ('" . $_SESSION['user_id'] . "', '$fname', '$lname', '$father_name', '$gender', '$profession', '$dob', '$website', '$personal_no', '$tel_no', '$email', '$img', '$country', '$city', '$about_us')";
     echo $sql;
   }
@@ -124,7 +126,7 @@ include("./includes/navbar.php");
                             <?php
                             echo "$db_img";
                             ?>
-                            <input name="imgupload" id="files" style="visibility:hidden;" type="file">
+                            <input name="imgupload" id="files" style="visibility:hidden;" type="file" accept=".png , .jpg , .jpeg">
                             <p id="imagetxt" style="color: #C21010; font-weight:600; position:absolute; top:140px; ">Select Image</p>
                           </div>
                         </div>
@@ -141,10 +143,10 @@ include("./includes/navbar.php");
                   <!-- ===============Gender=================== -->
                   <div class="col-md-6">
                     <div class="input-field mt-5">
-                      <select name="gender" class="form-select gender-option" <?= @$per_det['fname'] ?>>
-                        <option selected>Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                      <select name="gender" class="form-select gender-option">
+                        <option <?= (@$per_det['gender'] == 'Male') ? 'selected' : '' ?>>Male</option>
+                        <option <?= (@$per_det['gender'] == 'Female') ? 'selected' : '' ?>>Female</option>
+                        <option <?= (@$per_det['gender'] == 'Other') ? 'selected' : '' ?>>Other</option>
                       </select>
                       <label>Gender</label>
                     </div>
@@ -196,7 +198,11 @@ include("./includes/navbar.php");
                   <div class="col-md-6">
                     <div class="input-field mt-5">
                       <label>Country</label>
-                      <input name="country" type="text" required value="<?= @$per_det['country'] ?>">
+                      <select class="country form-control " name="country" id="country" value="<?= @$per_det['country'] ?>">
+                        <?php
+                        include_once('others/countrylist.php')
+                        ?>
+                      </select>
                     </div>
                   </div>
                   <!-- ============Contact no============ -->
@@ -310,3 +316,7 @@ include("./includes/navbar.php");
   <?php
   include('./includes/end_links.php');
   ?>
+  <script>
+    var $disabledResults = $(".country");
+    $disabledResults.select2();
+  </script>
