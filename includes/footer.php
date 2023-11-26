@@ -50,6 +50,9 @@
           <h6 class="text-uppercase fw-bold">Useful links</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:#C21010 ; height: 5px" />
           <p>
+            <a href="./contact.php" class="text-white">Contact Us</a>
+          </p>
+          <p>
             <?php
             if (@$_SESSION["loginemail"]) {
             ?>
@@ -72,9 +75,9 @@
           <h6 class="text-uppercase fw-bold">Contact</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:#C21010 ; height: 5px" />
           <p><i class="fas fa-home mr-3"></i> Faisalabad Punjab Pakistan</p>
-          <p><i class="fas fa-envelope mr-3"></i> info@cvbuilders.com</p>
-          <p><i class="fas fa-phone mr-3"></i> + 92 3196631466</p>
-          <p><i class="fas fa-print mr-3"></i> + 92 3196631466</p>
+          <p><i class="fas fa-envelope mr-3"></i> <a href="mailto:info@cvbuilders.com">info@cvbuilders.com</a></p>
+          <p><i class="fas fa-phone mr-3"></i> <a href="tel:+923196631466">+ 92 3196631466</a></p>
+          <p><i class="fa-brands fa-whatsapp mr-3"></i><a href="https://wa.me/923196631466" target="_blank"> + 92 3196631466 </a></p>
         </div>
       </div>
     </div>

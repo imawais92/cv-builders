@@ -39,6 +39,7 @@
             </div>
           </div>
         </div>
+
         <!-- ================phone-screen-collapse===================== -->
         <!-- ================phone-screen-collapse===================== -->
         <div class="nav_sm_drop pe-3 ps-3">
@@ -83,26 +84,9 @@
           </p>
           <div class="collapse ph_dropdown" id="colla">
             <div class="mt-2">
-              <?php
-              if (@$_SESSION["loginemail"]) {
-              ?>
-                <a href="./blog.php">blogs</a>
-                <!-- <a href="./users/">Setting</a> -->
-                <a href="./guide.php">How to create resume</a>
-
-              <?php
-
-              } else {
-              ?>
-
-                <a href="./blog.php">blogs</a>
-                <!-- <a href="./sign_up.php">Setting</a> -->
-                <a href="./guide.php">How to create resume</a>
-              <?php
-
-              }
-              ?>
-
+              <a href="./blog.php">blogs</a>
+              <a href="./blog.php">Contact Us</a>
+              <a href="./privacypolicy.php">Privacy & Policy</a>
             </div>
           </div>
         </div>
@@ -164,29 +148,24 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Others
           </a>
-          <?php
-          if (@$_SESSION["loginemail"]) {
-          ?>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="./blog.php">BLog</a></li>
-              <!-- <li><a class="dropdown-item" href="./users/">Setting</a></li> -->
-              <li><a class="dropdown-item" href="./privacypolicy.php">Privacy & Policy </a></li>
-            </ul>
-          <?php
-
-          } else {
-          ?>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="./blog.php">BLog</a></li>
-              <!-- <li><a class="dropdown-item" href="./sign_up.php">Setting</a></li> -->
-              <li><a class="dropdown-item" href="./privacypolicy.php">Privacy & Policy </a></li>
-            </ul>
-
-          <?php
-          }
-          ?>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="./blog.php">BLog</a></li>
+            <li><a class="dropdown-item" href="./contact.php">Contact Us</a></li>
+            <li><a class="dropdown-item" href="./privacypolicy.php">Privacy & Policy </a></li>
+          </ul>
         </li>
 
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.php">Contact Us</a>
+        </li>
+
+        <div class="nav_sm_drop pe-3 ps-3 pt-4">
+          <p>
+            <a href="./contact.php">
+              Contact Us</span>
+            </a>
+          </p>
       </ul>
       <div style="display: flex;justify-content: flex-end; ">
         <div class="lan_dropdown">

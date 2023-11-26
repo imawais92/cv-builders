@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!$_SESSION['user_id']) {
+  header("location: index.php");
+}
+
+
 $dat = json_encode($_SESSION['temdata']);
 $data = json_decode($dat);
 if (isset($_GET['pre'])) {

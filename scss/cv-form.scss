@@ -89,20 +89,16 @@
 
 
 .input-field {
-  margin-top: 2.2rem;
+  margin-top: 1.5rem;
   position: relative;
 
 
 
   & label {
-    position: absolute;
     transition: 0.3s;
     font-weight: 500;
-    top: -1.75rem;
-    left: .375rem;
+    margin-left: 5px;
     font-size: 1rem;
-    padding: 0 .125rem;
-    background: white;
     color: var(--primary-color);
 
   }
@@ -115,7 +111,8 @@
     padding: 0 .9375rem;
     color: #000000ab;
     font-weight: 500;
-    border: .0625rem solid #80808071
+    border: .0625rem solid #80808071;
+    margin-top: 5px;
   }
 
   & input:focus {
@@ -123,6 +120,10 @@
     border: .0625rem solid #808080
   }
 
+  & select {
+    margin-top: 5px;
+    height: 2.5rem;
+  }
 
 }
 
@@ -197,21 +198,21 @@
 }
 
 
-::-webkit-datetime-edit-month-field {
-  text-transform: uppercase;
-  color: #000000ab;
-}
+// ::-webkit-datetime-edit-month-field {
+//   text-transform: uppercase;
+//   color: #000000ab;
+// }
 
-::-webkit-datetime-edit-day-field {
-  text-transform: uppercase;
-  text-transform: uppercase;
-  color: #000000ab;
-}
+// ::-webkit-datetime-edit-day-field {
+//   text-transform: uppercase;
+//   text-transform: uppercase;
+//   color: #000000ab;
+// }
 
-::-webkit-datetime-edit-year-field {
-  text-transform: uppercase;
-  color: #000000ab;
-}
+// ::-webkit-datetime-edit-year-field {
+//   text-transform: uppercase;
+//   color: #000000ab;
+// }
 
 
 .input-field {
@@ -237,40 +238,7 @@
   }
 }
 
-
-.range-form {
-  width: 400px;
-  margin: auto;
-  padding: 50px;
-}
-
-.range-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 95%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    background: var(--primary-color);
-    cursor: pointer;
-    border-radius: 50%;
-
-
-  }
-
-}
-
 .image_input {
-  // border: 1px solid #80808071;
   width: 8rem;
   height: 8rem;
   float: right;

@@ -572,6 +572,11 @@ nav .user_icon i {
 footer p a {
   text-decoration: none;
   color: var(--light-color);
+  transition: all 0.25s;
+}
+footer p a:hover {
+  color: var(--light-color);
+  letter-spacing: 0.8px;
 }
 footer .icons a {
   color: var(--light-color);

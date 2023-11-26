@@ -2,6 +2,12 @@
 $title = "Templates";
 include('includes/header.php');
 include('includes/db.php');
+
+if (!$_SESSION['user_id']) {
+  header("location: index.php");
+}
+
+
 include('includes/navbar.php');
 $userid =  $_SESSION['user_id'];
 $sql = "SELECT * FROM `per_info` WHERE user_id = $userid";

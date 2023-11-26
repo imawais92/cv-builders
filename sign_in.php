@@ -4,8 +4,6 @@ include("./includes/header.php");
 include('./includes/db.php')
 ?>
 <?php
-@$_SESSION['login'];
-@$_SESSION['login'] == false;
 if (isset($_REQUEST['submit'])) {
 
   $email = $_POST['email'];
@@ -15,7 +13,6 @@ if (isset($_REQUEST['submit'])) {
   $row = mysqli_num_rows($result);
   if ($row == 1) {
     $row = mysqli_fetch_assoc($result);
-    @$_SESSION['login'] == true;
     $_SESSION["user_id"] = $row['user_id'];
     $_SESSION["email"] =  $row['email'];
     $_SESSION["username"] =  $row['username'];
@@ -41,15 +38,6 @@ if (isset($_REQUEST['submit'])) {
     $showeror = "<i style='color:#C21010; font-size:22px' class='bx bxs-error-circle'></i>";
   }
 }
-
-// echo '<span class="email">' . @$_SESSION['email'] . '</span></span></p>';
-// echo '<span class="email">' . @$_SESSION['username'] . '</span></span></p>'
-
-
-// if (!isset($_SESSION['access_token'])) {
-
-//   $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img class="s-icon" src="./image/google-icon.svg" alt="" ></a>';
-// }
 
 ?>
 
@@ -92,7 +80,7 @@ if (isset($_REQUEST['submit'])) {
                 </div>
                 <div class="check-box mb-4">
                   <input class="checkbox" type="checkbox" name="" id=""> <span>Rememebr me</span>
-                  <a href="./forgot_Password.php">Forgot Password ?</a>
+                  <!-- <a href="./forgot_Password.php">Forgot Password ?</a> -->
                 </div>
                 <button name="submit" type="submit" class="btn btn-primary">Login</button>
               </form>

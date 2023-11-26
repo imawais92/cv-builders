@@ -72,18 +72,14 @@
 }
 
 .input-field {
-  margin-top: 2.2rem;
+  margin-top: 1.5rem;
   position: relative;
 }
 .input-field label {
-  position: absolute;
   transition: 0.3s;
   font-weight: 500;
-  top: -1.75rem;
-  left: 0.375rem;
+  margin-left: 5px;
   font-size: 1rem;
-  padding: 0 0.125rem;
-  background: white;
   color: var(--primary-color);
 }
 .input-field input {
@@ -95,10 +91,15 @@
   color: rgba(0, 0, 0, 0.6705882353);
   font-weight: 500;
   border: 0.0625rem solid rgba(128, 128, 128, 0.4431372549);
+  margin-top: 5px;
 }
 .input-field input:focus {
   outline: none;
   border: 0.0625rem solid #808080;
+}
+.input-field select {
+  margin-top: 5px;
+  height: 2.5rem;
 }
 
 .form-select:focus {
@@ -149,22 +150,6 @@
   margin-top: 1rem;
 }
 
-::-webkit-datetime-edit-month-field {
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6705882353);
-}
-
-::-webkit-datetime-edit-day-field {
-  text-transform: uppercase;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6705882353);
-}
-
-::-webkit-datetime-edit-year-field {
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6705882353);
-}
-
 .input-field img {
   background: var(--primary-color);
   padding: 0.3125rem;
@@ -182,33 +167,6 @@
   position: absolute;
   margin-left: 1rem;
   margin-top: -5px;
-}
-
-.range-form {
-  width: 400px;
-  margin: auto;
-  padding: 50px;
-}
-
-.range-slider {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  width: 95%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  transition: opacity 0.2s;
-}
-.range-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  background: var(--primary-color);
-  cursor: pointer;
-  border-radius: 50%;
 }
 
 .image_input {

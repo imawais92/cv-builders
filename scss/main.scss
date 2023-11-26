@@ -183,6 +183,7 @@ nav {
       & p {
         @extend %flex-center;
         cursor: pointer;
+
         & span {
           color: var(--primary-color);
           margin-left: 12px;
@@ -214,7 +215,7 @@ nav {
           font-weight: 600;
           font-size: 15px;
           display: flex;
-  
+
 
           & img {
             object-fit: cover;
@@ -761,6 +762,11 @@ footer {
     & a {
       text-decoration: none;
       color: var(--light-color);
+      transition: all .25s;
+      &:hover {
+        color: var(--light-color);
+        letter-spacing: 0.80px;
+      }
     }
   }
 
