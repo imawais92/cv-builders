@@ -10,12 +10,13 @@
 :root {
   --primary-color: #C21010;
   --light-color: #ffffff;
-
+  --light-bg: whitesmoke;
+  --dark-color: #000000;
 }
 
 ::selection {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--light-color);
 }
 
 %flex-center {
@@ -26,7 +27,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: var(--light-bg);
 
 }
 
@@ -42,11 +43,6 @@ body {
 ::-webkit-scrollbar-track {
   width: 10px;
 }
-
-// .dropdown:hover .dropdown-menu {
-//   display:block;
-// }
-
 
 .dropdown-menu {
   border-top: 5px solid var(--primary-color);
@@ -542,7 +538,7 @@ nav {
     & button {
       background-color: var(--primary-color);
       border: 2px solid var(--primary-color);
-      color: white;
+      color: var(--light-color);
       padding: 8px 10px 8px 10px;
     }
   }
@@ -608,7 +604,7 @@ nav {
 
     & h1 {
       padding: 0 5px 0 5px;
-      color: white;
+      color: var(--light-color);
       font-weight: 600;
       text-align: center;
     }
@@ -618,8 +614,8 @@ nav {
       padding: 0.9rem 2rem;
       font-size: 16px;
       font-weight: 700;
-      color: white;
-      border: 3px solid white;
+      color: var(--light-color);
+      border: 3px solid var(--light-color);
       position: relative;
       background-color: transparent;
       overflow: hidden;
@@ -638,7 +634,7 @@ nav {
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: white;
+        background-color: var(--light-color);
         transform: translateX(-100%);
         transition: all .3s;
         z-index: -1;
@@ -763,6 +759,7 @@ footer {
       text-decoration: none;
       color: var(--light-color);
       transition: all .25s;
+
       &:hover {
         color: var(--light-color);
         letter-spacing: 0.80px;

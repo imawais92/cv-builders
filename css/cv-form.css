@@ -1,6 +1,8 @@
 :root {
   --primary-color: #C21010;
   --light-color: #ffffff;
+  --light-bg: whitesmoke;
+  --dark-color: #000000;
 }
 
 .image_input label span img, .image_input label span {
@@ -116,7 +118,7 @@
   display: inline;
   padding: 8px 20px 8px 8px;
   background-color: var(--primary-color);
-  color: white;
+  color: var(--light-color);
 }
 .personal-info-form .form-buttons button {
   background: linear-gradient(63deg, #c21010 0%, #a73232 80%);
@@ -240,6 +242,6 @@ input::-webkit-inner-spin-button {
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--light-color);
   font-weight: 500;
 }/*# sourceMappingURL=cv-form.css.map */

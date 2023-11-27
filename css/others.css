@@ -1,6 +1,8 @@
 :root {
   --primary-color: #C21010;
   --light-color: #ffffff;
+  --light-bg: whitesmoke;
+  --dark-color: #000000;
 }
 
 .blog-heading-img .heading {
@@ -38,11 +40,11 @@
   font-weight: 600;
 }
 .blog-heading-img .heading h5 a {
-  color: white;
+  color: var(--light-color);
 }
 .blog-heading-img .heading h1 {
   font-size: 50px;
-  color: white;
+  color: var(--light-color);
   font-weight: 700;
   text-transform: lowercase;
   margin-top: 10px;
@@ -98,16 +100,16 @@
   background-color: var(--primary-color);
   border: 3px solid black;
   border-radius: 5px;
-  color: white !important;
+  color: var(--light-color) !important;
   font-weight: 500;
 }
 .con-form-sec input::-moz-placeholder, .con-form-sec textarea::-moz-placeholder {
-  color: white;
+  color: var(--light-color);
   font-weight: 600;
 }
 .con-form-sec input::placeholder,
 .con-form-sec textarea::placeholder {
-  color: white;
+  color: var(--light-color);
   font-weight: 600;
 }
 .con-form-sec input:focus,
@@ -122,6 +124,6 @@
   width: 100%;
   border: 3px solid black;
   border-radius: 5px;
-  color: white;
+  color: var(--light-color);
   font-weight: 600;
 }/*# sourceMappingURL=others.css.map */
