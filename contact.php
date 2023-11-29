@@ -1,8 +1,20 @@
 <?php
 $title = "Contact";
+include('./includes/db.php');
+if (isset($_POST['submit'])) {
+  $fname = $_POST['fullnname'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  $sql = "INSERT INTO `enquiries`(`name`, `email`, `message`) VALUES ('$fname','$email','$message')";
+  $res = mysqli_query($conn, $sql);
+  if ($res) {
+    header("location: ./contact.php");
+  }
+}
 include("./includes/header.php");
 include('./includes/navbar.php');
 ?>
+
 <style>
   body {
     background-color: white;
@@ -31,16 +43,16 @@ include('./includes/navbar.php');
             <h3>For Enquiries</h3>
           </div>
           <div class="input-sec mt-3">
-            <input type="text" name="fullnname" class="form-control" placeholder="Name">
+            <input type="text" name="fullnname" class="form-control" placeholder="Name" required>
           </div>
           <div class="input-sec mt-3">
-            <input type="text" name="email" class="form-control" placeholder="Email">
+            <input type="text" name="email" class="form-control" placeholder="Email" required>
           </div>
           <div class="input-sec mt-3">
-            <textarea name="message" class="form-control" placeholder="Message" style="height: 110px;"></textarea>
+            <textarea name="message" class="form-control" placeholder="Message" style="height: 110px;" required></textarea>
           </div>
           <div class="input-sec mt-3">
-            <button>Send Message</button>
+            <button name="submit" id="sendbtn">Send Message</button>
           </div>
         </div>
       </form>

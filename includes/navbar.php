@@ -1,3 +1,21 @@
+<?php
+session_start();
+if (isset($_GET['lang'])) {
+  $_SESSION['lang'] = $_GET['lang'];
+  setcookie("lang",  $_GET['lang'], time() + (86400 * 365 * 10), "/");
+}
+if (isset($_COOKIE['lang'])) {
+  $currentLang = $_COOKIE['lang'];
+} else {
+  $currentLang = $_SESSION['lang'] ?? 'en';
+}
+if (isset($_GET['lang']) && $_GET['lang'] !== $currentLang) {
+  echo '<script type="text/javascript">location.reload();</script>';
+}
+$langFile = "Languages/{$currentLang}.json";
+$translations = json_decode(file_get_contents($langFile), true);
+// echo $translations['welcome'];
+?>
 <!-- =================== Navbar-Start =================== -->
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
@@ -167,20 +185,21 @@
             </a>
           </p>
       </ul>
-      <div style="display: flex;justify-content: flex-end; ">
-        <div class="lan_dropdown">
+      <div style="display: flex;justify-content: flex-end;">
+        <div class="lan_dropdown" style="cursor: pointer;">
           <div class="btn-group dropstart">
             <img class="flag_img" id="navbarflag" src="./image/usa.svg" data-bs-toggle="dropdown" aria-expanded="false">
 
             <ul class="dropdown-menu">
               <li>
-                <p class="lan_flag" flag="en"><img style="width:25px" src="./image/usa.svg"><span>English</span></p>
+                <a href="?lang=en" class="text-decoration-none">
+                  <p class="lan_flag" flag="en"><img style="width:25px" src="./image/usa.svg"><span>English</span></p>
+                </a>
               </li>
               <li>
-                <p class="lan_flag" flag="ar"><img style="width:30px" src="./image/sa.svg"><span>Arabic</span></p>
-              </li>
-              <li>
-                <p class="lan_flag" flag="ar"><img style="width:30px" src="./image/sa.svg"><span>Arabic</span></p>
+                <a href="?lang=es" class="text-decoration-none">
+                  <p class="lan_flag" flag="es"><img style="width:30px" src="./image/spain-flag-icon.svg"><span>Spanish</span></p>
+                </a>
               </li>
             </ul>
           </div>

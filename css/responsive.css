@@ -8,7 +8,7 @@
   width: 90%;
 }
 
-@media (max-width: 2000px) and (min-width: 992px) {
+@media (max-width: 8000px) and (min-width: 992px) {
   .nav_sm_drop {
     display: none;
   }

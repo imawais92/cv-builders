@@ -13,6 +13,7 @@
   justify-content: center;
 
 }
+
 .wrapper {
   width: 90%;
 }
@@ -21,7 +22,7 @@
 
 // ============== media-quary-End ===============
 
-@media (max-width:2000px) and (min-width:992px) {
+@media (max-width:8000px) and (min-width:992px) {
   .nav_sm_drop {
     display: none;
 
@@ -148,9 +149,11 @@
   .wrapper {
     width: 100%;
   }
+
   .input_info_table {
     width: 100%
   }
+
   .range-slider {
     width: 100%;
   }
@@ -299,19 +302,21 @@
 }
 
 @media (max-width:975px) {
-  .progress-sec p::after{
-  position: absolute;
-  opacity: 0;
+  .progress-sec p::after {
+    position: absolute;
+    opacity: 0;
   }
 }
+
 @media (max-width:840px) {
-  .progressbarss{
-  flex-wrap: wrap;
-  justify-content: center;
-   width: 100%;
+  .progressbarss {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 
   }
-  .progress-sec p{
+
+  .progress-sec p {
     justify-content: center;
   }
 }
