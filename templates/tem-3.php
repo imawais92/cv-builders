@@ -146,7 +146,7 @@
   }
 
   .un-list li {
-    margin: 10px 0 10px 18px;
+    margin: 10px 0;
   }
 
   .title {

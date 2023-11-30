@@ -14,28 +14,27 @@ include('includes/navbar.php')
     <div class="row">
       <div class="col-lg-6  col-md-7">
         <div class="heading">
-          <h2>We will deliver a professional</h2>
-          <!-- <h1><span class="txt-anim"></span> for Free</h1> -->
+          <h2>We deliver a professional</h2>
           <h1>
             <span class="typewrite" data-period="2000" data-type='[ "CV", "Resume" ]'>
               <span class="wrap"></span>
             </span> For Free
           </h1>
-          <p>Create your CV with different types of templates and color <span class="heading_br"><br></span>
-            combinations and also full customization</p>
+          <p>Create your CV with different types of templates , color <span class="heading_br"><br></span>
+            combinations and customization</p>
           <div>
             <?php
 
 
             if (@$_SESSION["loginemail"]) {
             ?>
-              <a href="./templates.php"> <button>Show template</button></a>
-              <a href="./personal_info.php"> <button class="cv-btn">Create CV or Resume</button></a>
+              <a href="./templates.php"> <button>Show templates</button></a>
+              <a href="./personal_info.php"> <button class="cv-btn">Create Here</button></a>
             <?php
             } else {
             ?>
-              <a href="./sign_up.php"> <button>Show template</button></a>
-              <a href="./sign_up.php"> <button class="cv-btn">Create CV or Resume</button></a>
+              <a href="./sign_up.php"> <button>Show templates</button></a>
+              <a href="./sign_up.php"> <button class="cv-btn">Create Here</button></a>
             <?php
             }
             ?>
@@ -45,7 +44,7 @@ include('includes/navbar.php')
       <div class="col-lg-6 col-md-5">
         <div class="header-image">
           <div class="image">
-            <img src="./image/cv.svg" alt="">
+            <img src="./image/cv.svg" alt="cv">
           </div>
         </div>
       </div>
@@ -62,7 +61,7 @@ include('includes/navbar.php')
 
   <!-- =========== heading-Start ============  -->
   <div class="datails-sec">
-    <h3>Create a professional Resume and CV with <span>100+</span> <span class="remove"><br></span> templates and fully customize the <span class="remove"><br></span> colors and fonts</h3>
+    <h3>Create professional Resume or CV with <span>100+</span> <span class="remove"><br></span> templates and customize the <span class="remove"><br></span> colors and fonts</h3>
 
     <!-- =========== heading-End =============  -->
     <div class="container-fluid mt-5">
@@ -122,7 +121,7 @@ include('includes/navbar.php')
 <div class="container-fluid p-0 mt-4">
   <div class="fix-bg">
     <div class="txt">
-      <h1 class="">"Select your favourite template and create your
+      <h1>"Select your favourite template and create your
         <span class="remove"><br></span>professional CV or Resume.
       </h1>
       <?php
@@ -146,7 +145,7 @@ include('includes/navbar.php')
 <!-- ================ Templates-start ==================== -->
 <div class="container-fluid mt-5 p-0">
   <div class="template-heading">
-    <h1>Our Famous template</h1>
+    <h1>Our Famous Recommendation</h1>
     <div id="myCarousel" class="carousel slide container-fluid" data-bs-ride="carousel">
       <div class="carousel-inner w-100">
         <div class="carousel-item active">
@@ -235,26 +234,26 @@ include('includes/navbar.php')
 <div class="container-fluid">
   <div class="tips-content">
     <div class="tip-sec-txt">
-      <h1>Tips to create a professional <br> <span> Resume or CV </span></h1>
-      <p>Use <span style="color:#283593">premium</span> template for free with a lot of color schemes</p>
+      <h1>Recommendation to create a professional <br> <span> Resume or CV </span></h1>
+      <p>Use <span style="color:#283593">premium</span> templates for free with a lot of color schemes</p>
       <div class="list">
         <ul>
-          <li>Proofread carefully: Check your resume for spelling and grammar errors, and have someone else review it as well.</li>
+          <li><strong>Proofread carefully:</strong> Check your resume for spelling and grammar errors, and have someone else review it as well.</li>
           <li>Use keywords: Many companies use software to scan resumes for keywords. Make sure to include relevant
             keywords from the job description.</li>
 
-          <li>Be honest: Don't exaggerate your qualifications or experience, and be prepared to back up any claims
+          <li><strong>Be honest:</strong> Don't exaggerate your qualifications or experience, and be prepared to back up any claims
             you make on your resume.</li>
 
-          <li>Make it easy to contact you: Include your name, phone number, email address, and LinkedIn profile (if you have one) at the top of your resume.</li>
+          <li><strong>Make it easy to contact you:</strong> Include your name, phone number, email address, and LinkedIn profile (if you have one) at the top of your resume.</li>
 
-          <li>Keep it concise and well-organized: Your resume should be easy to read and should not exceed two pages.
+          <li><strong>Keep it concise and well-organized:</strong> Your resume should be easy to read and should not exceed two pages.
             Use bullet points and clear headings to break up the text</li>
 
-          <li>Use a professional format: Choose a clean and modern font, and stick to a professional format. Use a
+          <li><strong>Use a professional format:</strong> Choose a clean and modern font, and stick to a professional format. Use a
             template if you're unsure where to start.</li>
 
-          <li>Customize your resume for each job: Tailor your resume to the job you're applying for by highlighting the
+          <li><strong>Customize your resume for each job:</strong> Tailor your resume to the job you're applying for by highlighting the
             skills and experience that match the job description.</li>
 
         </ul>
@@ -272,7 +271,7 @@ include('includes/navbar.php')
         <div class="anim-sec-txt">
           <div>
             <h1>Create your professional Resume or CV with <span class="remove"><br></span><span>CV Builders</span></h1>
-            <p>Follow step-by-step professional guidance to create <span class="remove"><br></span> a polished cv or resume in minutes.</p>
+            <p>Follow the simple steps and create a professional and <span class="remove"><br></span> polished cv or resume in minutes.</p>
 
             <?php
             if (@$_SESSION["loginemail"]) {

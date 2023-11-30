@@ -5,7 +5,7 @@
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Get connected with us on social networks:</p>
+        <p>Our social media handles:</p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -22,7 +22,7 @@
 
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-          <h6 class="text-uppercase fw-bold">CV Making</h6>
+          <h6 class="text-uppercase fw-bold">CV Builders</h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:#C21010 ; height: 5px" />
           <p>
             Create your CV in some simple steps. Just write your information, choose your favourite template and download it in pdf.

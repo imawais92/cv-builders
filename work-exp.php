@@ -117,9 +117,9 @@ include("./includes/navbar.php")
               ?>
                   <div class="py-3 mt-4" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
                     <div class="my-3 position-relative">
-                      <h3 class="headinf">Working Experience</h3>
+                      <h5 class="headinf">Working Experience</h5>
                       <a href="work-exp.php?del=<?= $work_det['work_exp_id'] ?>">
-                        <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; color:red"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                        <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer; color:red"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                       </a>
                     </div>
                     <div class="form-info">
@@ -198,7 +198,7 @@ include("./includes/navbar.php")
                 ?>
                 <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">Working Experience</h3>
+                    <h5 class="headinf">Working Experience</h5>
                   </div>
                   <div class="form-info">
 
@@ -297,8 +297,8 @@ include("./includes/navbar.php")
                   newel.id = 'workid_' + wid;
                   newel.innerHTML = `<div class="py-3 mt-4" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">Working Experience</h3>
-                    <h4 onclick="remove_workexp('#workid_${wid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                    <h5 class="headinf">Working Experience</h5>
+                    <h5 onclick="remove_workexp('#workid_${wid}')" class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                   </div>
                   <div class="form-info">
                     <div id="add_work">
@@ -367,9 +367,9 @@ include("./includes/navbar.php")
               <h3>TIPS</h3>
               <div class="text mt-2">
                 <ul>
-                  <li>Be Honest: Provide accurate and truthful information about your work experience. Avoid exaggeration or misrepresentation as it can be detrimental to your professional reputation.</li>
-                  <li>Use Keywords: Incorporate industry-specific keywords and phrases throughout your work experience section to align your resume with the job description and optimize it for applicant tracking systems (ATS).</li>
-                  <li>Reverse Chronological Order: Start with your most recent or current position and work backward chronologically. This format is the most common and helps employers quickly see your recent experience.</li>
+                  <li><strong>Be Honest:</strong> Provide accurate and truthful information about your work experience. Avoid exaggeration or misrepresentation as it can be detrimental to your professional reputation.</li>
+                  <li><strong>Use Keywords:</strong> Incorporate industry-specific keywords and phrases throughout your work experience section to align your resume with the job description and optimize it for applicant tracking systems (ATS).</li>
+                  <li><strong>Reverse Chronological Order:</strong> Start with your most recent or current position and work backward chronologically. This format is the most common and helps employers quickly see your recent experience.</li>
                 </ul>
               </div>
             </div>
@@ -391,7 +391,7 @@ include("./includes/navbar.php")
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Get connected with us on social networks:</p>
+        <p>Our social media handles:</p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>

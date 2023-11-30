@@ -55,7 +55,7 @@ if (isset($_REQUEST['submit'])) {
         <div class="sign-input">
           <div class="sign-txt">
             <h4 class="form-heading">Sign in</h4>
-            <h3>If you Don't have an account register</h3>
+            <h3>If you Don't have an account</h3>
             <h3>You Can <a href="./sign_up.php">Register here !</a></h3>
           </div>
           <!-- ==========form-start=========== -->
@@ -82,7 +82,7 @@ if (isset($_REQUEST['submit'])) {
                   <input class="checkbox" type="checkbox" name="" id=""> <span>Rememebr me</span>
                   <!-- <a href="./forgot_Password.php">Forgot Password ?</a> -->
                 </div>
-                <button name="submit" type="submit" class="btn btn-primary">Login</button>
+                <button name="submit" type="submit" class="btn btn-primary">Sign In</button>
               </form>
             </div>
           </div>

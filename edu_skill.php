@@ -83,8 +83,8 @@ if (isset($_POST['submit'])) {
 }
 
 
-$checkedu = mysqli_query($conn, "SELECT * FROM education WHERE user_id = '" . $_SESSION['user_id'] . "' ");
-$checkskill = mysqli_query($conn, "SELECT * FROM skills WHERE user_id = '" . $_SESSION['user_id'] . "' ");
+@$checkedu = mysqli_query($conn, "SELECT * FROM education WHERE user_id = '" . $_SESSION['user_id'] . "' ");
+@$checkskill = mysqli_query($conn, "SELECT * FROM skills WHERE user_id = '" . $_SESSION['user_id'] . "' ");
 if (mysqli_num_rows($checkedu) or mysqli_num_rows($checkskill)  >=  1) {
   $getdata = true;
   $buttontext = "Update";
@@ -163,9 +163,9 @@ include("./includes/navbar.php");
                     <!-- ================user-Education-form-Start==================== -->
                     <div class=" py-2 mt-3" id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                       <div class="my-3 position-relative">
-                        <h3 class="headinf">Education</h3>
+                        <h5 class="headinf">Education</h5>
                         <a href="edu_skill.php?del=<?= $dta['edu_id'] ?>">
-                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                          <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                         </a>
                       </div>
                       <div class="container">
@@ -249,7 +249,7 @@ include("./includes/navbar.php");
                   <!-- ================user-Education-form-Start==================== -->
                   <div class=" py-2 mt-3" id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
-                      <h3 class="headinf">Education</h3>
+                      <h5 class="headinf">Education</h5>
                     </div>
                     <div class="container">
                       <div class="row">
@@ -295,7 +295,7 @@ include("./includes/navbar.php");
                           <div class="input-field d-flex position-relative ">
                             <div>
                               <label class="date-lable">End Date</label>
-                              <input style="width: 100%;" name="edu_end_date[]" id="edate" class="hide" type="month" value="<?= $dta['deg_end_date'] ?>">
+                              <input style="width: 100%;" name="edu_end_date[]" id="edate" class="hide" type="month">
                             </div>
                             <div>
                               <label class="date-lable ">Present</label>
@@ -351,8 +351,8 @@ include("./includes/navbar.php");
                     newdivs.innerHTML = `
                         <div class=" py-2 mt-3 id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
-                      <h3 class="headinf">Education</h3>
-                      <h4  onclick="removeById('#education_table_id_${id}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                      <h5 class="headinf">Education</h5>
+                      <h5  onclick="removeById('#education_table_id_${id}')" class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                     </div>
                     <div class="row">
           <div class="col-md-6">
@@ -432,9 +432,9 @@ include("./includes/navbar.php");
                     <div style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px; margin-top:2rem">
                       <div class="personal-info-form  py-3 ">
                         <div class="my-3 position-relative">
-                          <h3 class="headinf">Skill</h3>
+                          <h5 class="headinf">Skill</h5>
                           <a href="edu_skill.php?delete=<?= $row['skill_id'] ?>">
-                            <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                            <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                           </a>
                         </div>
                       </div>
@@ -473,7 +473,7 @@ include("./includes/navbar.php");
                   <div style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px; margin-top:5rem">
                     <div class="personal-info-form  py-3 ">
                       <div class="my-3 position-relative">
-                        <h3 class="headinf">Skill</h3>
+                        <h5 class="headinf">Skill</h5>
                       </div>
                     </div>
                     <!-- ==================Skill-section-Start========================== -->
@@ -535,8 +535,8 @@ include("./includes/navbar.php");
                     skill_div.innerHTML = `                <div style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px; margin-top:1rem">
                     <div class="personal-info-form  py-3 ">
                       <div class="my-3 position-relative">
-                        <h3 class="headinf">Skill</h3>
-                        <h4  onclick="removeskillById('#skill_id_${sid}')" class="position-absolute" style="right: 1.5rem; top:-10px; cursor:pointer;"><i  class="fa-solid fa-x"></i></h4>
+                        <h5 class="headinf">Skill</h5>
+                        <h54  onclick="removeskillById('#skill_id_${sid}')" class="position-absolute" style="right: 1.5rem; top:-8px; cursor:pointer;"><i  class="fa-solid fa-x"></i></h54>
                       </div>
                     </div>
                     <!-- ==================Skill-section-Start========================== -->
@@ -587,15 +587,15 @@ include("./includes/navbar.php");
               <h3>TIPS</h3>
               <div class="text mt-2">
                 <ul>
-                  <li>Order: Start with your most recent or highest level of education and work backward chronologically.</li>
-                  <li>Format: Include the name of the institution, degree or qualification earned, field of study, and the dates
+                  <li><strong>Order:</strong> Start with your most recent or highest level of education and work backward chronologically.</li>
+                  <li><strong>Format:</strong> Include the name of the institution, degree or qualification earned, field of study, and the dates
                     of attendance or graduation.</li>
-                  <li>Relevant Information: Highlight any honors, awards, or notable achievements during your academic journey.</li>
-                  <li>Relevant Skills: Tailor your skills section to include those directly related to the job you're applying for. This could include technical skills, software proficiency, languages spoken, or specific industry knowledge.</li>
+                  <li><strong>Relevant Information: </strong>Highlight any honors, awards, or notable achievements during your academic journey.</li>
+                  <li><strong>Relevant Skills: </strong>Tailor your skills section to include those directly related to the job you're applying for. This could include technical skills, software proficiency, languages spoken, or specific industry knowledge.</li>
 
-                  <li>Categorize: Organize your skills into categories (e.g., technical skills, interpersonal skills) to provide clarity and ease of reading.</li>
-                  <li>Highlight Strengths: Place the most critical and relevant skills at the beginning of each category to grab the reader's attention.</li>
-                  <li>Use Keywords: Incorporate keywords from the job description to align your skills with the employer's requirements and increase the likelihood of your resume being selected by applicant tracking systems (ATS).</li>
+                  <li><strong>Categorize:</strong> Organize your skills into categories (e.g., technical skills, interpersonal skills) to provide clarity and ease of reading.</li>
+                  <li><strong>Highlight Strengths:</strong> Place the most critical and relevant skills at the beginning of each category to grab the reader's attention.</li>
+                  <li><strong>Use Keywords:</strong> Incorporate keywords from the job description to align your skills with the employer's requirements and increase the likelihood of your resume being selected by applicant tracking systems (ATS).</li>
                 </ul>
               </div>
             </div>
@@ -616,7 +616,7 @@ include("./includes/navbar.php");
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Get connected with us on social networks:</p>
+        <p>Our social media handles:</p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>

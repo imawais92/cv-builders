@@ -199,9 +199,9 @@ include("includes/navbar.php");
                   <input name="hoby_id" type="hidden" value="<?= $dta['hobbies_id'] ?>">
                   <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
-                      <h3 class="headinf">Hobbies</h3>
+                      <h5 class="headinf">Hobby</h5>
                       <a href="hob_lan_ref.php?delh=<?= $dta['hobbies_id'] ?>">
-                        <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                        <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                       </a>
                     </div>
                     <div class="container-fluid">
@@ -226,7 +226,7 @@ include("includes/navbar.php");
                 <!-- ==================hobby-section-Start========================== -->
                 <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">Hobbies</h3>
+                    <h5 class="headinf">Hobbies</h5>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -273,8 +273,8 @@ include("includes/navbar.php");
                   newhob.innerHTML = `
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">Hobbies</h3>
-                    <h4 onclick="removehob('#hobyrem_${hid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                    <h5 class="headinf">Hobbies</h5>
+                    <h5 onclick="removehob('#hobyrem_${hid}')" class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -301,9 +301,9 @@ include("includes/navbar.php");
                     <input type="hidden" name="lan_ids" id="" value="<?= $data['lang_id'] ?>">
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                       <div class="my-3 position-relative">
-                        <h3 class="headinf">Languages</h3>
+                        <h5 class="headinf">Language</h5>
                         <a href="hob_lan_ref.php?dellan=<?= $data['lang_id'] ?>">
-                          <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; "><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                          <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer; "><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                         </a>
                       </div>
                       <div class="container-fluid">
@@ -325,7 +325,7 @@ include("includes/navbar.php");
                   ?>
                   <div class="py-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
-                      <h3 class="headinf">Languages</h3>
+                      <h5 class="headinf">Languages</h5>
                     </div>
                     <div class="container-fluid">
                       <div class="row">
@@ -371,8 +371,8 @@ include("includes/navbar.php");
                   newlan.innerHTML = `
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">Languages</h3>
-                    <h4 onclick="removehob('#lanrem_${lid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                    <h5 class="headinf">Languages</h5>
+                    <h5 onclick="removehob('#lanrem_${lid}')" class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -396,10 +396,10 @@ include("includes/navbar.php");
               $count = mysqli_num_rows($checkref);
               if ($count == 0) {
               ?>
-                <input type="hidden" name="refe_id" id="" value="<?= $row['ref_id'] ?>">
+                <input type="hidden" name="refe_id" id="" value="<?= @$row['ref_id'] ?>">
                 <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">References</h3>
+                    <h5 class="headinf">Reference</h5>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -421,9 +421,9 @@ include("includes/navbar.php");
                   <input type="hidden" name="refe_id" id="" value="<?= $row['ref_id'] ?>">
                   <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                     <div class="my-3 position-relative">
-                      <h3 class="headinf">References</h3>
+                      <h5 class="headinf">Reference</h5>
                       <a href="hob_lan_ref.php?delref=<?= $row['ref_id'] ?>">
-                        <h4 class="position-absolute" style="right: 20px; top:-10px; cursor: pointer; "><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                        <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer; "><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                       </a>
                     </div>
                     <div class="container-fluid">
@@ -444,7 +444,7 @@ include("includes/navbar.php");
                 ?>
                 <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">References</h3>
+                    <h5 class="headinf">Reference</h5>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -489,8 +489,8 @@ include("includes/navbar.php");
                   newref.innerHTML = `
                     <div class="py-3 mt-3" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                   <div class="my-3 position-relative">
-                    <h3 class="headinf">References</h3>
-                    <h4 onclick="removehob('#refrem_${rid}')" class="position-absolute" style="right: 20px; top:-10px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
+                    <h5 class="headinf">References</h3>
+                    <h5 onclick="removehob('#refrem_${rid}')" class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h4>
                   </div>
                   <div class="container-fluid">
                     <div class="row">
@@ -523,16 +523,16 @@ include("includes/navbar.php");
               <h3>TIPS</h3>
               <div class="text mt-2">
                 <ul>
-                  <li>Select Relevant Hobbies: Choose hobbies that align with the skills or qualities valued
+                  <li><strong>Select Relevant Hobbies:</strong> Choose hobbies that align with the skills or qualities valued
                     in the job you're applying for. For example, if the position requires teamwork, you can
                     mention team sports or collaborative hobbies.</li>
-                  <li>Variety: Include a diverse range of hobbies to present a well-rounded personality. This can showcase
+                  <li><strong>Variety:</strong> Include a diverse range of hobbies to present a well-rounded personality. This can showcase
                     your ability to balance work and personal interests effectively.</li>
-                  <li>Showcase Transferable Skills: Highlight hobbies that demonstrate transferable skills such as
+                  <li><strong>Showcase Transferable Skills:</strong> Highlight hobbies that demonstrate transferable skills such as
                     leadership, creativity, problem-solving, or organization.</li>
-                  <li>Relevance: Highlight languages that are relevant to the job or industry you're applying for.
+                  <li><strong>Relevance:</strong> Highlight languages that are relevant to the job or industry you're applying for.
                     If you're bilingual or multilingual, emphasize your language skills as they can be valuable assets.</li>
-                  <li>Include Upon Request: Instead of providing specific references on your CV or resume, simply state "References
+                  <li><strong>Include Upon Request:</strong> Instead of providing specific references on your CV or resume, simply state "References
                     available upon request." This keeps your document concise and allows you to provide references when requested by
                     the employer.</li>
                 </ul>
@@ -558,7 +558,7 @@ include("includes/navbar.php");
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Get connected with us on social networks:</p>
+        <p>Our social media handles:</p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>

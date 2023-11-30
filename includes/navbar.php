@@ -40,14 +40,14 @@ $translations = json_decode(file_get_contents($langFile), true);
               if (@$_SESSION["loginemail"]) {
               ?>
                 <a href="./personal_info.php">Create cv</a>
-                <a href="./templates.php">Show cv templete</a>
+                <a href="./templates.php">Show cv templates</a>
                 <a href="./guide.php">How to create CV</a>
               <?php
               } else {
 
               ?>
                 <a href="./sign_up.php">Create cv</a>
-                <a href="./sign_up.php">Show cv templete</a>
+                <a href="./sign_up.php">Show cv templates</a>
                 <a href="./guide.php">How to create CV</a>
 
               <?php
@@ -72,7 +72,7 @@ $translations = json_decode(file_get_contents($langFile), true);
               if (@$_SESSION["loginemail"]) {
               ?>
                 <a href="./personal_info.php">Create Resume</a>
-                <a href="./templates.php">Show resume templete</a>
+                <a href="./templates.php">Show resume templates</a>
                 <a href="./guide.php">How to create resume</a>
 
 
@@ -82,7 +82,7 @@ $translations = json_decode(file_get_contents($langFile), true);
               ?>
 
                 <a href="./sign_up.php">Create Resume</a>
-                <a href="./sign_up.php">Show resume templete</a>
+                <a href="./sign_up.php">Show resume templates</a>
                 <a href="./guide.php">How to create resume</a>
 
               <?php
@@ -119,7 +119,7 @@ $translations = json_decode(file_get_contents($langFile), true);
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./personal_info.php">Create</a></li>
-              <li><a class="dropdown-item" href="./templates.php">Templete</a></li>
+              <li><a class="dropdown-item" href="./templates.php">Templates</a></li>
               <li><a class="dropdown-item" href="./guide.php">How to create CV</a></li>
             </ul>
           <?php
@@ -128,7 +128,7 @@ $translations = json_decode(file_get_contents($langFile), true);
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./sign_up.php">Create</a></li>
-              <li><a class="dropdown-item" href="./sign_up.php">Templete</a></li>
+              <li><a class="dropdown-item" href="./sign_up.php">Templates</a></li>
               <li><a class="dropdown-item" href="./guide.php">How to create CV</a></li>
             </ul>
           <?php
@@ -144,7 +144,7 @@ $translations = json_decode(file_get_contents($langFile), true);
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./personal_info.php">Create</a></li>
-              <li><a class="dropdown-item" href="./templates.php">Templete</a></li>
+              <li><a class="dropdown-item" href="./templates.php">Templates</a></li>
               <li><a class="dropdown-item" href="./guide.php">How to create Resume</a></li>
             </ul>
           <?php
@@ -153,7 +153,7 @@ $translations = json_decode(file_get_contents($langFile), true);
           ?>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./sign_up.php">Create</a></li>
-              <li><a class="dropdown-item" href="./sign_up.php">Templete</a></li>
+              <li><a class="dropdown-item" href="./sign_up.php">Templates</a></li>
               <li><a class="dropdown-item" href="./guide.php">How to create Resume</a></li>
             </ul>
 

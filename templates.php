@@ -23,8 +23,8 @@ $r = mysqli_query($conn, $q);
     <div class="heading">
       <h1><span style="color:#C21010; font-weight: 800;" href="" class="typewrite" data-period="2000" data-type='[ "CV", "Resume" ]'>
           <span class="wrap"></span>
-        </span> Templete</h1>
-      <h5>Select your favourite and premium CV or resume template, <br> create your template and download it easily </h5>
+        </span> Templates</h1>
+      <h5>Select your relevant template , create your <br> create your Cv or Resume easily </h5>
     </div>
   </div>
 </div>

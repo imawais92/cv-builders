@@ -2,7 +2,7 @@
 $title = "Information";
 include("./includes/db.php");
 
-if (!$_SESSION['user_id']) {
+if (@!$_SESSION['user_id']) {
   header("location: index.php");
 }
 
@@ -100,7 +100,7 @@ include("./includes/navbar.php");
         <div class="personal-info-form py-3 mt-5" style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px;">
           <div style="display:flex;  align-items: center; justify-content: space-between;">
             <div class="my-3 position-relative">
-              <h3 class="headinf">Personal Information</h3>
+              <h5 class="headinf">Personal Information</h5>
             </div>
 
           </div>
@@ -247,14 +247,14 @@ include("./includes/navbar.php");
     <div class="text mt-2">
       <ul>
         <li>Make sure your form has no spelling or any type of mistakes.</li>
-        <li>Full Name: Include your full legal name at the top of the document in a larger font size than the rest of the content.</li>
-        <li>Contact Information: Provide essential contact details such as your phone number, email address, and location (city and state or country).
+        <li><strong>Full Name: </strong> Include your full legal name at the top of the document in a larger font size than the rest of the content.</li>
+        <li><strong>Contact Information:</strong> Provide essential contact details such as your phone number, email address, and location (city and state or country).
           Avoid sharing unnecessary personal information like your marital status or social security number.</li>
-        <li>Professional Email Address: Use a simple and professional email address that incorporates your name,
+        <li><strong>Professional Email Address:</strong> Use a simple and professional email address that incorporates your name,
           such as firstname.lastname@email.com</li>
-        <li>Mailing Address: Unless specifically requested, it's generally not necessary to include your full mailing address. Providing your city
+        <li><strong>Mailing Address:</strong> Unless specifically requested, it's generally not necessary to include your full mailing address. Providing your city
           and state is usually sufficient.Lorem ipsum dolor sit amet consectetur, adipisicing Architecto, dolor.</li>
-        <li>Personal Website or Portfolio (optional): If you have a personal website or online portfolio showcasing your work, skills, or achievements, include a link to it.</li>
+        <li><strong>Personal Website or Portfolio (optional):</strong> If you have a personal website or online portfolio showcasing your work, skills, or achievements, include a link to it.</li>
       </ul>
     </div>
   </div>
@@ -272,7 +272,7 @@ include("./includes/navbar.php");
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Get connected with us on social networks:</p>
+        <p>Our social media handles:</p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>

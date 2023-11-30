@@ -35,13 +35,14 @@ if (isset($_REQUEST['submit'])) {
     } else {
       $passError = "Passwords not matched";
       $input_pass_eror = 'style="border-color:#C21010"';
+      $salert = '';
     }
   }
 }
 
 ?>
 <!-- ====alert=== -->
-<div style="position:absolute; top:20px; right:10px; background:#C21010; color:white; z-index:999;" class="toast <?= $salert ?>" role="alert" aria-live="assertive" aria-atomic="true">
+<div style="position:absolute; top:20px; right:10px; background:#C21010; color:white; z-index:999;" class="toast <?= @$salert ?>" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-body">
     <h6 class="p-0 m-0  d-flex align-items-center"><i class="fa-solid fa-circle-check me-2" style="color: green; font-size:25px"></i> Sign Up Successfully</h6>
   </div>
@@ -61,7 +62,7 @@ if (isset($_REQUEST['submit'])) {
         <div class="signup-input">
           <div class="sign-txt signup-txt">
             <h4 class="signup-heading">Sign Up</h4>
-            <h3>If you have an account register</h3>
+            <h3>If you have an account</h3>
             <h3>You Can <a href="./sign_in.php">login here !</a></h3>
           </div>
           <!-- ==========form-start=========== -->
@@ -102,7 +103,7 @@ if (isset($_REQUEST['submit'])) {
                     <div style="color:#C21010; letter-spacing:0.3px " class="form-text"><b><?php echo  @$passError ?></b></div>
                   </div>
                 </div>
-                <button name="submit" type="submit" class=" mt-3 btn btn-primary">Register</button>
+                <button name="submit" type="submit" class=" mt-3 btn btn-primary">Sign Up</button>
               </form>
             </div>
           </div>
