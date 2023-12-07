@@ -7,6 +7,10 @@ if (!$_SESSION['user_id']) {
 
 
 $dat = json_encode($_SESSION['temdata']);
+if (!$_SESSION['temdata']) {
+  header("location: index.php");
+}
+
 $data = json_decode($dat);
 if (isset($_GET['pre'])) {
   $tem_id = urldecode($_GET['pre']);
