@@ -362,8 +362,7 @@
                 <div class="details"><span><?= ucwords($data->education[$i]->dagree) ?></span> <span style="float: right;"><?= date("M Y", strtotime($data->education[$i]->deg_st_date)) ?> - <?= $newFormat ?></span>
                 </div>
                 <div class="highlights"><span><?= ucwords($data->education[$i]->instutute_name) ?></span></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet quam rhoncus, egestas dui
-                  eget, malesuada justo. Ut aliquam augue.</p>
+                <p><?= ucfirst($data->education[$i]->field) ?></p>
               </div>
             <?php
             }

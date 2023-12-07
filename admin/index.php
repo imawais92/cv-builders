@@ -2,12 +2,19 @@
 $title = "Add";
 include('../includes/header.php');
 include('../includes/db.php');
-if ($_SESSION['loginadmin']) {
+if (@$_SESSION['loginadmin']) {
 } else {
   header("Location: login.php");
 }
 
-
+if (@$_REQUEST['del']) {
+  $delid = $_REQUEST['del'];
+  $q = "DELETE FROM `templetes` WHERE templete_id = $delid";
+  $res = mysqli_query($conn, $q);
+  if ($res) {
+    header("location: index.php");
+  }
+}
 
 if (isset($_POST['submit'])) {
   $templete_name = $_POST['templete_name'];
@@ -31,6 +38,9 @@ if (isset($_POST['submit'])) {
 
   $sql = "INSERT INTO `templetes` ( `templete_name`, `templete_img`, `templete_file`) VALUES ( '$templete_name', '$templete_img', '$templete_file')";
   $result = mysqli_query($conn, $sql);
+  if ($result) {
+    header("location:index.php");
+  }
 }
 
 $sql_cv = "SELECT * FROM `templetes`";
@@ -87,6 +97,7 @@ $result_cv = mysqli_query($conn, $sql_cv);
             <th scope="col">Templete Name </th>
             <th scope="col">Templte Image</th>
             <th scope="col">Templte File</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -101,6 +112,7 @@ $result_cv = mysqli_query($conn, $sql_cv);
               <td><?= $cv_tem['templete_name'] ?></td>
               <td> <img style="height: 70px;" src="../templates/tem-img/<?= $cv_tem['templete_img'] ?>" alt="tem_img"></td>
               <td><?= $cv_tem['templete_file'] ?></td>
+              <td><a href="?del=<?= $cv_tem['templete_id'] ?>" class="btn btn-danger">DELETE</a></td>
             </tr>
           <?php } ?>
         </tbody>
