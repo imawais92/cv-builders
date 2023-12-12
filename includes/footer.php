@@ -5,7 +5,7 @@
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Our social media handles:</p>
+        <p><?=  $translations['Our_Social_Handles']?></p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -22,18 +22,18 @@
 
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-          <h6 class="text-uppercase fw-bold">CV Builders</h6>
+          <h6 class="text-uppercase fw-bold"><?=  $translations['CV BUILDERS']?></h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:#C21010 ; height: 5px" />
           <p>
-            Create your CV in some simple steps. Just write your information, choose your favourite template and download it in pdf.
+          <?=  $translations['footer_title1']?>
           </p>
         </div>
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold">Products</h6>
+          <h6 class="text-uppercase fw-bold"><?=  $translations['PRODUCTS']?></h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:#C21010 ; height: 5px" />
           <p>
-            <a href="#!" class="text-white">CV Builders</a>
+            <a href="#!" class="text-white"><?=  $translations['Cv_Builders']?></a>
           </p>
           <p>
             <a href="#!" class="text-white">..............</a>
@@ -47,10 +47,10 @@
         </div>
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold">Useful links</h6>
+          <h6 class="text-uppercase fw-bold"><?=  $translations['USEFUL_LINKS']?></h6>
           <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; background-color:#C21010 ; height: 5px" />
           <p>
-            <a href="./contact.php" class="text-white">Contact Us</a>
+            <a href="./contact.php" class="text-white"><?=  $translations['Contact_us']?></a>
           </p>
           <p>
             <?php
@@ -61,13 +61,13 @@
             <?php
             } else {
             ?>
-              <a href="./sign_up.php" class="text-white">Settings</a>
+              <a href="./sign_up.php" class="text-white"><?=  $translations['Settings']?></a>
             <?php
 
             } ?>
           </p>
           <p>
-            <a href="./privacypolicy.php" class="text-white">Privacy & Policy</a>
+            <a href="./privacypolicy.php" class="text-white"><?=  $translations['Privacy_&_Policy']?></a>
           </p>
 
         </div>
@@ -83,7 +83,7 @@
     </div>
   </section>
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-    © 2023 Copyright:The Product By
+  <?=  $translations['copyright']?>
     <a class="text-white" href="https://thewebconcept.com/" target="_blank">thewebconcept.com</a>
   </div>
 </footer>
