@@ -1,4 +1,181 @@
 {
-  "welcome": "¡Bienvenido",
-  "about": "Acerca"
-}
+  "create": "crear",
+  "templates": "plantillas",
+  "How_to_create ": "Cómo crear un currículum vitae",
+  "blog ": "Cómo crear un currículum vitae",
+  "Contact_Us": "Cómo crear un currículum vitae",
+  "Privacy_&_Policy ": "Cómo crear un currículum vitae",
+  "We_deliver_a_professional": "Entregamos un profesional | Currículum vitae gratis | CV gratis",
+  "heading2": "Crea tu currículum vitae con diferentes tipos de plantillas, combinaciones de colores y personalización",
+  "btn_show_templates": "Mostrar plantillas",
+  "btn_Create_here": "Crear aquí",
+  "heading_center": "Crea un currículum vitae profesional con 100+",
+  "heading_center1": "plantillas y personaliza los",
+  "heading_center2": "colores y fuentes",
+  "Easy_to_Download": "Fácil de descargar",
+  "Best_Premium_template": "Mejor plantilla premium",
+  "Fully_Customization": "Total personalización",
+  "Select_your_favourite_template_and_create_your ": "Selecciona tu plantilla favorita y crea tu",
+  
+  "professional_CV_or_Resume.": "Currículum vitae o resumen profesional.",
+  "Our_Famous_Recommendation": "Nuestra famosa recomendación",
+  "35k+": "35k+",
+  "Downloads": "Descargas",
+  "20k+": "20k+",
+  "Users": "Usuarios",
+  "100k+": "100k+",
+  "Recommendation_to_create_a_professional": "Recomendación para crear un profesional",
+  "Resume_or_CV": "Currículum vitae o CV",
+  "contant1": "Utiliza plantillas premium de forma gratuita con una gran cantidad de esquemas de colores",
+  "contant2": "Revisa cuidadosamente: Verifica tu currículum en busca de errores de ortografía y gramática, y haz que alguien más lo revise también.",
+  "contant3": "Utiliza palabras clave: Muchas empresas utilizan software para escanear currículums en busca de palabras clave. Asegúrate de incluir palabras clave relevantes de la descripción del trabajo.",
+  "contant4": "Sé honesto: No exageres tus calificaciones o experiencia, y prepárate para respaldar cualquier afirmación que hagas en tu currículum.",
+  "contant5": "Facilita el contacto contigo: Incluye tu nombre, número de teléfono, dirección de correo electrónico y perfil de LinkedIn (si lo tienes) en la parte superior de tu currículum.",
+  "contant6": "Mantenlo conciso y bien organizado: Tu currículum debe ser fácil de leer y no debe exceder las dos páginas. Usa viñetas y encabezados claros para dividir el texto.",
+  "contant7": "Utiliza un formato profesional: Elige una fuente limpia y moderna, y adhiérete a un formato profesional. Utiliza una plantilla si no estás seguro por dónde empezar.",
+  "contant8": "Personaliza tu currículum para cada trabajo: Adapta tu currículum al trabajo para el que estás aplicando resaltando las habilidades y experiencia que coincidan con la descripción del trabajo.",
+  "Create_your_professional_Resume_or_CV_with": "Crea tu currículum vitae profesional con",
+  "CV_Builders": "Constructores de CV",
+  "Follow the simple steps and create a professional and polished cv or resume in minutes.": "Sigue los pasos sencillos y crea un currículum vitae o resumen profesional y pulido en minutos.",
+  "Create_your_Cv": "Crea tu CV",
+  "Our_Social_Handles:": "Nuestras redes sociales:",
+  "CV BUILDERS": "CONSTRUCTORES DE CV",
+  "footer_title1": "Crea tu CV en algunos pasos sencillos. Solo escribe tu información, elige tu plantilla favorita y descárgala en formato PDF.",
+
+  
+  "PRODUCTS": "PRODUCTOS",
+  "Cv_Builders": "Constructores de CV",
+  "USEFUL_LINKS": "ENLACES ÚTILES",
+  "Contact_us": "Contáctanos",
+  "Settings": "Configuración",
+  "Privacy_&_Policy": "Privacidad y política",
+  "CONTACT": "CONTACTO",
+  "Address": "Faisalabad Punjab Pakistán",
+  "email": "info@cvbuilders.com",
+  "phone": "+92 3196631466",
+  "whatsapp": "+92 3196631466",
+
+  "copyright": "© 2023 Derechos de autor: El producto de thewebconcept.com",
+  "Sign_in":"Iniciar sesión",
+  "Sign_indes":"Si no tienes una cuenta",
+  "Sign_indes1":"¡Puedes registrarte aquí!",
+  "Sign_in_login":"Correo electrónico",
+  "Sign_in_login1":"Contraseña",
+  "Rememebr_me":"Recuérdame",
+
+  "Sign Up":"Registrarse",
+  "Sign_Up1":"Si ya tienes una cuenta",
+  "Sign_Up2":"Puedes",
+  "Sign_Up3":"Nombre completo",
+  "Sign_Up4":"Correo electrónico",
+  "Sign_Up5":"Número de teléfono",
+  "Sign_Up6":"Contraseña",
+  "Sign_Up7":"Confirmar contraseña",
+
+
+    "per_name1": "Nombre",
+    "per_name2": "Apellido",
+    "per_name3": "Nombre del Padre",
+    "per_name4": "Género",
+    "per_name5": "Fecha de Nacimiento",
+    "per_name6": "Profesión (Habilidad)",
+    "per_name7": "Sitio Web",
+    "per_name8": "Número Personal",
+    "per_name9": "Número de Teléfono",
+    "per_name10": "Correo Electrónico",
+    "per_name11": "País",
+    "per_name12": "Ciudad",
+    "per_name13": "Acerca de",
+    "per_name14": "Descripción en menos de 180 caracteres",
+  
+    
+      "per_name15": "Asegúrate de que tu formulario no tenga errores ortográficos ni ningún tipo de errores.",
+      "per_name16": "Nombre Completo: Incluye tu nombre completo legal en la parte superior del documento con un tamaño de fuente más grande que el resto del contenido.",
+      "per_name17": "Información de Contacto: Proporciona detalles de contacto esenciales como tu número de teléfono, dirección de correo electrónico y ubicación (ciudad y estado o país). Evita compartir información personal innecesaria como tu estado civil o número de seguro social.",
+      "per_name18": "Correo Electrónico Profesional: Utiliza una dirección de correo electrónico simple y profesional que incluya tu nombre, como nombre.apellido@email.com",
+      "per_name19": "Dirección Postal: A menos que se solicite específicamente, generalmente no es necesario incluir tu dirección postal completa. Proporcionar tu ciudad y estado suele ser suficiente. Lorem ipsum dolor sit amet consectetur, adipisicing Architecto, dolor.",
+      "per_name20": "Sitio Web Personal o Portafolio (opcional): Si tienes un sitio web personal o un portafolio en línea que muestre tu trabajo, habilidades o logros, incluye un enlace.",
+    
+
+    
+    
+    "edu_name1": "Nombre de la Institución",
+    "edu_name2": "Título",
+    "edu_name3": "Calificación Total / CPA",
+    "edu_name4": "Calificación Obtenida / CPA",
+    "edu_name5": "Fecha de Inicio",
+    "edu_name6": "Fecha de Finalización",
+    "edu_name7": "Actualidad",
+    "edu_name8": "Detalles Educativos",
+    "edu_name9": "Ingrese detalles educativos en menos de 180 caracteres",
+    "edu_name10": "+ Agregar Educación",
+
+
+      "edu_name11": "Orden: Comienza con tu nivel educativo más reciente o más alto y retrocede cronológicamente.",
+      "edu_name12": "Formato: Incluye el nombre de la institución, el título o la calificación obtenida, el campo de estudio y las fechas de asistencia o graduación.",
+      "edu_name13": "Información Relevante: Destaca cualquier honor, premio o logro notable durante tu trayectoria académica.",
+      "edu_name14": "Habilidades Relevantes: Adapta tu sección de habilidades para incluir aquellas directamente relacionadas con el trabajo para el que estás aplicando. Esto podría incluir habilidades técnicas, habilidades interpersonales, idiomas hablados o conocimientos específicos de la industria.",
+      "edu_name15": "Categorización: Organiza tus habilidades en categorías (por ejemplo, habilidades técnicas, habilidades interpersonales) para proporcionar claridad y facilidad de lectura.",
+      "edu_name16": "Destaca Fortalezas: Coloca las habilidades más críticas y relevantes al principio de cada categoría para captar la atención del lector.",
+      "edu_name17": "Usa Palabras Clave: Incorpora palabras clave de la descripción del trabajo para alinear tus habilidades con los requisitos del empleador y aumentar la probabilidad de que tu currículum sea seleccionado por los sistemas de seguimiento de solicitantes (ATS).",
+    
+    
+
+  
+    "skill_name1": "Habilidad",
+    "skill_name2": "Nivel de Habilidad",
+    "skill_name3": "+ Agregar Habilidad",
+    "skill_name4": "Siguiente",
+  
+  
+    "workexp_name1": "Nombre de la Empresa",
+    "workexp_name2": "Cargo",
+    "workexp_name3": "Detalles Laborales",
+    "workexp_name4": "Ingrese detalles laborales en menos de 180 caracteres",
+    "workexp_name5": "+ Agregar Experiencia Laboral",
+
+
+      "workexp_name6": "Sé Honesto: Proporciona información precisa y veraz sobre tu experiencia laboral. Evita la exageración o la tergiversación, ya que puede ser perjudicial para tu reputación profesional.",
+      "workexp_name7": "Usa Palabras Clave: Incorpora palabras y frases específicas de la industria a lo largo de tu sección de experiencia laboral para alinear tu currículum con la descripción del trabajo y optimizarlo para los sistemas de seguimiento de solicitantes (ATS).",
+      "workexp_name8": "Orden Cronológico Inverso: Comienza con tu posición más reciente o actual y retrocede cronológicamente. Este formato es el más común y ayuda a los empleadores a ver rápidamente tu experiencia reciente.",
+
+  
+
+    "hobby": "Pasatiempo",
+    "hobby_1": "+ Agregar Pasatiempo",
+  
+    "Languages": "Idioma",
+    "Languages_1": "+ Agregar Idioma",
+  
+    "Reference": "Referencia",
+    "Reference_1": "+ Agregar Referencia",
+
+  "reference_tips": "Selecciona Pasatiempos Relevantes: Elige pasatiempos que se alineen con las habilidades o cualidades valoradas en el trabajo para el que estás aplicando. Por ejemplo, si el puesto requiere trabajo en equipo, puedes mencionar deportes en equipo o pasatiempos colaborativos.",
+  "reference_tips1": "Variedad: Incluye una variedad de pasatiempos para presentar una personalidad equilibrada. Esto puede mostrar tu capacidad para equilibrar el trabajo y los intereses personales de manera efectiva.",
+  "reference_tips2": "Destaca Habilidades Transferibles: Resalta pasatiempos que demuestren habilidades transferibles como liderazgo, creatividad, resolución de problemas u organización.",
+  "reference_tips3": "Relevancia: Destaca idiomas que sean relevantes para el trabajo o la industria para la que estás aplicando. Si eres bilingüe o multilingüe, enfatiza tus habilidades lingüísticas, ya que pueden ser activos valiosos.",
+  "reference_tips4": "Incluye Bajo Petición: En lugar de proporcionar referencias específicas en tu CV o currículum, simplemente indica 'Referencias disponibles bajo petición'. Esto mantiene tu documento conciso y te permite proporcionar referencias cuando el empleador lo solicite."
+
+
+
+
+
+
+
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

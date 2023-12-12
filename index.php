@@ -20,8 +20,8 @@ include('includes/navbar.php')
               <span class="wrap"></span>
             </span> For Free
           </h1>
-          <p>Create your CV with different types of templates , color <span class="heading_br"><br></span>
-            combinations and customization</p>
+          <p><?=  $translations['heroheading']?> <span class="heading_br"><br></span>
+          <?=  $translations['heroheading2']?></p>
           <div>
             <?php
 

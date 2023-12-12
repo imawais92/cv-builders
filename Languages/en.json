@@ -1,4 +1,164 @@
 {
-  "welcome": "Welcome",
-  "about": "About"
+  "create": "create",
+  "templates": "templates",
+  "How_to_create ": "How to create cv",
+  "blog ": "How to create cv",
+  "Contact_Us": "How to create cv",
+  "Privacy_&_Policy ": "How to create cv",
+  "We_deliver_a_professional": "We deliver a professional | Resume For Free | CV For Free",
+  "heading2": "Create your CV with different types of templates , color combinations and customization",
+  "btn_show_templates": "Show templates",
+  "btn_Create_here": "Create here",
+  "heading_center": "Create professional Resume or CV with 100+",
+  "heading_center1": "templates and customize the",
+  "heading_center2": "colors and fonts",
+  "Easy_to_Download": "Easy to Download",
+  "Best_Premium_template": "Best Premium template",
+  "Fully_Customization": "Fully Customization",
+  "Select_your_favourite_template_and_create_your ": "Select your favourite template and create your",
+  
+  "professional_CV_or_Resume.": "professional CV or Resume.",
+  "Our_Famous_Recommendation": "Our Famous Recommendation",
+  "35k+": "35k+",
+  "Downloads": "Downloads",
+  "20k+": "20k+",
+  "Users": "Users",
+  "100k+": "100k+",
+  "Recommendation_to_create_a_professional": "Recommendation to create a professional",
+  "Resume_or_CV": "Resume or CV",
+  "contant1": "Use premium templates for free with a lot of color schemes",
+  "contant2": "Proofread carefully: Check your resume for spelling and grammar errors, and have someone else review it as well.",
+  "contant3": "Use keywords: Many companies use software to scan resumes for keywords. Make sure to include relevant keywords from the job description.",
+  "contant4": "Be honest: Don't exaggerate your qualifications or experience, and be prepared to back up any claims you make on your resume.",
+  "contant5": "Make it easy to contact you: Include your name, phone number, email address, and LinkedIn profile (if you have one) at the top of your resume.",
+  "contant6": "Keep it concise and well-organized: Your resume should be easy to read and should not exceed two pages. Use bullet points and clear headings to break up the text",
+  "contant7": "Use a professional format: Choose a clean and modern font, and stick to a professional format. Use a template if you're unsure where to start.",
+  "contant8": "Customize your resume for each job: Tailor your resume to the job you're applying for by highlighting the skills and experience that match the job description.",
+  "Create_your_professional_Resume_or_CV_with": "Create your professional Resume or CV with",
+  "CV_Builders": "CV Builders",
+  "Follow the simple steps and create a professional and polished cv or resume in minutes.": "Follow the simple steps and create a professional and polished cv or resume in minutes.",
+  "Create_your_Cv": "Create your Cv",
+  "Our_Social_Handles:": "Our social media handles:",
+  "CV BUILDERS": "CV BUILDERS",
+  "footer_title1": "Create your CV in some simple steps. Just write your information, choose your favourite template and download it in pdf.",
+
+  
+  "PRODUCTS": "PRODUCTS",
+  "Cv_Builders": "CV Builders",
+  "USEFUL_LINKS": "USEFUL LINKS",
+  "Contact_us": "Contact Us",
+  "Settings": "Settings",
+  "Privacy_&_Policy": "Privacy & Policy",
+  "CONTACT": "CONTACT",
+  "Address": "Faisalabad Punjab Pakistan",
+  "email": " info@cvbuilders.com",
+  "phone": "  + 92 3196631466",
+  "whatsapp": "  + 92 3196631466",
+
+  "copyright": "© 2023 Copyright:The Product By thewebconcept.com",
+  "Sign_in":"Sign in",
+  "Sign_indes":"If you Don't have an account",
+  "Sign_indes1":"You Can Register here !",
+  "Sign_in_login":"Email",
+  "Sign_in_login1":"Password",
+  " Rememebr_me":"Rememebr me",
+
+  "Sign Up":"Sign_Up",
+  "Sign_Up1":"If you have an account",
+  "Sign_Up2":"You Can",
+  "Sign_Up3":"Full name",
+  "Sign_Up4":"Email",
+  "Sign_Up5":"Phone no",
+  "Sign_Up6":"Password",
+  "Sign_Up7":"Conform Password",
+
+
+  "per_name1":"First Name",
+  "per_name2":"Last Name",
+  "per_name3":"Father Name",
+  "per_name4":"Gender",
+  "per_name5":"DOB (date of birth)",
+  "per_name6":"Profession (skill)",
+  "per_name7":"Website",
+  "per_name8":"Personal No",
+  "per_name9":"Tel No",
+  "per_name10":"Email",
+  "per_name11":"Country",
+  "per_name12":"city",
+  "per_name13":"About",
+  "per_name14":"Enter yourself in less than 180 Letters",
+
+
+  "per_name15": "Make sure your form has no spelling or any type of mistakes.",
+  "per_name16": "Full Name: Include your full legal name at the top of the document in a larger font size than the rest of the content.",
+  "per_name17": "Contact Information: Provide essential contact details such as your phone number, email address, and location (city and state or country). Avoid sharing unnecessary personal information like your marital status or social security number.",
+  "per_name18": "Professional Email Address: Use a simple and professional email address that incorporates your name, such as firstname.lastname@email.com",
+  "per_name19": "Mailing Address: Unless specifically requested, it's generally not necessary to include your full mailing address. Providing your city and state is usually sufficient.Lorem ipsum dolor sit amet consectetur, adipisicing Architecto, dolor.",
+  "per_name20": "Personal Website or Portfolio (optional): If you have a personal website or online portfolio showcasing your work, skills, or achievements, include a link to it.",
+
+
+
+  "edu_name1":"Institute Name",
+  "edu_name2":"Degree",
+  "edu_name3":"Total Marks / CGPA ",
+  "edu_name4":"Obtains Marks / CGPA ",
+  "edu_name5":"Start Date ",
+  "edu_name6":"End Date ",
+  "edu_name7":"Present ",
+  "edu_name8":"Education Details",
+  "edu_name9":"Enter yout education details in less than 180 Letters",
+  "edu_name10":"+ Add Education",
+
+
+  "edu_name11": "Order: Start with your most recent or highest level of education and work backward chronologically.",
+  "edu_name12": "Format: Include the name of the institution, degree or qualification earned, field of study, and the dates of attendance or graduation.",
+  "edu_name13": "Relevant Information: Highlight any honors, awards, or notable achievements during your academic journey.",
+  "edu_name14": "Relevant Skills: Tailor your skills section to include those directly related to the job you're applying for. This could include technical skills, software proficiency, languages spoken, or specific industry knowledge.",
+  "edu_name15": "Categorize: Organize your skills into categories (e.g., technical skills, interpersonal skills) to provide clarity and ease of reading.",
+  "edu_name16": "Highlight Strengths: Place the most critical and relevant skills at the beginning of each category to grab the reader's attention.",
+  "edu_name17": "Use Keywords: Incorporate keywords from the job description to align your skills with the employer's requirements and increase the likelihood of your resume being selected by applicant tracking systems (ATS).",
+  
+
+  "skill_name1":"Skill",
+  "skill_name2":"skill level",
+  "skill_name3":"+ Add Skill",
+  "skill_name4":"Next",
+
+
+  "workexp_name1":"Company Name",
+  "workexp_name2":"Role",
+  "workexp_name3":"Working Details",
+  "workexp_name4":"Enter yout work details in less than 180 Letters",
+  "workexp_name5":"+ Add work Experience",
+
+
+
+  "workexp_name6": "Be Honest: Provide accurate and truthful information about your work experience. Avoid exaggeration or misrepresentation as it can be detrimental to your professional reputation.",
+  "workexp_name7": "Use Keywords: Incorporate industry-specific keywords and phrases throughout your work experience section to align your resume with the job description and optimize it for applicant tracking systems (ATS).",
+  "workexp_name8": "Reverse Chronological Order: Start with your most recent or current position and work backward chronologically. This format is the most common and helps employers quickly see your recent experience.",
+
+
+
+  "hobby": "Hobby",
+  "hobby_1": "+ Add Hobby",
+
+  "Languages": "Language",
+  "Languages_1": "+ Add Language",
+
+  "Reference": "Reference",
+  "Reference_1": "+ Add Reference",
+
+
+
+  "reference_tips": "Select Relevant Hobbies: Choose hobbies that align with the skills or qualities valued in the job you're applying for. For example, if the position requires teamwork, you can mention team sports or collaborative hobbies.",
+  "reference_tips1": "Variety: Include a diverse range of hobbies to present a well-rounded personality. This can showcase your ability to balance work and personal interests effectively",
+  "reference_tips2": "Showcase Transferable Skills: Highlight hobbies that demonstrate transferable skills such as leadership, creativity, problem-solving, or organization.",
+  "reference_tips3": "Relevance: Highlight languages that are relevant to the job or industry you're applying for. If you're bilingual or multilingual, emphasize your language skills as they can be valuable assets.",
+  "reference_tips4": "Include Upon Request: Instead of providing specific references on your CV or resume, simply state References available upon request. This keeps your document concise and allows you to provide references when requested by the employer."
+
+
+
+
+
+
 }
