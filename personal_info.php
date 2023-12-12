@@ -83,6 +83,7 @@ include("./includes/navbar.php");
         <a href="./hob_lan_ref.php">
           <p><span>4</span> <bdo class="form_progress_txt">Languages/Reference </bdo></p>
         </a>
+        
       </div>
     </div>
   </div>
@@ -100,7 +101,7 @@ include("./includes/navbar.php");
         <div class="personal-info-form py-3 mt-5" style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px;">
           <div style="display:flex;  align-items: center; justify-content: space-between;">
             <div class="my-3 position-relative">
-              <h5 class="headinf">Personal Information</h5>
+              <h5 class="headinf"><?=  $translations['per_info']?></h5>
             </div>
 
           </div>
@@ -117,11 +118,11 @@ include("./includes/navbar.php");
                   <div class="row">
                     <div class="col-lg-9 col-md-8 col-7 ">
                       <div class="input-field ">
-                        <label>First Name</label>
+                        <label><?=  $translations['per_name1']?></label>
                         <input id="fnamev" name="fname" class="w-100" type="text" value="<?= @$per_det['fname'] ?>">
                         <!-- ============Last Name============ -->
                         <div class="input-field">
-                          <label>Last Name</label>
+                          <label><?=  $translations['per_name2']?></label>
                           <input id="lnamev" name="lname" class="w-100" type="text" value="<?= @$per_det['lname'] ?>">
                         </div>
                       </div>
@@ -143,7 +144,7 @@ include("./includes/navbar.php");
                 <!-- ============Father Name============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>Father Name</label>
+                    <label><?=  $translations['per_name3']?></label>
                     <input name="father_name" type="text" required value="<?= @$per_det['father_name'] ?>">
                   </div>
                 </div>
@@ -162,49 +163,49 @@ include("./includes/navbar.php");
                 <!-- ============DOB============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>DOB <span>(date of birth)</span></label>
+                    <label><?=  $translations['per_name5']?></label>
                     <input name="dob" type="date" required value="<?= @$per_det['dob'] ?>">
                   </div>
                 </div>
                 <!-- ============Professional============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>Profession <span>(skill)</span></label>
+                    <label><?=  $translations['per_name6']?></label>
                     <input name="profession" type="text" required value="<?= @$per_det['profession'] ?>">
                   </div>
                 </div>
                 <!-- ============Website============ -->
                 <div class="col-md-12">
                   <div class="input-field">
-                    <label>Website</label>
+                    <label><?=  $translations['per_name7']?></label>
                     <input name="website" class="email_width" type=" email" value="<?= @$per_det['website'] ?>">
                   </div>
                 </div>
                 <!-- ============Contact no============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>Personal No</label>
+                    <label><?=  $translations['per_name8']?></label>
                     <input name="personal_no" type="number" required value="<?= @$per_det['per_no'] ?>">
                   </div>
                 </div>
                 <!-- ============Telephone No============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>Tel No</label>
+                    <label><?=  $translations['per_name9']?></label>
                     <input name="tel_no" type="number" value="<?= @$per_det['tel_no'] ?>">
                   </div>
                 </div>
                 <!-- ============Email============ -->
                 <div class="col-md-12">
                   <div class="input-field">
-                    <label>Email</label>
+                    <label><?=  $translations['per_name10']?></label>
                     <input name="email" class="email_width" type=" email" required value="<?= @$per_det['email'] ?>">
                   </div>
                 </div>
                 <!-- ============Country============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>Country</label>
+                    <label><?=  $translations['per_name11']?></label>
                     <select class="country form-control " name="country" id="country" value="<?= @$per_det['country'] ?>">
                       <?php
                       include_once('others/countrylist.php')
@@ -215,16 +216,16 @@ include("./includes/navbar.php");
                 <!-- ============Contact no============ -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>City</label>
+                    <label><?=  $translations['per_name12']?></label>
                     <input name="city" type="text" required value="<?= @$per_det['city'] ?>">
                   </div>
                 </div>
                 <!-- ============about us ============ -->
                 <div class="col-md-12">
                   <div class="input-field">
-                    <label>About</label>
+                    <label><?=  $translations['per_name13']?></label>
                     <textarea maxlength="180" name="about_us" class="email_width form-control" rows="4"><?= @$per_det['about_us'] ?> </textarea>
-                    <div class="form-text about-us-txt">Enter yourself in less than <b>180</b> Letters</div>
+                    <div class="form-text about-us-txt"><?=  $translations['per_name14']?></div>
                   </div>
                 </div>
               </div>
@@ -246,15 +247,11 @@ include("./includes/navbar.php");
     <h3>TIPS</h3>
     <div class="text mt-2">
       <ul>
-        <li>Make sure your form has no spelling or any type of mistakes.</li>
-        <li><strong>Full Name: </strong> Include your full legal name at the top of the document in a larger font size than the rest of the content.</li>
-        <li><strong>Contact Information:</strong> Provide essential contact details such as your phone number, email address, and location (city and state or country).
-          Avoid sharing unnecessary personal information like your marital status or social security number.</li>
-        <li><strong>Professional Email Address:</strong> Use a simple and professional email address that incorporates your name,
-          such as firstname.lastname@email.com</li>
-        <li><strong>Mailing Address:</strong> Unless specifically requested, it's generally not necessary to include your full mailing address. Providing your city
-          and state is usually sufficient.Lorem ipsum dolor sit amet consectetur, adipisicing Architecto, dolor.</li>
-        <li><strong>Personal Website or Portfolio (optional):</strong> If you have a personal website or online portfolio showcasing your work, skills, or achievements, include a link to it.</li>
+        <li><?=  $translations['per_name15']?></li>
+        <li><?=  $translations['per_name16']?></li>
+        <li><?=  $translations['per_name17']?></li>
+        <li><?=  $translations['per_name18']?></li>
+        <li><?=  $translations['per_name19']?></li>
       </ul>
     </div>
   </div>

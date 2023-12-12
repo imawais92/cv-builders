@@ -163,7 +163,7 @@ include("./includes/navbar.php");
                     <!-- ================user-Education-form-Start==================== -->
                     <div class=" py-2 mt-3" id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                       <div class="my-3 position-relative">
-                        <h5 class="headinf">Education</h5>
+                        <h5 class="headinf"><?=  $translations['education']?></h5>
                         <a href="edu_skill.php?del=<?= $dta['edu_id'] ?>">
                           <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                         </a>

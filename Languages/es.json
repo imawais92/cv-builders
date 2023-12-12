@@ -74,6 +74,8 @@
   "Sign_Up7":"Confirmar contraseña",
 
 
+
+  "per_info":"Informacion personal",
     "per_name1": "Nombre",
     "per_name2": "Apellido",
     "per_name3": "Nombre del Padre",
@@ -99,7 +101,7 @@
     
 
     
-    
+      "education":"Education",
     "edu_name1": "Nombre de la Institución",
     "edu_name2": "Título",
     "edu_name3": "Calificación Total / CPA",

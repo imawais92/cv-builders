@@ -73,7 +73,7 @@
   "Sign_Up6":"Password",
   "Sign_Up7":"Conform Password",
 
-
+"per_info":"Personal Information",
   "per_name1":"First Name",
   "per_name2":"Last Name",
   "per_name3":"Father Name",
@@ -98,7 +98,7 @@
   "per_name20": "Personal Website or Portfolio (optional): If you have a personal website or online portfolio showcasing your work, skills, or achievements, include a link to it.",
 
 
-
+"education":"Education",
   "edu_name1":"Institute Name",
   "edu_name2":"Degree",
   "edu_name3":"Total Marks / CGPA ",
