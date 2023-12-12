@@ -163,7 +163,7 @@ include("./includes/navbar.php");
                     <!-- ================user-Education-form-Start==================== -->
                     <div class=" py-2 mt-3" id="addeduction" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px;">
                       <div class="my-3 position-relative">
-                        <h5 class="headinf"><?=  $translations['education']?></h5>
+                        <h5 class="headinf"><?=  $translations['education_info']?></h5>
                         <a href="edu_skill.php?del=<?= $dta['edu_id'] ?>">
                           <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                         </a>
@@ -174,15 +174,15 @@ include("./includes/navbar.php");
                           <!-- ============institue Name============ -->
                           <div class="col-md-6">
                             <div class="input-field ">
-                              <label>Institute Name</label>
+                              <label><?=  $translations['edu_name1']?></label>
                               <input class="rem_value hide" name="institute_name[]" id="Institute" type="text" value="<?= $dta['instutute_name'] ?>">
                             </div>
                           </div>
                           <!-- ============Dagree Name============ -->
-                          <div class="col-md-6">
+                           <div class="col-md-6">
 
                             <div class="input-field ">
-                              <label>Degree</label>
+                              <label><?=  $translations['edu_name2']?></label>
                               <input name="degree[]" class="hide" id="Dagree" type="text" value="<?= $dta['dagree'] ?>">
                             </div>
                           </div>
@@ -190,21 +190,21 @@ include("./includes/navbar.php");
                           <div class="col-md-6">
 
                             <div class="input-field ">
-                              <label>Total Marks / CGPA</label>
+                              <label><?=  $translations['edu_name3']?></label>
                               <input name="total_marks[]" class="hide" id="tmarks" type="text" value="<?= $dta['total_marks'] ?>">
                             </div>
                           </div>
                           <!-- ============Obtains Marks============ -->
                           <div class="col-md-6">
                             <div class="input-field">
-                              <label>Obtains Marks / CGPA</label>
+                              <label><?=  $translations['edu_name4']?></label>
                               <input name="ob_marks[]" class="hide" id="obmarks" type="text" value="<?= $dta['obtain_marks'] ?>">
                             </div>
                           </div>
                           <!-- ============Start-Date============ -->
                           <div class="col-md-6">
                             <div class="input-field ">
-                              <label>Start Date</label>
+                              <label><?=  $translations['edu_name5']?></label>
                               <input name="edu_st_date[]" class="hide" id="sdate" type="month" value="<?= $dta['deg_st_date'] ?>">
                             </div>
                           </div>
@@ -212,7 +212,7 @@ include("./includes/navbar.php");
                           <div class="col-md-6 ">
                             <div class="input-field d-flex position-relative ">
                               <div>
-                                <label class="date-lable">End Date</label>
+                                <label class="date-lable"><?=  $translations['edu_name6']?></label>
                                 <input style="width: 100%;" name="edu_end_date[]" id="edate" class="hide" type="month" value="<?= $dta['deg_end_date'] ?>">
                               </div>
                               <?php
@@ -223,7 +223,7 @@ include("./includes/navbar.php");
                               }
                               ?>
                               <div>
-                                <label class="date-lable ">Present</label>
+                                <label class="date-lable "><?=  $translations['edu_name7']?></label>
                                 <input type="checkbox" <?= $checked ?> style="width: 100%;" id="checkbox<?= $a ?>" onchange="changecheck(this)">
                                 <input type="hidden" id="inputField<?= $a ?>" name="edu_present[]" value="<?= $dta['edu_present'] ?>" readonly>
                               </div>
@@ -232,9 +232,9 @@ include("./includes/navbar.php");
                           <!-- ============Feild============ -->
                           <div class="col-md-12">
                             <div class="input-field   ">
-                              <label>Education Details</label>
+                              <label><?=  $translations['edu_name8']?></label>
                               <textarea maxlength="180" name="edu_field[]" class="form-control" id="Feild" rows="4"> <?= $dta['field'] ?></textarea>
-                              <div class="form-text about-us-txt">Enter yout education details in less than <b>180</b> Letters</div>
+                              <div class="form-text about-us-txt"> <?=  $translations['edu_name9']?></div>
                             </div>
                           </div>
                         </div>
@@ -256,7 +256,7 @@ include("./includes/navbar.php");
                         <!-- ============institue Name============ -->
                         <div class="col-md-6">
                           <div class="input-field ">
-                            <label>Institute Name</label>
+                            <label><?=  $translations['edu_name1']?></label>
                             <input class="rem_value hide" name="institute_name[]" id="Institute" type="text">
                           </div>
                         </div>
@@ -264,7 +264,7 @@ include("./includes/navbar.php");
                         <div class="col-md-6">
 
                           <div class="input-field ">
-                            <label>Degree</label>
+                            <label><?=  $translations['edu_name2']?></label>
                             <input name="degree[]" class="hide" id="Dagree" type="text">
                           </div>
                         </div>
@@ -272,21 +272,21 @@ include("./includes/navbar.php");
                         <div class="col-md-6">
 
                           <div class="input-field">
-                            <label>Total Marks / CGPA</label>
+                            <label><?=  $translations['edu_name3']?></label>
                             <input name="total_marks[]" class="hide" id="tmarks" type="text">
                           </div>
                         </div>
                         <!-- ============Obtains Marks============ -->
                         <div class="col-md-6">
                           <div class="input-field ">
-                            <label>Obtains Marks / CGPA</label>
+                            <label><?=  $translations['edu_name4']?></label>
                             <input name="ob_marks[]" class="hide" id="obmarks" type="text">
                           </div>
                         </div>
                         <!-- ============Start-Date============ -->
                         <div class="col-md-6">
                           <div class="input-field  ">
-                            <label>Start Date</label>
+                            <label><?=  $translations['edu_name5']?></label>
                             <input name="edu_st_date[]" class="hide" id="sdate" type="month">
                           </div>
                         </div>
@@ -294,7 +294,7 @@ include("./includes/navbar.php");
                         <div class="col-md-6 ">
                           <div class="input-field d-flex position-relative ">
                             <div>
-                              <label class="date-lable">End Date</label>
+                              <label class="date-lable"><?=  $translations['edu_name6']?></label>
                               <input style="width: 100%;" name="edu_end_date[]" id="edate" class="hide" type="month">
                             </div>
                             <div>
@@ -307,9 +307,9 @@ include("./includes/navbar.php");
                         <!-- ============Feild============ -->
                         <div class="col-md-12">
                           <div class="input-field   ">
-                            <label>Education Details</label>
+                            <label><?=  $translations['edu_name8']?></label>
                             <textarea maxlength="180" name="edu_field[]" class="form-control" id="Feild" rows="4"></textarea>
-                            <div class="form-text about-us-txt">Enter yout education details in less than <b>180</b> Letters</div>
+                            <div class="form-text about-us-txt"><?=  $translations['edu_name9']?></div>
                           </div>
                         </div>
                       </div>
@@ -432,7 +432,7 @@ include("./includes/navbar.php");
                     <div style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px; margin-top:2rem">
                       <div class="personal-info-form  py-3 ">
                         <div class="my-3 position-relative">
-                          <h5 class="headinf">Skill</h5>
+                          <h5 class="headinf"><?=  $translations['skill_name1']?></h5>
                           <a href="edu_skill.php?delete=<?= $row['skill_id'] ?>">
                             <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer;"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                           </a>
@@ -452,12 +452,12 @@ include("./includes/navbar.php");
                           </div>
                           <!-- ================user-Skills-form-End  ====================== -->
                           <div class="input-field mb-4">
-                            <label class="ms-2">Skill level</label>
+                            <label class="ms-2"><?=  $translations['skill_name2']?></label>
                             <select name="skill_range[]" class="form-select gender-option">
-                              <option value="Beginner" <?= ($row['skill_per'] == 'Beginner') ? 'selected' : '' ?>>Beginner</option>
-                              <option value="Skillful" <?= ($row['skill_per'] == 'Skillful') ? 'selected' : '' ?>>Skillful</option>
+                              <option value="Beginner" <?= ($row['skill_per'] == 'Beginner') ? 'selected' : '' ?>><?=  $translations['skill_type']?></option>
+                              <option value="Skillful" <?= ($row['skill_per'] == 'Skillful') ? 'selected' : '' ?>><?=  $translations['skill_type1']?></option>
                               <option value="Experienced" <?= ($row['skill_per'] == 'Experienced') ? 'selected' : '' ?>>Experienced</option>
-                              <option value="Expert" <?= ($row['skill_per'] == 'Expert') ? 'selected' : '' ?>>Expert</option>
+                              <option value="Expert" <?= ($row['skill_per'] == 'Expert') ? 'selected' : '' ?>><?=  $translations['skill_type2']?></option>
                             </select>
                           </div>
 
@@ -473,7 +473,7 @@ include("./includes/navbar.php");
                   <div style=" box-shadow:0px 0px 15px 10px #E0E0E0; border-radius:20px; margin-top:5rem">
                     <div class="personal-info-form  py-3 ">
                       <div class="my-3 position-relative">
-                        <h5 class="headinf">Skill</h5>
+                        <h5 class="headinf"><?=  $translations['skill_name1']?></h5>
                       </div>
                     </div>
                     <!-- ==================Skill-section-Start========================== -->
@@ -483,18 +483,17 @@ include("./includes/navbar.php");
                         <!-- ================user-Skills-form-Start====================== -->
                         <div id="add_iteee" class="mt-3">
                           <div class="input-field">
-                            <label>Skill </label>
+                            <label><?=  $translations['skill_name1']?> </label>
                             <input name="skill[]" id="skill_" style="width:100%" type="text">
                           </div>
                         </div>
                         <!-- ================user-Skills-form-End  ====================== -->
                         <div class="input-field mb-4">
-                          <label class="ms-2">skill level</label>
+                          <label class="ms-2"><?=  $translations['skill_name2']?></label>
                           <select id="age_slider" name="skill_range[]" class="form-select gender-option">
-                            <option selected value="Beginner">Beginner</option>
-                            <option value="Skillful">Skillful</option>
-                            <option value="Experienced">Experienced</option>
-                            <option value="Expert">Expert</option>
+                            <option selected value="Beginner"><?=  $translations['skill_type']?></option>
+                            <option value="Skillful"><?=  $translations['skill_type1']?></option>
+                            <option value="Expert"><?=  $translations['skill_type2']?></option>
                           </select>
                         </div>
                       </div>
@@ -587,15 +586,13 @@ include("./includes/navbar.php");
               <h3>TIPS</h3>
               <div class="text mt-2">
                 <ul>
-                  <li><strong>Order:</strong> Start with your most recent or highest level of education and work backward chronologically.</li>
-                  <li><strong>Format:</strong> Include the name of the institution, degree or qualification earned, field of study, and the dates
-                    of attendance or graduation.</li>
-                  <li><strong>Relevant Information: </strong>Highlight any honors, awards, or notable achievements during your academic journey.</li>
-                  <li><strong>Relevant Skills: </strong>Tailor your skills section to include those directly related to the job you're applying for. This could include technical skills, software proficiency, languages spoken, or specific industry knowledge.</li>
-
-                  <li><strong>Categorize:</strong> Organize your skills into categories (e.g., technical skills, interpersonal skills) to provide clarity and ease of reading.</li>
-                  <li><strong>Highlight Strengths:</strong> Place the most critical and relevant skills at the beginning of each category to grab the reader's attention.</li>
-                  <li><strong>Use Keywords:</strong> Incorporate keywords from the job description to align your skills with the employer's requirements and increase the likelihood of your resume being selected by applicant tracking systems (ATS).</li>
+                 <li><?=  $translations['edu_name11']?></li>
+                 <li><?=  $translations['edu_name12']?></li>
+                 <li><?=  $translations['edu_name13']?></li>
+                 <li><?=  $translations['edu_name14']?></li>
+                 <li><?=  $translations['edu_name15']?></li>
+                 <li><?=  $translations['edu_name16']?></li>
+                 <li><?=  $translations['edu_name17']?></li>
                 </ul>
               </div>
             </div>
@@ -616,7 +613,7 @@ include("./includes/navbar.php");
   <section style="background-color: #C21010">
     <div class=" d-flex justify-content-between pe-3  ps-3">
       <div class="social-icon-heading">
-        <p>Our social media handles:</p>
+        <p><?=  $translations['Our_Social_Handles']?></p>
       </div>
       <div class="icons pt-1">
         <a href="#"><i class='bx bxl-facebook'></i></a>

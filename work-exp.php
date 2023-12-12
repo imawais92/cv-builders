@@ -69,7 +69,7 @@ if (@$_REQUEST['del']) {
 ?>
 
 <?php
-include("includes/header.php");
+include("./includes/header.php");
 include("./includes/navbar.php")
 ?>
 <style>
@@ -117,7 +117,7 @@ include("./includes/navbar.php")
               ?>
                   <div class="py-3 mt-4" style=" box-shadow:0px 0px 20px 10px #E0E0E0AF; border-radius:20px; ">
                     <div class="my-3 position-relative">
-                      <h5 class="headinf">Working Experience</h5>
+                      <h5 class="headinf"><?=  $translations['work_heding']?></h5>
                       <a href="work-exp.php?del=<?= $work_det['work_exp_id'] ?>">
                         <h5 class="position-absolute" style="right: 20px; top:-8px; cursor: pointer; color:red"><i style="color:#c21010;" class="fa-solid fa-x"></i></h5>
                       </a>
@@ -133,7 +133,7 @@ include("./includes/navbar.php")
                             <!-- ============Company Name============ -->
                             <div class="col-md-6">
                               <div class="input-field mt-4 ">
-                                <label>Company Name</label>
+                                <label><?=  $translations['workexp_name1']?></label>
                                 <input name="company_name[]" id="com_name" type="text" value="<?= $work_det['company_name'] ?>">
                               </div>
                             </div>
@@ -141,7 +141,7 @@ include("./includes/navbar.php")
                             <div class="col-md-6">
 
                               <div class="input-field mt-4 ">
-                                <label>Role </label>
+                                <label><?=  $translations['workexp_name2']?></label>
                                 <input name="work_role[]" id="role" type="text" value="<?= $work_det['role'] ?>">
                               </div>
                             </div>
@@ -179,9 +179,9 @@ include("./includes/navbar.php")
                             <div class="col-md-12">
 
                               <div class="input-field mt-4 ">
-                                <label>Working Details</label>
+                                <label><?=  $translations['workexp_name3']?></label>
                                 <textarea maxlength="180" name="work_city_coun[]" class="form-control" id="Feild" rows="4"><?= $work_det['city_country'] ?></textarea>
-                                <div class="form-text about-us-txt">Enter yout work details in less than <b>180</b> Letters</div>
+                                <div class="form-text about-us-txt"><?=  $translations['workexp_name4']?></div>
                               </div>
                             </div>
                             <!-- ============Country============ -->
@@ -211,7 +211,7 @@ include("./includes/navbar.php")
                           <!-- ============Company Name============ -->
                           <div class="col-md-6">
                             <div class="input-field mt-4 ">
-                              <label>Company Name</label>
+                              <label><?=  $translations['workexp_name1']?></label>
                               <input name="company_name[]" id="com_name" type="text">
                             </div>
                           </div>
@@ -219,7 +219,7 @@ include("./includes/navbar.php")
                           <div class="col-md-6">
 
                             <div class="input-field mt-4 ">
-                              <label>Role </label>
+                              <label><?=  $translations['workexp_name2']?> </label>
                               <input name="work_role[]" id="role" type="text">
                             </div>
                           </div>
@@ -249,9 +249,9 @@ include("./includes/navbar.php")
                           <div class="col-md-12">
 
                             <div class="input-field mt-4 ">
-                              <label>Working Details</label>
+                              <label><?=  $translations['workexp_name3']?></label>
                               <textarea maxlength="180" name="work_city_coun[]" class="form-control" id="Feild" rows="4"></textarea>
-                              <div class="form-text about-us-txt">Enter yout work details in less than <b>180</b> Letters</div>
+                              <div class="form-text about-us-txt"><?=  $translations['workexp_name4']?></div>
                             </div>
                           </div>
                           <!-- ============Country============ -->
@@ -367,9 +367,9 @@ include("./includes/navbar.php")
               <h3>TIPS</h3>
               <div class="text mt-2">
                 <ul>
-                  <li><strong>Be Honest:</strong> Provide accurate and truthful information about your work experience. Avoid exaggeration or misrepresentation as it can be detrimental to your professional reputation.</li>
-                  <li><strong>Use Keywords:</strong> Incorporate industry-specific keywords and phrases throughout your work experience section to align your resume with the job description and optimize it for applicant tracking systems (ATS).</li>
-                  <li><strong>Reverse Chronological Order:</strong> Start with your most recent or current position and work backward chronologically. This format is the most common and helps employers quickly see your recent experience.</li>
+                 <li><?=  $translations['workexp_name6']?></li>
+                 <li><?=  $translations['workexp_name7']?></li>
+                 <li><?=  $translations['workexp_name8']?></li>
                 </ul>
               </div>
             </div>

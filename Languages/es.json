@@ -101,7 +101,7 @@
     
 
     
-      "education":"educación",
+      "education_info":"educación",
     "edu_name1": "Nombre de la Institución",
     "edu_name2": "Título",
     "edu_name3": "Calificación Total / CPA",
@@ -129,8 +129,11 @@
     "skill_name2": "Nivel de Habilidad",
     "skill_name3": "+ Agregar Habilidad",
     "skill_name4": "Siguiente",
+    "skill_type": "Principiante",
+    "skill_type1": "Hábil",
+    "skill_type2": "Experta",
   
-  
+"work_heding":"Experiencia de trabajo",
     "workexp_name1": "Nombre de la Empresa",
     "workexp_name2": "Cargo",
     "workexp_name3": "Detalles Laborales",
