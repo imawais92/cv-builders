@@ -209,7 +209,7 @@ include("includes/navbar.php");
                         <div class="col-md-12">
                           <div id="referad">
                             <div class="input-field mt-3 ">
-                              <label>Hobby</label>
+                              <label><?=  $translations['hobbiesss']?></label>
                               <input name="hobby[]" id="hobby" type="text" value="<?= $dta['hobby'] ?>" required>
                             </div>
                           </div>
@@ -233,7 +233,7 @@ include("includes/navbar.php");
                       <div class="col-md-12">
                         <div id="referad">
                           <div class="input-field mt-3 ">
-                            <label>Hobby</label>
+                            <label><?=  $translations['hobby']?></label>
                             <input name="hobby[]" id="hobby" type="text" required>
                           </div>
                         </div>
@@ -310,7 +310,7 @@ include("includes/navbar.php");
                         <div class="row">
                           <div class="col-md-12">
                             <div class="input-field mt-3 ">
-                              <label>Language</label>
+                              <label><?=  $translations['Languages']?></label>
                               <input name="languge[]" id="lan" type="text" value="<?= $data['language'] ?>" required>
                             </div>
                           </div>
@@ -331,7 +331,7 @@ include("includes/navbar.php");
                       <div class="row">
                         <div class="col-md-12">
                           <div class="input-field mt-3 ">
-                            <label>Language</label>
+                            <label><?=  $translations['Languages']?></label>
                             <input name="languge[]" id="lan" type="text" required>
                           </div>
                         </div>
@@ -405,7 +405,7 @@ include("includes/navbar.php");
                     <div class="row">
                       <div class="col-md-12">
                         <div class="input-field mt-3 ">
-                          <label>Reference</label>
+                          <label><?=  $translations['Reference']?></label>
                           <input name="reference[]" id="ref" type="text">
                         </div>
                       </div>
@@ -430,7 +430,7 @@ include("includes/navbar.php");
                       <div class="row">
                         <div class="col-md-12">
                           <div class="input-field mt-3 ">
-                            <label>Reference</label>
+                            <label><?=  $translations['Reference']?></label>
                             <input name="reference[]" id="ref" type="text" value="<?= $row['user_reference'] ?>">
                           </div>
                         </div>
@@ -450,7 +450,7 @@ include("includes/navbar.php");
                     <div class="row">
                       <div class="col-md-12">
                         <div class="input-field mt-3 ">
-                          <label>Reference</label>
+                          <label><?=  $translations['Reference']?></label>
                           <input name="reference[]" id="ref" type="text">
                         </div>
                       </div>

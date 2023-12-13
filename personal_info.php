@@ -135,7 +135,7 @@ include("./includes/navbar.php");
                           echo "$db_img";
                           ?>
                           <input name="imgupload" id="files" style="visibility:hidden;" type="file" accept=".png , .jpg , .jpeg">
-                          <p id="imagetxt" style="color: #C21010; font-weight:600; position:absolute; top:140px; ">Select Image</p>
+                          <p id="imagetxt" style="color: #C21010; font-weight:600; position:absolute; top:140px; "><?=  $translations['per_name0']?></p>
                         </div>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ include("./includes/navbar.php");
                 <!-- ===============Gender=================== -->
                 <div class="col-md-6">
                   <div class="input-field">
-                    <label>Gender</label>
+                    <label><?=  $translations['per_name4']?></label>
                     <select name="gender" class="form-select gender-option">
                       <option <?= (@$per_det['gender'] == 'Male') ? 'selected' : '' ?>>Male</option>
                       <option <?= (@$per_det['gender'] == 'Female') ? 'selected' : '' ?>>Female</option>

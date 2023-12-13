@@ -238,7 +238,7 @@ include("./includes/navbar.php")
                                 <input style="width: 100%;" name="work_end_date[]" id="end_date" type="month">
                               </div>
                               <div>
-                                <label>Present</label>
+                                <label><?=  $translations['edu_name7']?></label>
                                 <input type="checkbox" style="width: 100%;" id="checkbox2" onchange="updateInputField(this)">
                                 <input type="hidden" id="inputField2" name="present[]" value="0" readonly>
                               </div>

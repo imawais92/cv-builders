@@ -298,7 +298,7 @@ include("./includes/navbar.php");
                               <input style="width: 100%;" name="edu_end_date[]" id="edate" class="hide" type="month">
                             </div>
                             <div>
-                              <label class="date-lable ">Present</label>
+                              <label class="date-lable "><?=  $translations['edu_name7']?></label>
                               <input type="checkbox" style="width: 100%;" id="checkbox1" onchange="changecheck(this)">
                               <input type="hidden" id="inputField1" name="edu_present[]" value="0" readonly>
                             </div>

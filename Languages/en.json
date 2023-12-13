@@ -74,6 +74,7 @@
   "Sign_Up7":"Conform Password",
 
 "per_info":"Personal Information",
+"per_name0":"Select Image",
   "per_name1":"First Name",
   "per_name2":"Last Name",
   "per_name3":"Father Name",
@@ -144,7 +145,7 @@
   "workexp_name8": "Reverse Chronological Order: Start with your most recent or current position and work backward chronologically. This format is the most common and helps employers quickly see your recent experience.",
 
 
-
+  "hobbies": "Hobbies",
   "hobby": "Hobby",
   "hobby_1": "+ Add Hobby",
 
