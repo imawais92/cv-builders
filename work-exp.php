@@ -226,7 +226,7 @@ include("./includes/navbar.php")
                           <!-- ============Start-Date============ -->
                           <div class="col-md-6">
                             <div class="input-field mt-4 ">
-                              <label>Start Date</label>
+                              <label><?=  $translations['workexp_name9']?></label>
                               <input name="work_st_date[]" id="start_date" type="month">
                             </div>
                           </div>
@@ -234,7 +234,7 @@ include("./includes/navbar.php")
                           <div class="col-md-6 ">
                             <div class="input-field mt-4 d-flex position-relative ">
                               <div>
-                                <label>End Date</label>
+                                <label><?=  $translations['workexp_name10']?></label>
                                 <input style="width: 100%;" name="work_end_date[]" id="end_date" type="month">
                               </div>
                               <div>
