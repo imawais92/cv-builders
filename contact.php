@@ -23,8 +23,8 @@ include('./includes/navbar.php');
 <div class="container-fluid p-0 pt-1">
   <div class="blog-heading-img ">
     <div class="heading">
-      <h5><a href="index.php">HOME</a> /BLOG</h5>
-      <h1>Contact Us</h1>
+      <h5><a href="index.php"><?=  $translations['home']?></a> /<?=  $translations['blog']?></h5>
+      <h1><?=  $translations['Contact_us']?></h1>
     </div>
   </div>
 </div>
@@ -40,7 +40,7 @@ include('./includes/navbar.php');
       <form action="#" method="post">
         <div class="con-form-sec mt-5">
           <div class="heading">
-            <h3>For Enquiries</h3>
+            <h3><?=  $translations['FOR_ENQUIRIES']?></h3>
           </div>
           <div class="input-sec mt-3">
             <input type="text" name="fullnname" class="form-control" placeholder="Name" required>
@@ -52,7 +52,7 @@ include('./includes/navbar.php');
             <textarea name="message" class="form-control" placeholder="Message" style="height: 110px;" required></textarea>
           </div>
           <div class="input-sec mt-3">
-            <button name="submit" id="sendbtn">Send Message</button>
+            <button name="submit" id="sendbtn"><?=  $translations['sendmsg']?></button>
           </div>
         </div>
       </form>

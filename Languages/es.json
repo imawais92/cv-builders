@@ -55,6 +55,13 @@
   "email": "info@cvbuilders.com",
   "phone": "+92 3196631466",
   "whatsapp": "+92 3196631466",
+  "home":"hogar",
+  "blog":"Blog",
+  "FOR_ENQUIRIES":"PARA CONSULTAS",
+  "sendmsg": "Enviar mensaje",
+  
+
+
 
   "copyright": "© 2023 Derechos de autor: El producto de",
   "Sign_in":"Iniciar sesión",
@@ -62,6 +69,7 @@
   "Sign_indes1":"¡Puedes registrarte aquí!",
   "Sign_in_login":"Correo electrónico",
   "Sign_in_login1":"Contraseña",
+  "name":"nombre",
   "Rememebr_me":"Recuérdame",
 
   "Sign Up":"Registrarse",
@@ -162,14 +170,39 @@
   "reference_tips1": "Variedad: Incluye una variedad de pasatiempos para presentar una personalidad equilibrada. Esto puede mostrar tu capacidad para equilibrar el trabajo y los intereses personales de manera efectiva.",
   "reference_tips2": "Destaca Habilidades Transferibles: Resalta pasatiempos que demuestren habilidades transferibles como liderazgo, creatividad, resolución de problemas u organización.",
   "reference_tips3": "Relevancia: Destaca idiomas que sean relevantes para el trabajo o la industria para la que estás aplicando. Si eres bilingüe o multilingüe, enfatiza tus habilidades lingüísticas, ya que pueden ser activos valiosos.",
-  "reference_tips4": "Incluye Bajo Petición: En lugar de proporcionar referencias específicas en tu CV o currículum, simplemente indica 'Referencias disponibles bajo petición'. Esto mantiene tu documento conciso y te permite proporcionar referencias cuando el empleador lo solicite."
+  "reference_tips4": "Incluye Bajo Petición: En lugar de proporcionar referencias específicas en tu CV o currículum, simplemente indica 'Referencias disponibles bajo petición'. Esto mantiene tu documento conciso y te permite proporcionar referencias cuando el empleador lo solicite.",
 
 
 
 
-
-
-
+    "blogh1": "Política de privacidad de constructores de CV",
+    "blog2": "Los constructores de CV operan el sitio web http://freecvbuilders.com/, que proporciona el SERVICIO",
+    "blog3": "Esta página se utiliza para informar a los visitantes del sitio web sobre nuestras políticas con respecto a la recopilación, uso y divulgación de información personal en caso de que alguien decida utilizar nuestro servicio, el sitio web freecvbuilders.com.",
+    "blog4": "Esta página se utiliza para informar a los visitantes del sitio web sobre nuestras políticas con respecto a la recopilación, uso y divulgación de información personal en caso de que alguien decida utilizar nuestro servicio, el sitio web freecvbuilders.com.",
+    "blog5": "Si decides utilizar nuestro servicio, aceptas la recopilación y uso de información en relación con esta política. La información personal que recopilamos se utiliza para proporcionar y mejorar el servicio. No utilizaremos ni compartiremos tu información con nadie, excepto según se describe en esta política de privacidad.",
+    "blog6": "Los términos utilizados en esta política de privacidad tienen los mismos significados que en nuestros Términos y condiciones, que se pueden consultar en http://freecvbuilders.com/, a menos que se defina de otra manera en esta política de privacidad.",
+    "blogh7": "Recopilación y uso de la información",
+    "blog8": "Para obtener una mejor experiencia al utilizar nuestro servicio, podemos solicitarte que nos proporciones cierta información personal identificable, incluidos, entre otros, tu nombre, número de teléfono y dirección postal. La información que recopilamos se utilizará para ponernos en contacto contigo o identificarte.",
+    "blogh9": "Datos de registro",
+    "blog10": "Queremos informarte que cada vez que visitas nuestro servicio, recopilamos información que tu navegador nos envía, conocida como Datos de registro. Estos Datos de registro pueden incluir información como la dirección IP de tu ordenador, la versión del navegador, las páginas de nuestro servicio que visitas, la hora y la fecha de tu visita, el tiempo que pasas en esas páginas y otras estadísticas.",
+    "blogh11": "Cookies",
+    "blog12": "Las cookies son archivos con una pequeña cantidad de datos que se utilizan comúnmente como identificador único anónimo. Estos se envían a tu navegador desde el sitio web que visitas y se almacenan en el disco duro de tu ordenador.",
+    "blog13": "Nuestro sitio web utiliza estas cookies para recopilar información y mejorar nuestro servicio. Tienes la opción de aceptar o rechazar estas cookies y de saber cuándo se envía una cookie a tu ordenador. Si eliges rechazar nuestras cookies, es posible que no puedas utilizar algunas partes de nuestro servicio.",
+    "blogh14": "Proveedores de servicios",
+    "blog15": "Podemos emplear a empresas e individuos de terceros por las siguientes razones:",
+    "blog16": "Facilitar nuestro servicio",
+    "blog17": "Proporcionar el servicio en nuestro nombre;",
+    "blog18": "Realizar servicios relacionados con el servicio; o",
+    "blog19": "Ayudarnos a analizar cómo se utiliza nuestro servicio.",
+    "blog20": "Queremos informar a los usuarios de nuestro servicio que estos terceros tienen acceso a tu información personal. La razón es realizar las tareas asignadas a ellos en nuestro nombre. Sin embargo, están obligados a no divulgar ni utilizar la información con ningún otro propósito.",
+    "blogh21": "Seguridad",
+    "blog22": "Valoramos tu confianza al proporcionarnos tu información personal, por lo que nos esforzamos por utilizar medios comercialmente aceptables para protegerla. Pero recuerda que ningún método de transmisión por Internet o de almacenamiento electrónico es 100% seguro y fiable, y no podemos garantizar su seguridad absoluta.",
+    "blogh23": "Enlaces a otros sitios",
+    "blog24": "Nuestro servicio puede contener enlaces a otros sitios. Si haces clic en un enlace de terceros, serás dirigido a ese sitio. Ten en cuenta que estos sitios externos no son operados por nosotros. Por lo tanto, te recomendamos encarecidamente que revises la política de privacidad de estos sitios web. No tenemos control sobre el contenido, las políticas de privacidad o las prácticas de cualquier sitio o servicio de terceros.",
+    "blog25": "Privacidad de los niños",
+    "blog26": "Nuestros servicios no están dirigidos a personas menores de 13 años. No recopilamos conscientemente información personal identificable de niños menores de 13 años. En caso de que descubramos que un niño menor de 13 años nos ha proporcionado información personal, eliminamos inmediatamente esta información de nuestros servidores. Si eres padre o tutor y eres consciente de que tu hijo nos ha proporcionado información personal, contáctanos para que podamos tomar las acciones necesarias.",
+    "blogh27": "Contáctanos",
+    "blog28": "Si tienes alguna pregunta o sugerencia sobre nuestra política de privacidad, no dudes en contactarnos."
   }
   
 
